@@ -109,4 +109,14 @@ cd lunahan_v2/sw && python3 agent_sdk.py
 
 ---
 
+## Project Resources
+
+| Resource | Consumed | Detail |
+|----------|----------|--------|
+| 🤖 **LLM Tokens** | **~450K** | DeepSeek V4 Pro. Prompt + completion: 3 repos, 20+ source files, RTL (6,374 lines), GDS, SPEF, STA, profiling, SDK, agent vision. |
+| 💻 **Machine Time** | **~3.5 h** | MacBook Pro 14″ — Apple M1 Pro (8-core), 16 GB unified memory, macOS 26.4. LLM inference + Python execution (PD flow, GDS generation, STA, gate-level sim, benchmarking). |
+| 👨‍🔬 **Dr. Han Wu** | **~1.5 h** | Direction, review, corrections. All design, coding, verification, and documentation handled by the AI collaborator. |
+
+---
+
 *June 2026 · Dr. Han Wu + DeepSeek V4 Pro · MIT License*
