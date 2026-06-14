@@ -4,7 +4,7 @@
 
 > ⚠️ **Project Status:** Under development by **Dr. Han Wu** + **DeepSeek V4 Pro**. Flow demonstration stage. Not silicon-proven.
 
-> 🙏 **Acknowledgments:** This work is conducted under the supervision of **Chief Scientist Dr. Liao Heng** (HUAWEI). The integration of the **pyCircuit** and **XiangShan** RISC-V open-source projects was proposed by **Huawei Fellow Du Wenhua**, whose vision of combining Python-native agile design with silicon-proven RISC-V microarchitecture inspired the lunarch methodology.
+> 🙏🙏🙏 ☕☕☕ 🌹🌹🌹 **Acknowledgments:** This work is conducted under the supervision of **Chief Scientist Dr. Liao Heng** (HUAWEI). The integration of the **pyCircuit** and **XiangShan** RISC-V open-source projects was proposed by **Huawei Fellow Du Wenhua**, whose vision of combining Python-native agile design with silicon-proven RISC-V microarchitecture inspired the lunarch methodology.
 
 ---
 
@@ -34,7 +34,7 @@
 | **Frequency** | 100 MHz (max 438) | 100 MHz (max 234) | 100 MHz (max 234) |
 | **Cells** | 2,706 (1,224 DFFs) | 1,785 + 3 SRAM macros | 4,500 + SRAM |
 | **ISA** | RV32IMC | RV32IMC | RV32IMC + 11 custom |
-| **Contexts** | 1 | 1 | **4 (1-cycle HW switch)** |
+| **HW contexts** | 1 (single-thread) | 1 (single-thread) | **4 (banked register files, 1-cycle agent.switch)** |
 | **Key Feature** | Full Python→GDS flow | SRAM proven equivalent | STU + KV-cache + agent SDK |
 | **GDS** | ✓ | ✓ | ✓ |
 
