@@ -77,9 +77,9 @@ All three cores share the same methodology:
 | Phase | Timeline | Goal |
 |-------|----------|------|
 | **v1.x** ✓ | Done | Foundation validated: Python→GDS, DFF + SRAM |
-| **v2.x** | Q3–Q4 2025 | Agentic ISA, hardware context switching, STU |
-| **v3.x** | 2026 | NPU co-design: open-source NPU + RISC-V interface |
-| **v4.x** | 2027 | Silicon: TinyTapeout/Efabless shuttle, open-source agentic AI SoC |
+| **v2.x** | Q3–Q4 2026 | Agentic ISA, hardware context switching, STU |
+| **v3.x** | 2027 | NPU co-design: open-source NPU + RISC-V interface |
+| **v4.x** | 2028 | Silicon: TinyTapeout/Efabless shuttle, open-source agentic AI SoC |
 
 ---
 
@@ -109,4 +109,4 @@ cd lunahan_v2/sw && python3 agent_sdk.py
 
 ---
 
-*May 2025 · Dr. Han Wu + DeepSeek V4 Pro · MIT License*
+*June 2026 · Dr. Han Wu + DeepSeek V4 Pro · MIT License*
