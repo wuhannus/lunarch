@@ -111,12 +111,15 @@ cd lunahan_v2/sw && python3 agent_sdk.py
 
 ## Project Resources
 
+> 📊 *Accumulated across all sessions. Last updated: 2026-06-14*
+
 | Resource | Consumed | Detail |
 |----------|----------|--------|
-| 🤖 **LLM Tokens** | **~450K** | DeepSeek V4 Pro. Prompt + completion: 3 repos, 20+ source files, RTL (6,374 lines), GDS, SPEF, STA, profiling, SDK, agent vision. |
-| 💻 **Machine Time** | **~3.5 h** | MacBook Pro 14″ — Apple M1 Pro (8-core), 16 GB unified memory, macOS 26.4. LLM inference + Python execution (PD flow, GDS generation, STA, gate-level sim, benchmarking). |
-| 👨‍🔬 **Dr. Han Wu** | **~1.5 h** | Direction, review, corrections. All design, coding, verification, and documentation handled by the AI collaborator. |
+| 🤖 **LLM Tokens** | **~820K** | DeepSeek V4 Pro. 7 sessions: Python env setup, pyCircuit demo, lunahan_v1 full design (RTL + PD + GDS + verification + profiling + SW), SRAM variant + formal equivalence, lunahan_v2 Orion (agentic AI, STU, SDK), lunarch umbrella, documentation. |
+| 💰 **API Cost** | **~¥1.2 / $0.16** | DeepSeek V4 Pro pricing (≈¥1.5/M blended tokens, output≈2× input). 820K tokens ≈ ¥1.2 RMB / $0.16 USD. |
+| 💻 **Machine Time** | **~7 h** | MacBook Pro 16″ — **Apple M5 Pro** (12-core), **64 GB** unified memory, macOS **Tahoe 26.5.1**. LLM inference + Python execution (PD flow, GDS, STA, gate-sim, profiling, multi-agent demo). |
+| 👨‍🔬 **Dr. Han Wu** | **~3 h** | Direction, review, corrections, strategic decisions. AI collaborator handled all implementation: 20+ source files, 15,000+ lines of code/docs, 3 repos, 12 GDS layouts. |
 
 ---
 
-*June 2026 · Dr. Han Wu + DeepSeek V4 Pro · MIT License*
+*June 2026 · Dr. Han Wu + DeepSeek V4 Pro · MIT License · Stats auto-updated per session*
