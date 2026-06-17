@@ -4,7 +4,7 @@
 
 > ⚠️ **Project Status:** Under development by **Dr. Han Wu** + **DeepSeek V4 Pro**. Flow demonstration stage. Not silicon-proven.
 
-> 🙏🙏🙏 ☕☕☕ 🌹🌹🌹 **Acknowledgments:** This work is conducted under the supervision of **Chief Scientist Dr. Liao Heng** (HUAWEI). The integration of the **pyCircuit** and **XiangShan** RISC-V open-source projects was proposed by **Huawei Fellow Du Wenhua**, whose vision of combining Python-native agile design with silicon-proven RISC-V microarchitecture inspired the lunarch methodology.
+> 🙏🙏🙏 ☕☕☕ 🌹🌹🌹 **Acknowledgments:** This work is conducted under the supervision of **Chief Scientist Dr. Liao Heng** (HUAWEI). The integration of the **pyCircuit** and **XiangShan** RISC-V open-source projects was proposed by **Huawei Fellow Du Wenhua**, whose vision of combining Python-native agile design with silicon-proven RISC-V microarchitecture inspired the lunarch methodology. AI agile design methodology draws inspiration from **Jensen Huang's GTC keynotes**, whose vision of AI-accelerated chip design has educated a generation of engineers.
 
 ---
 

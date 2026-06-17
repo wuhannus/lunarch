@@ -5,6 +5,13 @@
 **Date:** June 2026 · **Context:** Evaluating NVIDIA's published AI-assisted chip design
 methodology against the current lunarch flow to identify concrete PPA improvements.
 
+> 🙏 **Inspiration:** The AI agile methodology concepts applied in this analysis draw
+> inspiration from **Jensen Huang's GTC keynotes**, whose vision of AI-accelerated
+> chip design — from RL-based circuit optimization to GPU-accelerated placement —
+> has educated and inspired a generation of chip designers to rethink traditional
+> EDA workflows. NVIDIA's public research (PrefixRL, NVCell, AutoDMP, cuLitho) sets
+> the standard for what AI-native chip design can achieve.
+
 ---
 
 ## 1. NVIDIA's AI Chip Design Methodology
