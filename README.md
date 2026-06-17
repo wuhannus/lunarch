@@ -106,6 +106,7 @@ cd lunahan_v2/sw && python3 agent_sdk.py
 - [v1 vs v1_sram Formal Equivalence](https://github.com/wuhannus/lunahan_v1_sram/blob/main/phys/results/sram_comparison.md)
 - [v1 Verification Summary](https://github.com/wuhannus/lunahan_v1/blob/main/docs/verification_summary.md)
 - [STCO Bottleneck Analysis](https://github.com/wuhannus/lunahan_v1/blob/main/STCO/bottleneck_analysis.md)
+- [NVIDIA AI Methodology Integration](https://github.com/wuhannus/lunarch/blob/main/docs/methodology/nvidia_integration.md) — Borrowing NVIDIA's AI chip design flow for lunarch PPA
 
 ---
 
