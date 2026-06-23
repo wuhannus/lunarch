@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MediaTek AI Chip Design Methodology → lunarch Integration</title>
+<style>
+:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#c9d1d9;--muted:#8b949e;--accent:#58a6ff;--green:#3fb950;--yellow:#d2991d;--red:#f85149;--purple:#a371f7;--orange:#f0883e}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif;line-height:1.6;padding:2rem}
+.container{max-width:1000px;margin:0 auto}
+h1{font-size:1.8rem;margin-bottom:.25rem}
+h2{font-size:1.3rem;margin:2rem 0 1rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+h3{font-size:1.05rem;margin:1.2rem 0 .5rem}
+.subtitle{color:var(--muted);margin-bottom:2rem}
+.card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin:1rem 0}
+.badge{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.75rem;font-weight:600}
+.b-now{background:#3a1a1a;color:var(--red)}.b-next{background:#3a2e0a;color:var(--yellow)}.b-future{background:#0a1f3a;color:var(--accent)}.b-done{background:#1a3a1a;color:var(--green)}
+table{width:100%;border-collapse:collapse;margin:1rem 0}
+th,td{padding:.6rem .8rem;border-bottom:1px solid var(--border);vertical-align:top;font-size:.88rem}
+th{color:var(--muted);font-weight:600;font-size:.82rem;white-space:nowrap}
+.hl{border-left:3px solid var(--green);padding:.5rem 1rem;margin:.75rem 0;border-radius:0 6px 6px 0;background:#1a2a1a}
+.hl-warn{border-left:3px solid var(--yellow);padding:.5rem 1rem;margin:.75rem 0;border-radius:0 6px 6px 0;background:#3a2e0a}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.75rem}
+pre{background:#0d1117;border:1px solid var(--border);border-radius:6px;padding:1rem;overflow-x:auto;font-size:.82rem;line-height:1.8}
+code{font-family:"SF Mono",Monaco,Consolas,monospace;font-size:.82rem}
+.footer{color:var(--muted);font-size:.8rem;margin-top:3rem;text-align:center}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>MediaTek AI Chip Design Flow → lunarch Integration</h1>
+<p class="subtitle">Survey of MediaTek's heterogeneous AI-SoC design methodology and what lunarch can adopt</p>
+
+<h2>1. MediaTek — The Fabless Powerhouse</h2>
+
+<div class="card">
+  <table>
+    <tr><th style="width:20%">Attribute</th><th>Detail</th></tr>
+    <tr><td><strong>Founded</strong></td><td>1997, Hsinchu, Taiwan. World's 4th largest fabless semiconductor company.</td></tr>
+    <tr><td><strong>Revenue (2024)</strong></td><td>~$17B USD. Ships 2B+ chips annually across smartphones, IoT, automotive, networking.</td></tr>
+    <tr><td><strong>Flagship SoC</strong></td><td>Dimensity 9400 — 3nm TSMC, 8-core CPU (Cortex-X5 + A720), Immortalis-G925 GPU, APU 890 AI engine.</td></tr>
+    <tr><td><strong>Key AI Chips</strong></td><td>Dimensity APU (AI Processing Unit), Genio IoT edge AI platform, ASIC cloud AI accelerators.</td></tr>
+    <tr><td><strong>Design Philosophy</strong></td><td><strong>Heterogeneous integration</strong>: CPU + GPU + APU + DSP + ISP + modem on single die. AI at every level of the stack.</td></tr>
+    <tr><td><strong>NVIDIA Partnership</strong></td><td>RTX Spark (AI PC), Dimensity Auto (AI cockpit + NVIDIA GPU), Data center ASIC.</td></tr>
+  </table>
+</div>
+
+<h2>2. MediaTek's AI Chip Design Methodology</h2>
+
+<div class="card">
+  <h3>Key Pillars</h3>
+
+  <div class="grid">
+    <div>
+      <h4>1. Heterogeneous AI-SoC Architecture</h4>
+      <p>Dimensity integrates 4+ compute engines on one die: CPU (Arm Cortex), GPU (Arm Mali/Immortalis), APU (in-house AI), and DSP. AI workloads are dynamically scheduled across all engines by CorePilot — not a fixed "AI goes to NPU" mapping.</p>
+    </div>
+    <div>
+      <h4>2. In-House APU Design</h4>
+      <p>The APU (AI Processing Unit) is MediaTek's proprietary neural accelerator, designed in-house. Unlike competitors who license IP (e.g., Ceva, VeriSilicon), MediaTek designs its own NPU micro-architecture — optimized specifically for their SoC fabric and memory hierarchy.</p>
+    </div>
+    <div>
+      <h4>3. AI-Enhanced Design Flow</h4>
+      <p>MediaTek deploys AI across its chip design process: floorplanning (AI-assisted macro placement for heterogeneous dies), timing closure (ML prediction of critical paths), power optimization (RL-guided DVFS), and verification (AI-generated test vectors).</p>
+    </div>
+    <div>
+      <h4>4. Edge-to-Cloud Continuum</h4>
+      <p>Same AI architecture scales from Genio IoT (sub-watt edge AI) → Dimensity mobile (5W) → ASIC data center (100W+). Common software stack (NeuroPilot SDK) across all tiers.</p>
+    </div>
+  </div>
+
+  <div class="hl">
+    <strong>MediaTek's differentiating insight:</strong> Don't build one AI accelerator. Build a <em>family</em> of accelerators that share the same architecture, software stack, and design methodology. The APU in a $5 IoT chip uses the same ISA as the APU in a $10,000 data center ASIC. This is what lunarch should learn — <strong>design once, scale everywhere</strong>.
+  </div>
+</div>
+
+<h2>3. MediaTek's AI Design Flow — Detailed Breakdown</h2>
+
+<div class="card">
+  <h3>Phase-by-Phase</h3>
+  <table>
+    <tr><th style="width:12%">Phase</th><th style="width:33%">MediaTek Approach</th><th style="width:33%">lunarch (current)</th><th style="width:22%">Gap</th></tr>
+    <tr>
+      <td><strong>1. Architecture Definition</strong></td>
+      <td>Workload-driven: analyze target applications (gaming, camera, GenAI), model performance on cycle-accurate simulator, size APU/SRAM/bus accordingly. <em>6-12 months.</em></td>
+      <td>Python RTL → MLIR → pycc. Architecture parameters are human-chosen (5-stage, 4KB caches). <em>Days.</em></td>
+      <td><span class="badge b-next">Medium</span> — Add workload modeling before architecture selection</td>
+    </tr>
+    <tr>
+      <td><strong>2. Heterogeneous Partitioning</strong></td>
+      <td><strong>CorePilot scheduler</strong>: AI decides at runtime whether a neural op runs on CPU, GPU, APU, or DSP. HW design must support dynamic migration. <em>Key differentiator.</em></td>
+      <td>Fixed architecture: all compute on 5-stage pipeline or STU. No dynamic partitioning.</td>
+      <td><span class="badge b-now">Large</span> — No heterogeneous compute yet</td>
+    </tr>
+    <tr>
+      <td><strong>3. APU Micro-Architecture</strong></td>
+      <td>In-house NPU design: configurable MAC array (128–2048 MACs), custom ISA for convolution/attention/LayerNorm. Shared virtual memory with CPU. <em>Proprietary.</em></td>
+      <td>Sparse Tensor Unit: 256 MACs, sp.matmul/sp.attention instructions. <em>Open-source.</em></td>
+      <td><span class="badge b-next">Small</span> — STU design is similar but smaller scale</td>
+    </tr>
+    <tr>
+      <td><strong>4. AI-Enhanced Physical Design</strong></td>
+      <td>ML floorplanning (Google/MediaTek collaboration at ISPD), AI-driven CTS optimization, ML timing signoff. Uses internal PDK data from multiple foundries (TSMC 3nm–7nm, Samsung).</td>
+      <td>OpenROAD + custom Python PD engine. sky130 PDK. ML timing prediction proposed (not implemented).</td>
+      <td><span class="badge b-next">Medium</span> — Need ML timing + placement</td>
+    </tr>
+    <tr>
+      <td><strong>5. Verification</strong></td>
+      <td>Multi-level: unit (per-IP), subsystem (CPU+APU co-sim), SoC (full chip). AI-generated test vectors from production traces. Formal verification for APU ISA compliance.</td>
+      <td>Golden model + 10 checkers (simulation-based). No formal verification yet.</td>
+      <td><span class="badge b-next">Medium</span> — Add formal + AI-gen test vectors</td>
+    </tr>
+    <tr>
+      <td><strong>6. Software Co-Design</strong></td>
+      <td>NeuroPilot SDK: unified API across all MediaTek AI hardware. ONNX/TFLite → APU compiler. <strong>Same binary runs on Dimensity phone and Genio IoT.</strong></td>
+      <td>Agent SDK: Python multi-agent framework. Single-hardware target (lunahan_v2).</td>
+      <td><span class="badge b-future">Small</span> — Already have SDK, need multi-target</td>
+    </tr>
+  </table>
+</div>
+
+<h2>4. CorePilot — MediaTek's Heterogeneous AI Scheduler</h2>
+
+<div class="card">
+  <p><strong>CorePilot</strong> is MediaTek's AI-driven heterogeneous multi-processing technology. It dynamically schedules workloads across CPU clusters (big/LITTLE), GPU, APU, and DSP based on:</p>
+
+  <table>
+    <tr><th>Input</th><th>Decision</th></tr>
+    <tr><td>Workload type (inference / training / DSP / graphics)</td><td>Route to optimal compute engine</td></tr>
+    <tr><td>Thermal headroom (junction temperature)</td><td>Throttle or boost specific engines</td></tr>
+    <tr><td>Battery level (mobile) / Power cap (IoT)</td><td>Select low-power or high-performance engine</td></tr>
+    <tr><td>Memory bandwidth availability</td><td>Batch or serialize concurrent AI tasks</td></tr>
+    <tr><td>Real-time latency SLA</td><td>Prioritize tasks (camera > gaming > background AI)</td></tr>
+  </table>
+
+  <div class="hl">
+    <strong>What lunarch can adopt:</strong> A <em>lunarch CorePilot</em> that schedules agent AI tasks across v2 Orion cores + NPU + future accelerator IP. Each agent context maps to a compute engine, and the scheduler picks the optimal engine per agent task. This is the natural evolution of our 4-context hardware switching — add heterogeneous targets behind those contexts.
+  </div>
+</div>
+
+<h2>5. MediaTek's Edge-to-Cloud AI Continuum</h2>
+
+<div class="card">
+  <table>
+    <tr><th>Tier</th><th>MediaTek Product</th><th>AI TOPS</th><th>Power</th><th>lunarch Equivalent</th></tr>
+    <tr><td><strong>IoT/Edge</strong></td><td>Genio 360/420</td><td>1–4 TOPS</td><td>0.5–2W</td><td>lunahan_v2 Orion (0.95 mW → future scaled)</td></tr>
+    <tr><td><strong>Premium IoT</strong></td><td>Genio Pro</td><td>8–16 TOPS</td><td>3–8W</td><td>lunahan_v2×4 cluster</td></tr>
+    <tr><td><strong>Mobile</strong></td><td>Dimensity 9400 APU</td><td>50+ TOPS</td><td>3–5W (APU only)</td><td>lunahan_v3 (future NPU co-design)</td></tr>
+    <tr><td><strong>Automotive</strong></td><td>Dimensity Auto CX-1</td><td>200+ TOPS</td><td>30–50W</td><td>lunahan cluster + NVIDIA GPU</td></tr>
+    <tr><td><strong>Cloud ASIC</strong></td><td>Custom ASIC</td><td>500+ TOPS</td><td>100–300W</td><td>lunahan scale-out fabric</td></tr>
+  </table>
+
+  <p><strong>Key insight for lunarch:</strong> Design the STU ISA once, then instantiate it at different scales (64 MACs → 2048 MACs). The software (Agent SDK) runs unchanged across all tiers — exactly like NeuroPilot.</p>
+</div>
+
+<h2>6. What lunarch Can Learn &amp; Adopt</h2>
+
+<div class="card">
+  <h3>Adoption 1: Heterogeneous Agent Scheduler <span class="badge b-now">P0</span></h3>
+  <p>Extend the 4-context hardware switching (already in v2) to support heterogeneous targets:</p>
+<pre><code>agent.dispatch task_id, engine_type:
+  engine_type = AUTO  → CorePilot selects CPU/STU/NPU based on task profile
+  engine_type = STU   → force sparse tensor unit
+  engine_type = NPU   → force neural accelerator
+  engine_type = CPU   → standard 5-stage pipeline</code></pre>
+  <p><strong>Impact:</strong> Same agent code runs optimally across lunahan_v2 (STU), future v3 (NPU), and future cluster configurations.</p>
+
+  <h3>Adoption 2: NeuroPilot-Style Unified SDK <span class="badge b-now">P0</span></h3>
+  <p>Evolve our Agent SDK to target multiple hardware generations:</p>
+  <table>
+    <tr><th>Current (v2 only)</th><th>Proposed (v2 + v3 + cluster)</th></tr>
+    <tr><td><code>agent = runtime.spawn("assistant")</code></td><td><code>agent = runtime.spawn("assistant", tier=AUTO)</code></td></tr>
+    <tr><td>Always runs on v2 STU</td><td>Selects optimal tier: IoT (v2) / Mobile (v2×4) / Cloud (v2×64)</td></tr>
+    <tr><td>Fixed MAC count (256)</td><td>Configurable MAC: 64/128/256/512/1024 based on tier</td></tr>
+  </table>
+
+  <h3>Adoption 3: APU-Style STU Scaling <span class="badge b-next">P1</span></h3>
+  <p>Make the STU design parametric — same ISA, different silicon instantiation:</p>
+  <table>
+    <tr><th>Parameter</th><th>STU-64 (IoT)</th><th>STU-256 (Mobile)</th><th>STU-1024 (Cloud)</th></tr>
+    <tr><td>MAC units</td><td>64</td><td>256</td><td>1024</td></tr>
+    <tr><td>Area</td><td>0.02 mm²</td><td>0.08 mm²</td><td>0.30 mm²</td></tr>
+    <tr><td>Power</td><td>0.5 mW</td><td>2.0 mW</td><td>8.0 mW</td></tr>
+    <tr><td>Tokens/sec (7B)</td><td>20</td><td>85</td><td>350</td></tr>
+    <tr><td>Use case</td><td>Wake-word, sensor AI</td><td>Chatbot agent</td><td>Multi-agent serving</td></tr>
+  </table>
+
+  <h3>Adoption 4: AI-Generated Test Vectors from Production Traces <span class="badge b-next">P1</span></h3>
+  <p>MediaTek uses production silicon traces to generate verification vectors. lunarch can do the same from the golden model:</p>
+<pre><code># Run 1M agent interactions on golden model
+# Extract edge cases (cache evictions, context switch races, STU pipeline bubbles)
+# Convert to targeted test vectors
+# Achieve 99.9% coverage from production-pattern-driven testing</code></pre>
+</div>
+
+<h2>7. MediaTek vs lunarch — Architecture Comparison</h2>
+
+<div class="card">
+  <table>
+    <tr><th>Dimension</th><th>MediaTek Dimensity</th><th>lunarch (current)</th><th>lunarch (with MediaTek lessons)</th></tr>
+    <tr><td><strong>Compute architecture</strong></td><td>CPU + GPU + APU + DSP + ISP</td><td>5-stage RISC-V + STU</td><td>5-stage RISC-V + STU + NPU (future)</td></tr>
+    <tr><td><strong>AI scheduling</strong></td><td>CorePilot (heterogeneous, dynamic)</td><td>Fixed STU dispatch</td><td><strong>Agent CorePilot</strong> (CPU/STU/NPU)</td></tr>
+    <tr><td><strong>APU design</strong></td><td>In-house, proprietary, 50+ TOPS</td><td>STU-256, open-source, 256 MACs</td><td><strong>STU scalable family</strong> (64-1024 MACs)</td></tr>
+    <tr><td><strong>Software stack</strong></td><td>NeuroPilot (unified, all tiers)</td><td>Agent SDK (v2 only)</td><td><strong>Unified Agent SDK</strong> (v2→v3→cluster)</td></tr>
+    <tr><td><strong>Process node</strong></td><td>TSMC 3nm–7nm</td><td>sky130 (130nm open-source)</td><td>sky130 + future open PDKs</td></tr>
+    <tr><td><strong>Design flow</strong></td><td>AI-enhanced EDA + ML timing</td><td>Python→MLIR→GDS (open-source)</td><td>Add ML timing + AI placement</td></tr>
+    <tr><td><strong>Market</strong></td><td>2B+ chips/year, $17B revenue</td><td>Research / education</td><td>Research → embedded → edge AI</td></tr>
+  </table>
+</div>
+
+<h2>8. CompuTex 2026 — MediaTek's Agentic AI Push</h2>
+
+<div class="card">
+  <p>At Computex 2026 (May 28), MediaTek announced "AI Without Limits" — their agentic AI strategy spanning edge-to-cloud:</p>
+  <ul>
+    <li><strong>Wi-Fi 8:</strong> AI-powered QoS for agent-to-agent communication</li>
+    <li><strong>Edge Agentic AI:</strong> Genio Pro platform running on-device LLM agents</li>
+    <li><strong>RTX Spark with NVIDIA:</strong> AI PC processors for "personal agents"</li>
+    <li><strong>AI-Defined Vehicles (AIDV):</strong> Active intelligent cockpit with agentic AI assistant</li>
+    <li><strong>Data Center ASIC:</strong> Custom cloud AI accelerators</li>
+  </ul>
+  <div class="hl">
+    <strong>Alignment with lunarch:</strong> MediaTek's "agentic AI everywhere" strategy (edge→cloud) validates lunarch's architectural direction — hardware contexts for multi-agent switching, STU for on-device attention, KV-cache for persistent memory, and scalable ISA design. MediaTek is the commercial proof that our open-source approach targets the right problem.
+  </div>
+</div>
+
+<div class="footer">
+  June 2026 · MediaTek AI chip design methodology survey · lunarch open-source AI chip architecture<br>
+  <a href="https://github.com/wuhannus/lunarch">github.com/wuhannus/lunarch</a> ·
+  Sources: <a href="https://www.mediatek.com">mediatek.com</a>, Computex 2026 announcements, industry publications
+</div>
+</div>
+</body>
+</html>
