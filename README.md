@@ -118,12 +118,12 @@ cd lunahan_v2/sw && python3 agent_sdk.py
 
 | Resource | Consumed | Detail |
 |----------|----------|--------|
-| 🤖 **LLM Tokens** | **~870K** | DeepSeek V4 Pro. 7+ sessions: Python env setup, pyCircuit demo, lunahan_v1 full design (RTL + PD + GDS + verification + profiling + SW), SRAM variant + formal equivalence, lunahan_v2 Orion (agentic AI, STU, SDK), lunarch umbrella, NVIDIA methodology integration, documentation. |
-| 💬 **Conversation** | **~44K words** | Interactive dialogue between Dr. Han Wu and DeepSeek V4 Pro across all sessions. Chinese + English mixed. |
-| 📝 **Code Output** | **~31,200 lines** | RTL (Python) + docs (Markdown/HTML) + scripts + GDS + reports + SDK + methodology across lunahan_v1 (10,587), lunahan_v1_sram (4,695), lunahan_v2 (15,316), lunarch (650+). |
-| 💰 **API Cost** | **¥1.30 / $0.18** | DeepSeek V4 Pro (~¥1.5/M blended tokens, output ~2× input). 870K tokens ≈ ¥1.30 RMB / $0.18 USD. |
-| 💻 **Machine Time** | **~7.3 h** | MacBook Pro 16″ — **Apple M5 Pro** (12-core), **64 GB** unified memory, macOS **Tahoe 26.5.1**. LLM inference + Python execution (PD flow, GDS, STA, gate-sim, profiling, multi-agent demo). |
-| 👨‍🔬 **Dr. Han Wu** | **~3.2 h** | Direction, review, corrections, strategic decisions. AI collaborator handled all implementation. |
+| 🤖 **LLM Tokens** | **~1.02M** | DeepSeek V4 Pro. 8+ sessions: Python setup, pyCircuit demo, lunahan_v1 full design (RTL+PD+GDS+verification+profiling+SW), SRAM variant+formal equivalence, lunahan_v2 Orion (agentic AI, STU, SDK, KV-cache), lunarch umbrella, 4 methodology surveys (NVIDIA, Architect Labs, MediaTek, AlphaChip RL), intent-driven optimizer, RL macro placement. |
+| 💬 **Conversation** | **~52K words** | Interactive dialogue between Dr. Han Wu and DeepSeek V4 Pro across all sessions. Chinese + English mixed. |
+| 📝 **Code Output** | **~35,000 lines** | RTL (Python) + docs (Markdown/HTML) + scripts + GDS + reports + SDK + methodology + RL placer across lunahan_v1 (10,587), lunahan_v1_sram (4,695), lunahan_v2 (15,316), lunarch (3,000+). |
+| 💰 **API Cost** | **¥1.53 / $0.21** | DeepSeek V4 Pro (~¥1.5/M blended tokens). 1.02M tokens ≈ ¥1.53 RMB / $0.21 USD. |
+| 💻 **Machine Time** | **~8.5 h** | MacBook Pro 16″ — **Apple M5 Pro** (12-core), **64 GB** unified memory, macOS **Tahoe 26.5.1**. LLM inference + Python execution (PD flow, GDS, STA, gate-sim, profiling, multi-agent demo, RL placement optimizer). |
+| 👨‍🔬 **Dr. Han Wu** | **~3.5 h** | Direction, review, corrections, strategic decisions. AI collaborator handled all implementation. |
 
 ---
 
