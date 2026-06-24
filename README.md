@@ -133,7 +133,7 @@ cd lunahan_v2/sw && python3 agent_sdk.py
 
 ## Project Resources
 
-> 📊 *Accumulated across all sessions. Last updated: 2026-06-14*
+> 📊 *Accumulated across all sessions. Last updated: 2026-06-24*
 
 | Resource | Consumed | Detail |
 |----------|----------|--------|
@@ -146,4 +146,4 @@ cd lunahan_v2/sw && python3 agent_sdk.py
 
 ---
 
-*June 2026 · Dr. Han Wu + DeepSeek V4 Pro · MIT License · Stats auto-updated per session*
+*June 24, 2026 · Dr. Han Wu + DeepSeek V4 Pro · MIT License · Stats auto-updated per session*
