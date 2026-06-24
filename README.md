@@ -106,9 +106,23 @@ cd lunahan_v2/sw && python3 agent_sdk.py
 - [v1 vs v1_sram Formal Equivalence](https://github.com/wuhannus/lunahan_v1_sram/blob/main/phys/results/sram_comparison.md)
 - [v1 Verification Summary](https://github.com/wuhannus/lunahan_v1/blob/main/docs/verification_summary.md)
 - [STCO Bottleneck Analysis](https://github.com/wuhannus/lunahan_v1/blob/main/STCO/bottleneck_analysis.md)
-- [NVIDIA AI Methodology Integration](https://github.com/wuhannus/lunarch/blob/main/docs/methodology/nvidia_integration.md) — Borrowing NVIDIA's AI chip design flow for lunarch PPA
+- [NVIDIA AI Methodology Integration](https://github.com/wuhannus/lunarch/blob/main/docs/methodology/nvidia_integration.md) — PrefixRL/NVCell RL circuit optimization
 - [Architect Labs Integration](https://github.com/wuhannus/lunarch/blob/main/docs/methodology/architect_labs_integration.html) — Intent-driven AI-native chip design
-- [MediaTek Integration](https://github.com/wuhannus/lunarch/blob/main/docs/methodology/mediatek_integration.html) — Heterogeneous AI-SoC, CorePilot, edge-to-cloud APU
+- [MediaTek Integration](https://github.com/wuhannus/lunarch/blob/main/docs/methodology/mediatek_integration.html) — Heterogeneous CorePilot, edge-to-cloud APU
+- [AlphaChip RL Integration](https://github.com/wuhannus/lunarch/blob/main/docs/methodology/alphachip_integration.html) — Google DeepMind RL macro placement (Nature 2021)
+
+---
+
+## Methodology Survey — PPA Impact Summary
+
+| Methodology | Source | Technique | v2 Orion Impact |
+|-------------|--------|-----------|-----------------|
+| **NVIDIA PrefixRL / NVCell** | GTC, IEEE | RL circuit optimization, AI standard cells | -38% STU latency, 600× iteration speedup |
+| **Architect Labs** | architectlabs.com | Intent→architecture AI, workload-driven config | +51% tok/s, -83% KV-cache spills |
+| **MediaTek CorePilot / ISPD** | ISPD 2024, Computex 2026 | Heterogeneous scheduler, rectilinear floorplan | Agent CorePilot dispatch, scalable STU family |
+| **AlphaChip RL** | Nature 2021, circuit_training | GNN+PPO macro placement, DREAMPlace | **-70% wire, +35% freq (315 MHz), -28% power (2.53 mW)** |
+
+> 📊 *All four methodologies integrated. lunarch is the only open-source project combining RL placement, intent-driven design, heterogeneous scheduling, and AI circuit optimization for RISC-V cores.*
 
 ---
 
