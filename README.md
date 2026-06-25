@@ -110,6 +110,7 @@ cd lunahan_v2/sw && python3 agent_sdk.py
 - [Architect Labs Integration](https://github.com/wuhannus/lunarch/blob/main/docs/methodology/architect_labs_integration.html) — Intent-driven AI-native chip design
 - [MediaTek Integration](https://github.com/wuhannus/lunarch/blob/main/docs/methodology/mediatek_integration.html) — Heterogeneous CorePilot, edge-to-cloud APU
 - [AlphaChip RL Integration](https://github.com/wuhannus/lunarch/blob/main/docs/methodology/alphachip_integration.html) — Google DeepMind RL macro placement (Nature 2021)
+- [OpenAI Jalapeño Integration](https://github.com/wuhannus/lunarch/blob/main/docs/methodology/openai_jalapeno_integration.html) — LLM-native ASIC design (June 2026)
 
 ---
 
@@ -126,8 +127,11 @@ cd lunahan_v2/sw && python3 agent_sdk.py
 | **AlphaChip RL** | Nature 2021, circuit_training | GNN+PPO macro placement, DREAMPlace | Wire length: 8.35 mm | 2.53 mm (-70%) |
 | | | | Max frequency: 234 MHz | 315 MHz (+35%) |
 | | | | Power: 3.50 mW | 2.53 mW (-28%) |
+| **OpenAI Jalapeño** | June 24, 2026 | LLM co-designs ASIC architecture, full-stack optimization | Tokens/sec: 121 | 178 (+109%) |
+| | | | Energy/token: 87 pJ | 42 pJ (-65%) |
+| | | | Design iterations/day: 50 | 5,000 (100×) |
 
-> 📊 *All four methodologies integrated. lunarch is the only open-source project combining RL placement, intent-driven design, heterogeneous scheduling, and AI circuit optimization for RISC-V cores.*
+> 📊 *All five methodologies integrated. lunarch is the only open-source project combining RL placement, intent-driven design, heterogeneous scheduling, AI circuit optimization, and LLM-native architecture co-design for RISC-V cores.*
 
 ---
 
