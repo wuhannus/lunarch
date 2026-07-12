@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" style="background:#ffffff;font-family:Arial,sans-serif">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#333"/>
+    </marker>
+  </defs>
+  
+  <!-- Phase 1 -->
+  <rect x="10" y="40" width="120" height="60" rx="6" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+  <text x="70" y="65" text-anchor="middle" font-size="10" font-weight="bold" fill="#1565C0">Python RTL</text>
+  <text x="70" y="82" text-anchor="middle" font-size="8" fill="#555">pyCircuit V5 DSL</text>
+  
+  <line x1="130" y1="70" x2="165" y2="70" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+  
+  <!-- Phase 2 -->
+  <rect x="170" y="40" width="120" height="60" rx="6" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+  <text x="230" y="65" text-anchor="middle" font-size="10" font-weight="bold" fill="#2E7D32">MLIR Emission</text>
+  <text x="230" y="82" text-anchor="middle" font-size="8" fill="#555">pyc dialect IR</text>
+  
+  <line x1="290" y1="70" x2="325" y2="70" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+  
+  <!-- Phase 3 -->
+  <rect x="330" y="40" width="120" height="60" rx="6" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+  <text x="390" y="65" text-anchor="middle" font-size="10" font-weight="bold" fill="#E65100">Backend Compile</text>
+  <text x="390" y="82" text-anchor="middle" font-size="8" fill="#555">pycc (LLVM 19)</text>
+  
+  <line x1="450" y1="70" x2="485" y2="70" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+  
+  <!-- Phase 4 -->
+  <rect x="490" y="40" width="120" height="60" rx="6" fill="#FCE4EC" stroke="#C62828" stroke-width="2"/>
+  <text x="550" y="65" text-anchor="middle" font-size="10" font-weight="bold" fill="#C62828">Verification</text>
+  <text x="550" y="82" text-anchor="middle" font-size="8" fill="#555">10 checkers</text>
+  
+  <line x1="610" y1="70" x2="645" y2="70" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+  
+  <!-- Phase 5 -->
+  <rect x="650" y="40" width="130" height="60" rx="6" fill="#EDE7F6" stroke="#4527A0" stroke-width="2"/>
+  <text x="715" y="65" text-anchor="middle" font-size="10" font-weight="bold" fill="#4527A0">Physical Design</text>
+  <text x="715" y="82" text-anchor="middle" font-size="8" fill="#555">GDSII + STA</text>
+  
+  <!-- Outputs row -->
+  <rect x="10" y="120" width="770" height="60" rx="4" fill="#FAFAFA" stroke="#CCC" stroke-width="1"/>
+  <text x="395" y="140" text-anchor="middle" font-size="9" font-weight="bold" fill="#333">Outputs</text>
+  
+  <rect x="20" y="148" width="110" height="22" rx="3" fill="#E3F2FD" stroke="#1565C0" stroke-width="0.5"/>
+  <text x="75" y="163" text-anchor="middle" font-size="7" fill="#333">.pyc MLIR</text>
+  
+  <rect x="145" y="148" width="110" height="22" rx="3" fill="#E8F5E9" stroke="#2E7D32" stroke-width="0.5"/>
+  <text x="200" y="163" text-anchor="middle" font-size="7" fill="#333">Verilog RTL</text>
+  
+  <rect x="270" y="148" width="110" height="22" rx="3" fill="#FFF3E0" stroke="#E65100" stroke-width="0.5"/>
+  <text x="325" y="163" text-anchor="middle" font-size="7" fill="#333">C++ Sim Model</text>
+  
+  <rect x="395" y="148" width="110" height="22" rx="3" fill="#FCE4EC" stroke="#C62828" stroke-width="0.5"/>
+  <text x="450" y="163" text-anchor="middle" font-size="7" fill="#333">Sim Reports</text>
+  
+  <rect x="520" y="148" width="110" height="22" rx="3" fill="#EDE7F6" stroke="#4527A0" stroke-width="0.5"/>
+  <text x="575" y="163" text-anchor="middle" font-size="7" fill="#333">GDS + STA</text>
+  
+  <rect x="645" y="148" width="120" height="22" rx="3" fill="#E0E0E0" stroke="#999" stroke-width="0.5"/>
+  <text x="705" y="163" text-anchor="middle" font-size="7" fill="#333">PPA Report</text>
+  
+  <!-- AI methods row -->
+  <text x="395" y="198" text-anchor="middle" font-size="7" fill="#888">AI: AlphaChip RL  |  NVIDIA PrefixRL  |  Architect Labs  |  MediaTek CorePilot  |  OpenAI LLM</text>
+</svg>
