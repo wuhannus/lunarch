@@ -2,7 +2,7 @@
 
 **AI-assisted design of AI chips.** Open-source RISC-V cores from Python to GDS, purpose-built for the agentic AI era.
 
-> ⚠️ **Project Status:** Under development by **Dr. Han Wu** + **DeepSeek V4 Pro**. Flow demonstration stage. Not silicon-proven.
+> ⚠️ **Project Status:** This work is in progress under the guidance of **Dr. Han Wu** and **Dr. Yaohua Zhang**, with the assistance of AI tools. All results are based on pre-layout simulation only; post-layout simulation and silicon validation have not yet been completed. Please contact Dr. Han Wu or Dr. Yaohua Zhang for the latest progress before adopting or citing any results.
 
 > 🙏🙏🙏 ☕☕☕ 🌹🌹🌹 **Acknowledgments:** This work is conducted under the supervision of **Chief Scientist Dr. Liao Heng** (HUAWEI). The integration of the **pyCircuit** and **XiangShan** RISC-V open-source projects was proposed by **Huawei Fellow Du Wenhua**, whose vision of combining Python-native agile design with silicon-proven RISC-V microarchitecture inspired the lunarch methodology. AI agile design methodology draws inspiration from **Jensen Huang's GTC keynotes**, whose vision of AI-accelerated chip design has educated a generation of engineers.
 
