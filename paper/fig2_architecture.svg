@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" style="background:#ffffff;font-family:Arial,sans-serif">
+  <text x="400" y="20" text-anchor="middle" font-size="11" font-weight="bold" fill="#333">LUNARCH Core Family Architecture</text>
+  
+  <!-- v1 baseline -->
+  <rect x="20" y="40" width="230" height="200" rx="6" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+  <text x="135" y="62" text-anchor="middle" font-size="10" font-weight="bold" fill="#2E7D32">lunahan_v1</text>
+  <text x="135" y="80" text-anchor="middle" font-size="8" fill="#555">Baseline RV32IMC · DFF-based</text>
+  <line x1="30" y1="88" x2="240" y2="88" stroke="#C8E6C9" stroke-width="1"/>
+  <text x="40" y="105" font-size="8" fill="#333">• 5-stage IF/ID/EX/MEM/WB</text>
+  <text x="40" y="120" font-size="8" fill="#333">• ICache 4KB + DCache 4KB</text>
+  <text x="40" y="135" font-size="8" fill="#333">• 32×32 Register File</text>
+  <text x="40" y="150" font-size="8" fill="#333">• BTB 64-entry, 2-bit bimodal</text>
+  <text x="40" y="165" font-size="8" fill="#333">• AXI4-Lite 32-bit bus</text>
+  <text x="40" y="180" font-size="8" fill="#333">• 2,706 cells, 1,224 DFFs</text>
+  <rect x="60" y="200" width="150" height="25" rx="3" fill="#C8E6C9"/>
+  <text x="135" y="217" text-anchor="middle" font-size="8" font-weight="bold" fill="#2E7D32">0.056 mm² · 0.95 mW · 438 MHz</text>
+
+  <!-- v1 sram -->
+  <rect x="285" y="40" width="230" height="200" rx="6" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+  <text x="400" y="62" text-anchor="middle" font-size="10" font-weight="bold" fill="#1565C0">lunahan_v1_sram</text>
+  <text x="400" y="80" text-anchor="middle" font-size="8" fill="#555">SRAM Variant · sky130 PDK macros</text>
+  <line x1="295" y1="88" x2="505" y2="88" stroke="#BBDEFB" stroke-width="1"/>
+  <text x="305" y="105" font-size="8" fill="#333">• sky130_sram 4KB ICache</text>
+  <text x="305" y="120" font-size="8" fill="#333">• sky130_sram 4KB DCache</text>
+  <text x="305" y="135" font-size="8" fill="#333">• sky130_sram 1KB RegFile</text>
+  <text x="305" y="150" font-size="8" fill="#333">• 250 DFFs (-80% vs v1)</text>
+  <text x="305" y="165" font-size="8" fill="#333">• Formal equivalence verified</text>
+  <text x="305" y="180" font-size="8" fill="#333">• ISA 100% match vs v1</text>
+  <rect x="325" y="200" width="150" height="25" rx="3" fill="#BBDEFB"/>
+  <text x="400" y="217" text-anchor="middle" font-size="8" font-weight="bold" fill="#1565C0">0.020 mm² · 0.94 mW · 234 MHz</text>
+
+  <!-- v2 Orion -->
+  <rect x="550" y="40" width="230" height="200" rx="6" fill="#EDE7F6" stroke="#4527A0" stroke-width="2"/>
+  <text x="665" y="62" text-anchor="middle" font-size="10" font-weight="bold" fill="#4527A0">lunahan_v2 "Orion"</text>
+  <text x="665" y="80" text-anchor="middle" font-size="8" fill="#555">Agentic AI · 11 custom ISA ext.</text>
+  <line x1="560" y1="88" x2="770" y2="88" stroke="#D1C4E9" stroke-width="1"/>
+  <text x="570" y="105" font-size="8" fill="#333">• 4 HW agent contexts (1-cyc sw)</text>
+  <text x="570" y="120" font-size="8" fill="#333">• STU 256 MAC · sparse attention</text>
+  <text x="570" y="135" font-size="8" fill="#333">• KV-cache 128KB on-chip SRAM</text>
+  <text x="570" y="150" font-size="8" fill="#333">• Agent trace 4×8KB buffer</text>
+  <text x="570" y="165" font-size="8" fill="#333">• Security PMP 16 regions</text>
+  <text x="570" y="180" font-size="8" fill="#333">• AXI4-Lite 64-bit bus</text>
+  <rect x="590" y="200" width="150" height="25" rx="3" fill="#D1C4E9"/>
+  <text x="665" y="217" text-anchor="middle" font-size="8" font-weight="bold" fill="#4527A0">0.176 mm² · 3.50 mW · 234 MHz</text>
+
+  <!-- Connecting line -->
+  <text x="400" y="268" text-anchor="middle" font-size="8" fill="#888">Unified Python-to-GDS flow · AI-optimized · MIT License</text>
+  <text x="400" y="285" text-anchor="middle" font-size="7" fill="#888">pyCircuit V5 → MLIR → pycc (LLVM 19) → Verilog → OpenROAD → sky130 GDSII</text>
+</svg>

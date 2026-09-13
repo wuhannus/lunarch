@@ -1,0 +1,68 @@
+{
+  "method": "AlphaChip-inspired RL simulated annealing",
+  "iterations": 5000,
+  "accepted_moves": 4498,
+  "improvements": 52,
+  "reward": {
+    "grid_placement": -8.408505004052403,
+    "optimized_placement": -2.6187772494148898,
+    "improvement_pct": 68.85561406988764
+  },
+  "wirelength": {
+    "grid_hpwl": 8.345,
+    "optimized_hpwl": 2.5337,
+    "improvement_pct": 69.6
+  },
+  "congestion": {
+    "grid": 0.0015,
+    "optimized": 0.0012,
+    "improvement_pct": 24.0
+  },
+  "ppa_impact": {
+    "frequency_gain_pct": 34.8,
+    "power_reduction_pct": 27.9,
+    "area_reduction_pct": 3.6,
+    "max_freq_original_mhz": 234,
+    "max_freq_optimized_mhz": 315,
+    "power_original_mw": 3.5,
+    "power_optimized_mw": 2.53,
+    "tokens_per_sec_gain_pct": 41.8
+  },
+  "placements": {
+    "Core": {
+      "x": 120,
+      "y": 120,
+      "flipped": false
+    },
+    "ICache": {
+      "x": 44.8,
+      "y": 74.3,
+      "flipped": false
+    },
+    "DCache": {
+      "x": 148.7,
+      "y": 139.0,
+      "flipped": false
+    },
+    "RegFile": {
+      "x": 151.0,
+      "y": 84.7,
+      "flipped": false
+    },
+    "KV_cache": {
+      "x": 56.4,
+      "y": 213.0,
+      "flipped": false
+    },
+    "STU": {
+      "x": 124.3,
+      "y": 212.1,
+      "flipped": false
+    },
+    "TraceBuf": {
+      "x": 164.2,
+      "y": 266.3,
+      "flipped": false
+    }
+  }
+}
