@@ -1,0 +1,22 @@
+# Yosys formal equivalence: RTL (gold) vs ORFS synthesized netlist (gate)
+# gold: synthesize the RTL with the sky130 liberty
+read_verilog /home/lunarch/rtl_lec_src/*.v
+synth -top riscv -flatten
+dfflibmap -liberty /home/lunarch/orfs-clean/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty /home/lunarch/orfs-clean/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+opt_clean -purge
+hierarchy -top riscv
+design -stash gold
+
+# revised: the ORFS-synthesized gate netlist
+read_verilog /home/lunarch/orfs-clean/flow/results/sky130hd/riscv32i/base/1_synth_lec.v
+hierarchy -top riscv
+design -stash gate
+
+design -copy-from gold -as gold riscv
+design -copy-from gate -as gate riscv
+equiv_make gold gate equiv
+hierarchy -top equiv
+equiv_simple
+equiv_induct
+equiv_status -assert

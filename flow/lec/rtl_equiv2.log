@@ -1,0 +1,2393 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.69+post (git sha1 143eb14f9cc55d6f8927e68523b0c9d2166ed02c, Release, GNU /usr/bin/c++ 13.3.0)
+
+-- Executing script file `/home/lunarch/rtl_equiv.ys' --
+
+1. Executing Verilog-2005 frontend: /home/lunarch/rtl_lec_src/adder.v
+Parsing Verilog input from `/home/lunarch/rtl_lec_src/adder.v' to AST representation.
+Generating RTLIL representation for module `\adder'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /home/lunarch/rtl_lec_src/alu.v
+Parsing Verilog input from `/home/lunarch/rtl_lec_src/alu.v' to AST representation.
+Generating RTLIL representation for module `\alu'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: /home/lunarch/rtl_lec_src/aludec.v
+Parsing Verilog input from `/home/lunarch/rtl_lec_src/aludec.v' to AST representation.
+Generating RTLIL representation for module `\aludec'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: /home/lunarch/rtl_lec_src/controller.v
+Parsing Verilog input from `/home/lunarch/rtl_lec_src/controller.v' to AST representation.
+Generating RTLIL representation for module `\controller'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: /home/lunarch/rtl_lec_src/datapath.v
+Parsing Verilog input from `/home/lunarch/rtl_lec_src/datapath.v' to AST representation.
+Generating RTLIL representation for module `\datapath'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: /home/lunarch/rtl_lec_src/dmem.v
+Parsing Verilog input from `/home/lunarch/rtl_lec_src/dmem.v' to AST representation.
+Generating RTLIL representation for module `\dmem'.
+Warning: wire '\we_mem' is assigned in a block at /home/lunarch/rtl_lec_src/dmem.v:33.3-33.19.
+Warning: wire '\we_mem' is assigned in a block at /home/lunarch/rtl_lec_src/dmem.v:35.3-35.19.
+Warning: wire '\we_mem' is assigned in a block at /home/lunarch/rtl_lec_src/dmem.v:37.3-37.19.
+Warning: wire '\we_mem' is assigned in a block at /home/lunarch/rtl_lec_src/dmem.v:39.3-39.19.
+Warning: wire '\we_mem' is assigned in a block at /home/lunarch/rtl_lec_src/dmem.v:41.3-41.19.
+Warning: wire '\mem_out' is assigned in a block at /home/lunarch/rtl_lec_src/dmem.v:62.9-62.30.
+Warning: wire '\mem_out' is assigned in a block at /home/lunarch/rtl_lec_src/dmem.v:63.9-63.30.
+Warning: wire '\mem_out' is assigned in a block at /home/lunarch/rtl_lec_src/dmem.v:64.9-64.30.
+Warning: wire '\mem_out' is assigned in a block at /home/lunarch/rtl_lec_src/dmem.v:65.9-65.30.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: /home/lunarch/rtl_lec_src/flopenr.v
+Parsing Verilog input from `/home/lunarch/rtl_lec_src/flopenr.v' to AST representation.
+Generating RTLIL representation for module `\flopenr'.
+Successfully finished Verilog frontend.
+
+8. Executing Verilog-2005 frontend: /home/lunarch/rtl_lec_src/flopens.v
+Parsing Verilog input from `/home/lunarch/rtl_lec_src/flopens.v' to AST representation.
+Generating RTLIL representation for module `\flopens'.
+Successfully finished Verilog frontend.
+
+9. Executing Verilog-2005 frontend: /home/lunarch/rtl_lec_src/flopr.v
+Parsing Verilog input from `/home/lunarch/rtl_lec_src/flopr.v' to AST representation.
+Generating RTLIL representation for module `\flopr'.
+Successfully finished Verilog frontend.
+
+10. Executing Verilog-2005 frontend: /home/lunarch/rtl_lec_src/magcompare2b.v
+Parsing Verilog input from `/home/lunarch/rtl_lec_src/magcompare2b.v' to AST representation.
+Generating RTLIL representation for module `\magcompare2b'.
+Successfully finished Verilog frontend.
+
+11. Executing Verilog-2005 frontend: /home/lunarch/rtl_lec_src/magcompare2c.v
+Parsing Verilog input from `/home/lunarch/rtl_lec_src/magcompare2c.v' to AST representation.
+Generating RTLIL representation for module `\magcompare2c'.
+Successfully finished Verilog frontend.
+
+12. Executing Verilog-2005 frontend: /home/lunarch/rtl_lec_src/magcompare32.v
+Parsing Verilog input from `/home/lunarch/rtl_lec_src/magcompare32.v' to AST representation.
+Generating RTLIL representation for module `\magcompare32'.
+Successfully finished Verilog frontend.
+
+13. Executing Verilog-2005 frontend: /home/lunarch/rtl_lec_src/maindec.v
+Parsing Verilog input from `/home/lunarch/rtl_lec_src/maindec.v' to AST representation.
+Generating RTLIL representation for module `\maindec'.
+Successfully finished Verilog frontend.
+
+14. Executing Verilog-2005 frontend: /home/lunarch/rtl_lec_src/mux2.v
+Parsing Verilog input from `/home/lunarch/rtl_lec_src/mux2.v' to AST representation.
+Generating RTLIL representation for module `\mux2'.
+Successfully finished Verilog frontend.
+
+15. Executing Verilog-2005 frontend: /home/lunarch/rtl_lec_src/mux3.v
+Parsing Verilog input from `/home/lunarch/rtl_lec_src/mux3.v' to AST representation.
+Generating RTLIL representation for module `\mux3'.
+Successfully finished Verilog frontend.
+
+16. Executing Verilog-2005 frontend: /home/lunarch/rtl_lec_src/mux4.v
+Parsing Verilog input from `/home/lunarch/rtl_lec_src/mux4.v' to AST representation.
+Generating RTLIL representation for module `\mux4'.
+Successfully finished Verilog frontend.
+
+17. Executing Verilog-2005 frontend: /home/lunarch/rtl_lec_src/mux5.v
+Parsing Verilog input from `/home/lunarch/rtl_lec_src/mux5.v' to AST representation.
+Generating RTLIL representation for module `\mux5'.
+Successfully finished Verilog frontend.
+
+18. Executing Verilog-2005 frontend: /home/lunarch/rtl_lec_src/mux8.v
+Parsing Verilog input from `/home/lunarch/rtl_lec_src/mux8.v' to AST representation.
+Generating RTLIL representation for module `\mux8'.
+Successfully finished Verilog frontend.
+
+19. Executing Verilog-2005 frontend: /home/lunarch/rtl_lec_src/regfile.v
+Parsing Verilog input from `/home/lunarch/rtl_lec_src/regfile.v' to AST representation.
+Generating RTLIL representation for module `\regfile'.
+Successfully finished Verilog frontend.
+
+20. Executing Verilog-2005 frontend: /home/lunarch/rtl_lec_src/riscv.v
+Parsing Verilog input from `/home/lunarch/rtl_lec_src/riscv.v' to AST representation.
+Generating RTLIL representation for module `\riscv'.
+Successfully finished Verilog frontend.
+
+21. Executing Verilog-2005 frontend: /home/lunarch/rtl_lec_src/rom.v
+Parsing Verilog input from `/home/lunarch/rtl_lec_src/rom.v' to AST representation.
+Generating RTLIL representation for module `\ROM'.
+Successfully finished Verilog frontend.
+
+22. Executing Verilog-2005 frontend: /home/lunarch/rtl_lec_src/shifter.v
+Parsing Verilog input from `/home/lunarch/rtl_lec_src/shifter.v' to AST representation.
+Generating RTLIL representation for module `\shifter'.
+Successfully finished Verilog frontend.
+
+23. Executing Verilog-2005 frontend: /home/lunarch/rtl_lec_src/signext.v
+Parsing Verilog input from `/home/lunarch/rtl_lec_src/signext.v' to AST representation.
+Generating RTLIL representation for module `\signext'.
+Successfully finished Verilog frontend.
+
+24. Executing Verilog-2005 frontend: /home/lunarch/rtl_lec_src/top.v
+Parsing Verilog input from `/home/lunarch/rtl_lec_src/top.v' to AST representation.
+Generating RTLIL representation for module `\riscv_top'.
+Successfully finished Verilog frontend.
+
+25. Executing SYNTH pass.
+
+25.1. Executing HIERARCHY pass (managing design hierarchy).
+
+25.1.1. Analyzing design hierarchy..
+Top module:  \riscv
+Used module:     \datapath
+Used module:         \mux2
+Used module:         \mux3
+Used module:         \shifter
+Used module:         \alu
+Used module:         \magcompare32
+Used module:             \magcompare2c
+Used module:             \magcompare2b
+Used module:         \adder
+Used module:         \signext
+Used module:             \mux5
+Used module:         \regfile
+Used module:         \flopr
+Used module:         \flopenr
+Used module:     \controller
+Used module:         \aludec
+Used module:         \maindec
+Parameter 1 (\WIDTH) = 4
+
+25.1.2. Executing AST frontend in derive mode using pre-parsed AST for module `\mux2'.
+Parameter 1 (\WIDTH) = 4
+Generating RTLIL representation for module `$paramod\mux2\WIDTH=s32'00000000000000000000000000000100'.
+Parameter 1 (\WIDTH) = 1
+
+25.1.3. Executing AST frontend in derive mode using pre-parsed AST for module `\mux2'.
+Parameter 1 (\WIDTH) = 1
+Generating RTLIL representation for module `$paramod\mux2\WIDTH=s32'00000000000000000000000000000001'.
+Parameter 1 (\WIDTH) = 32
+
+25.1.4. Executing AST frontend in derive mode using pre-parsed AST for module `\mux2'.
+Parameter 1 (\WIDTH) = 32
+Generating RTLIL representation for module `$paramod\mux2\WIDTH=s32'00000000000000000000000000100000'.
+Parameter 1 (\WIDTH) = 32
+
+25.1.5. Executing AST frontend in derive mode using pre-parsed AST for module `\mux3'.
+Parameter 1 (\WIDTH) = 32
+Generating RTLIL representation for module `$paramod\mux3\WIDTH=s32'00000000000000000000000000100000'.
+Parameter 1 (\WIDTH) = 32
+Found cached RTLIL representation for module `$paramod\mux3\WIDTH=s32'00000000000000000000000000100000'.
+Parameter 1 (\WIDTH) = 32
+Found cached RTLIL representation for module `$paramod\mux2\WIDTH=s32'00000000000000000000000000100000'.
+Parameter 1 (\WIDTH) = 32
+Found cached RTLIL representation for module `$paramod\mux2\WIDTH=s32'00000000000000000000000000100000'.
+Parameter 1 (\WIDTH) = 32
+Found cached RTLIL representation for module `$paramod\mux2\WIDTH=s32'00000000000000000000000000100000'.
+Parameter 1 (\WIDTH) = 32
+Found cached RTLIL representation for module `$paramod\mux2\WIDTH=s32'00000000000000000000000000100000'.
+Parameter 1 (\WIDTH) = 32
+Found cached RTLIL representation for module `$paramod\mux2\WIDTH=s32'00000000000000000000000000100000'.
+Parameter 1 (\WIDTH) = 32
+Found cached RTLIL representation for module `$paramod\mux2\WIDTH=s32'00000000000000000000000000100000'.
+Parameter 1 (\WIDTH) = 5
+
+25.1.6. Executing AST frontend in derive mode using pre-parsed AST for module `\mux2'.
+Parameter 1 (\WIDTH) = 5
+Generating RTLIL representation for module `$paramod\mux2\WIDTH=s32'00000000000000000000000000000101'.
+Parameter 1 (\WIDTH) = 32
+
+25.1.7. Executing AST frontend in derive mode using pre-parsed AST for module `\flopr'.
+Parameter 1 (\WIDTH) = 32
+Generating RTLIL representation for module `$paramod\flopr\WIDTH=s32'00000000000000000000000000100000'.
+Parameter 1 (\WIDTH) = 32
+Found cached RTLIL representation for module `$paramod\mux2\WIDTH=s32'00000000000000000000000000100000'.
+Parameter 1 (\WIDTH) = 32
+Found cached RTLIL representation for module `$paramod\mux2\WIDTH=s32'00000000000000000000000000100000'.
+Parameter 1 (\WIDTH) = 32
+
+25.1.8. Executing AST frontend in derive mode using pre-parsed AST for module `\flopenr'.
+Parameter 1 (\WIDTH) = 32
+Generating RTLIL representation for module `$paramod\flopenr\WIDTH=s32'00000000000000000000000000100000'.
+Parameter 1 (\WIDTH) = 32
+
+25.1.9. Executing AST frontend in derive mode using pre-parsed AST for module `\mux5'.
+Parameter 1 (\WIDTH) = 32
+Generating RTLIL representation for module `$paramod\mux5\WIDTH=s32'00000000000000000000000000100000'.
+
+25.1.10. Analyzing design hierarchy..
+Top module:  \riscv
+Used module:     \datapath
+Used module:         $paramod\mux2\WIDTH=s32'00000000000000000000000000100000
+Used module:         $paramod\mux3\WIDTH=s32'00000000000000000000000000100000
+Used module:         \shifter
+Used module:         \alu
+Used module:         \magcompare32
+Used module:             \magcompare2c
+Used module:             \magcompare2b
+Used module:         \adder
+Used module:         \signext
+Used module:             $paramod\mux5\WIDTH=s32'00000000000000000000000000100000
+Used module:         \regfile
+Used module:         $paramod\mux2\WIDTH=s32'00000000000000000000000000000101
+Used module:         $paramod\flopr\WIDTH=s32'00000000000000000000000000100000
+Used module:         $paramod\flopenr\WIDTH=s32'00000000000000000000000000100000
+Used module:     \controller
+Used module:         $paramod\mux2\WIDTH=s32'00000000000000000000000000000100
+Used module:         $paramod\mux2\WIDTH=s32'00000000000000000000000000000001
+Used module:         \aludec
+Used module:         \maindec
+
+25.1.11. Analyzing design hierarchy..
+Top module:  \riscv
+Used module:     \datapath
+Used module:         $paramod\mux2\WIDTH=s32'00000000000000000000000000100000
+Used module:         $paramod\mux3\WIDTH=s32'00000000000000000000000000100000
+Used module:         \shifter
+Used module:         \alu
+Used module:         \magcompare32
+Used module:             \magcompare2c
+Used module:             \magcompare2b
+Used module:         \adder
+Used module:         \signext
+Used module:             $paramod\mux5\WIDTH=s32'00000000000000000000000000100000
+Used module:         \regfile
+Used module:         $paramod\mux2\WIDTH=s32'00000000000000000000000000000101
+Used module:         $paramod\flopr\WIDTH=s32'00000000000000000000000000100000
+Used module:         $paramod\flopenr\WIDTH=s32'00000000000000000000000000100000
+Used module:     \controller
+Used module:         $paramod\mux2\WIDTH=s32'00000000000000000000000000000100
+Used module:         $paramod\mux2\WIDTH=s32'00000000000000000000000000000001
+Used module:         \aludec
+Used module:         \maindec
+Removing unused module `\riscv_top'.
+Removing unused module `\ROM'.
+Removing unused module `\mux8'.
+Removing unused module `\mux5'.
+Removing unused module `\mux4'.
+Removing unused module `\mux3'.
+Removing unused module `\mux2'.
+Removing unused module `\flopr'.
+Removing unused module `\flopens'.
+Removing unused module `\flopenr'.
+Removing unused module `\dmem'.
+Removed 11 unused modules.
+Mapping positional arguments of cell magcompare32.mag3F (magcompare2c).
+Mapping positional arguments of cell magcompare32.mag3A (magcompare2c).
+Mapping positional arguments of cell magcompare32.mag39 (magcompare2c).
+Mapping positional arguments of cell magcompare32.mag34 (magcompare2c).
+Mapping positional arguments of cell magcompare32.mag33 (magcompare2c).
+Mapping positional arguments of cell magcompare32.mag32 (magcompare2c).
+Mapping positional arguments of cell magcompare32.mag31 (magcompare2c).
+Mapping positional arguments of cell magcompare32.mag28 (magcompare2c).
+Mapping positional arguments of cell magcompare32.mag27 (magcompare2c).
+Mapping positional arguments of cell magcompare32.mag26 (magcompare2c).
+Mapping positional arguments of cell magcompare32.mag25 (magcompare2c).
+Mapping positional arguments of cell magcompare32.mag24 (magcompare2c).
+Mapping positional arguments of cell magcompare32.mag23 (magcompare2c).
+Mapping positional arguments of cell magcompare32.mag22 (magcompare2c).
+Mapping positional arguments of cell magcompare32.mag21 (magcompare2c).
+Mapping positional arguments of cell magcompare32.mag10 (magcompare2b).
+Mapping positional arguments of cell magcompare32.magF (magcompare2b).
+Mapping positional arguments of cell magcompare32.magE (magcompare2b).
+Mapping positional arguments of cell magcompare32.magD (magcompare2b).
+Mapping positional arguments of cell magcompare32.magC (magcompare2b).
+Mapping positional arguments of cell magcompare32.magB (magcompare2b).
+Mapping positional arguments of cell magcompare32.magA (magcompare2b).
+Mapping positional arguments of cell magcompare32.mag9 (magcompare2b).
+Mapping positional arguments of cell magcompare32.mag8 (magcompare2b).
+Mapping positional arguments of cell magcompare32.mag7 (magcompare2b).
+Mapping positional arguments of cell magcompare32.mag6 (magcompare2b).
+Mapping positional arguments of cell magcompare32.mag5 (magcompare2b).
+Mapping positional arguments of cell magcompare32.mag4 (magcompare2b).
+Mapping positional arguments of cell magcompare32.mag3 (magcompare2b).
+Mapping positional arguments of cell magcompare32.mag2 (magcompare2b).
+Mapping positional arguments of cell magcompare32.mag1 (magcompare2b).
+
+25.2. Executing PROC pass (convert processes to netlists).
+
+25.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+25.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/home/lunarch/rtl_lec_src/flopenr.v:8$175 in module $paramod\flopenr\WIDTH=s32'00000000000000000000000000100000.
+Marked 1 switch rules as full_case in process $proc$/home/lunarch/rtl_lec_src/regfile.v:14$136 in module regfile.
+Marked 1 switch rules as full_case in process $proc$/home/lunarch/rtl_lec_src/flopr.v:7$174 in module $paramod\flopr\WIDTH=s32'00000000000000000000000000100000.
+Marked 1 switch rules as full_case in process $proc$/home/lunarch/rtl_lec_src/maindec.v:21$120 in module maindec.
+Removed 1 dead cases from process $proc$/home/lunarch/rtl_lec_src/mux5.v:6$176 in module $paramod\mux5\WIDTH=s32'00000000000000000000000000100000.
+Marked 1 switch rules as full_case in process $proc$/home/lunarch/rtl_lec_src/mux5.v:6$176 in module $paramod\mux5\WIDTH=s32'00000000000000000000000000100000.
+Marked 1 switch rules as full_case in process $proc$/home/lunarch/rtl_lec_src/shifter.v:10$159 in module shifter.
+Marked 4 switch rules as full_case in process $proc$/home/lunarch/rtl_lec_src/aludec.v:10$15 in module aludec.
+Marked 1 switch rules as full_case in process $proc$/home/lunarch/rtl_lec_src/alu.v:18$10 in module alu.
+Removed a total of 1 dead cases.
+
+25.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 11 redundant assignments.
+Promoted 5 assignments to connections.
+
+25.2.4. Executing PROC_INIT pass (extract init attributes).
+
+25.2.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \reset in `$paramod\flopenr\WIDTH=s32'00000000000000000000000000100000.$proc$/home/lunarch/rtl_lec_src/flopenr.v:8$175'.
+Found async reset \reset in `$paramod\flopr\WIDTH=s32'00000000000000000000000000100000.$proc$/home/lunarch/rtl_lec_src/flopr.v:7$174'.
+
+25.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 1 switch.
+<suppressed ~9 debug messages>
+
+25.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `$paramod\flopenr\WIDTH=s32'00000000000000000000000000100000.$proc$/home/lunarch/rtl_lec_src/flopenr.v:8$175'.
+     1/1: $0\q[31:0]
+Creating decoders for process `\regfile.$proc$/home/lunarch/rtl_lec_src/regfile.v:14$136'.
+     1/3: $1$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$144
+     2/3: $1$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_DATA[31:0]$143
+     3/3: $1$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_ADDR[4:0]$142
+Creating decoders for process `$paramod\flopr\WIDTH=s32'00000000000000000000000000100000.$proc$/home/lunarch/rtl_lec_src/flopr.v:7$174'.
+     1/1: $0\q[31:0]
+Creating decoders for process `\maindec.$proc$/home/lunarch/rtl_lec_src/maindec.v:21$120'.
+     1/1: $0\controls[16:0]
+Creating decoders for process `$paramod\mux5\WIDTH=s32'00000000000000000000000000100000.$proc$/home/lunarch/rtl_lec_src/mux5.v:6$176'.
+     1/1: $1\y[31:0]
+Creating decoders for process `\shifter.$proc$/home/lunarch/rtl_lec_src/shifter.v:10$159'.
+     1/1: $1\y[31:0]
+Creating decoders for process `\aludec.$proc$/home/lunarch/rtl_lec_src/aludec.v:10$15'.
+     1/8: $0\lbu[0:0]
+     2/8: $0\lb[0:0]
+     3/8: $0\lh[0:0]
+     4/8: $0\sltunsigned[0:0]
+     5/8: $0\shtype[1:0]
+     6/8: $0\alucontrol[3:0]
+     7/8: $0\alu2src[0:0]
+     8/8: $0\lhu[0:0]
+Creating decoders for process `\alu.$proc$/home/lunarch/rtl_lec_src/alu.v:18$10'.
+     1/1: $0\result[31:0]
+
+25.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\maindec.\controls' from process `\maindec.$proc$/home/lunarch/rtl_lec_src/maindec.v:21$120'.
+No latch inferred for signal `$paramod\mux5\WIDTH=s32'00000000000000000000000000100000.\y' from process `$paramod\mux5\WIDTH=s32'00000000000000000000000000100000.$proc$/home/lunarch/rtl_lec_src/mux5.v:6$176'.
+No latch inferred for signal `\shifter.\y' from process `\shifter.$proc$/home/lunarch/rtl_lec_src/shifter.v:10$159'.
+No latch inferred for signal `\aludec.\sltunsigned' from process `\aludec.$proc$/home/lunarch/rtl_lec_src/aludec.v:10$15'.
+No latch inferred for signal `\aludec.\alucontrol' from process `\aludec.$proc$/home/lunarch/rtl_lec_src/aludec.v:10$15'.
+No latch inferred for signal `\aludec.\shtype' from process `\aludec.$proc$/home/lunarch/rtl_lec_src/aludec.v:10$15'.
+No latch inferred for signal `\aludec.\alu2src' from process `\aludec.$proc$/home/lunarch/rtl_lec_src/aludec.v:10$15'.
+No latch inferred for signal `\aludec.\lh' from process `\aludec.$proc$/home/lunarch/rtl_lec_src/aludec.v:10$15'.
+No latch inferred for signal `\aludec.\lb' from process `\aludec.$proc$/home/lunarch/rtl_lec_src/aludec.v:10$15'.
+No latch inferred for signal `\aludec.\lhu' from process `\aludec.$proc$/home/lunarch/rtl_lec_src/aludec.v:10$15'.
+No latch inferred for signal `\aludec.\lbu' from process `\aludec.$proc$/home/lunarch/rtl_lec_src/aludec.v:10$15'.
+No latch inferred for signal `\alu.\result' from process `\alu.$proc$/home/lunarch/rtl_lec_src/alu.v:18$10'.
+
+25.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `$paramod\flopenr\WIDTH=s32'00000000000000000000000000100000.\q' using process `$paramod\flopenr\WIDTH=s32'00000000000000000000000000100000.$proc$/home/lunarch/rtl_lec_src/flopenr.v:8$175'.
+  created $adff cell `$procdff$363' with positive edge clock and positive level reset.
+Creating register for signal `\regfile.$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_ADDR' using process `\regfile.$proc$/home/lunarch/rtl_lec_src/regfile.v:14$136'.
+  created $dff cell `$procdff$364' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_DATA' using process `\regfile.$proc$/home/lunarch/rtl_lec_src/regfile.v:14$136'.
+  created $dff cell `$procdff$365' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN' using process `\regfile.$proc$/home/lunarch/rtl_lec_src/regfile.v:14$136'.
+  created $dff cell `$procdff$366' with positive edge clock.
+Creating register for signal `$paramod\flopr\WIDTH=s32'00000000000000000000000000100000.\q' using process `$paramod\flopr\WIDTH=s32'00000000000000000000000000100000.$proc$/home/lunarch/rtl_lec_src/flopr.v:7$174'.
+  created $adff cell `$procdff$369' with positive edge clock and positive level reset.
+
+25.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+25.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `$paramod\flopenr\WIDTH=s32'00000000000000000000000000100000.$proc$/home/lunarch/rtl_lec_src/flopenr.v:8$175'.
+Removing empty process `$paramod\flopenr\WIDTH=s32'00000000000000000000000000100000.$proc$/home/lunarch/rtl_lec_src/flopenr.v:8$175'.
+Found and cleaned up 1 empty switch in `\regfile.$proc$/home/lunarch/rtl_lec_src/regfile.v:14$136'.
+Removing empty process `regfile.$proc$/home/lunarch/rtl_lec_src/regfile.v:14$136'.
+Removing empty process `$paramod\flopr\WIDTH=s32'00000000000000000000000000100000.$proc$/home/lunarch/rtl_lec_src/flopr.v:7$174'.
+Found and cleaned up 1 empty switch in `\maindec.$proc$/home/lunarch/rtl_lec_src/maindec.v:21$120'.
+Removing empty process `maindec.$proc$/home/lunarch/rtl_lec_src/maindec.v:21$120'.
+Found and cleaned up 1 empty switch in `$paramod\mux5\WIDTH=s32'00000000000000000000000000100000.$proc$/home/lunarch/rtl_lec_src/mux5.v:6$176'.
+Removing empty process `$paramod\mux5\WIDTH=s32'00000000000000000000000000100000.$proc$/home/lunarch/rtl_lec_src/mux5.v:6$176'.
+Found and cleaned up 1 empty switch in `\shifter.$proc$/home/lunarch/rtl_lec_src/shifter.v:10$159'.
+Removing empty process `shifter.$proc$/home/lunarch/rtl_lec_src/shifter.v:10$159'.
+Found and cleaned up 4 empty switches in `\aludec.$proc$/home/lunarch/rtl_lec_src/aludec.v:10$15'.
+Removing empty process `aludec.$proc$/home/lunarch/rtl_lec_src/aludec.v:10$15'.
+Found and cleaned up 1 empty switch in `\alu.$proc$/home/lunarch/rtl_lec_src/alu.v:18$10'.
+Removing empty process `alu.$proc$/home/lunarch/rtl_lec_src/alu.v:18$10'.
+Cleaned up 10 empty switches.
+
+25.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\flopenr\WIDTH=s32'00000000000000000000000000100000.
+<suppressed ~1 debug messages>
+Optimizing module riscv.
+Optimizing module regfile.
+<suppressed ~3 debug messages>
+Optimizing module $paramod\flopr\WIDTH=s32'00000000000000000000000000100000.
+<suppressed ~1 debug messages>
+Optimizing module $paramod\mux2\WIDTH=s32'00000000000000000000000000000101.
+Optimizing module $paramod\mux3\WIDTH=s32'00000000000000000000000000100000.
+Optimizing module $paramod\mux2\WIDTH=s32'00000000000000000000000000100000.
+Optimizing module $paramod\mux2\WIDTH=s32'00000000000000000000000000000001.
+Optimizing module maindec.
+Optimizing module magcompare32.
+Optimizing module magcompare2c.
+Optimizing module magcompare2b.
+Optimizing module $paramod\mux2\WIDTH=s32'00000000000000000000000000000100.
+Optimizing module $paramod\mux5\WIDTH=s32'00000000000000000000000000100000.
+<suppressed ~1 debug messages>
+Optimizing module signext.
+Optimizing module shifter.
+<suppressed ~1 debug messages>
+Optimizing module datapath.
+Optimizing module controller.
+Optimizing module aludec.
+<suppressed ~6 debug messages>
+Optimizing module alu.
+<suppressed ~1 debug messages>
+Optimizing module adder.
+
+25.3. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod\flopenr\WIDTH=s32'00000000000000000000000000100000...
+Checking module riscv...
+Checking module regfile...
+Checking module $paramod\flopr\WIDTH=s32'00000000000000000000000000100000...
+Checking module $paramod\mux2\WIDTH=s32'00000000000000000000000000000101...
+Checking module $paramod\mux3\WIDTH=s32'00000000000000000000000000100000...
+Checking module $paramod\mux2\WIDTH=s32'00000000000000000000000000100000...
+Checking module $paramod\mux2\WIDTH=s32'00000000000000000000000000000001...
+Checking module maindec...
+Checking module magcompare32...
+Checking module magcompare2c...
+Checking module magcompare2b...
+Checking module $paramod\mux2\WIDTH=s32'00000000000000000000000000000100...
+Checking module $paramod\mux5\WIDTH=s32'00000000000000000000000000100000...
+Checking module signext...
+Checking module shifter...
+Checking module datapath...
+Checking module controller...
+Checking module aludec...
+Checking module alu...
+Checking module adder...
+Found and reported 0 problems.
+
+25.4. Executing FLATTEN pass (flatten design).
+Deleting now unused module $paramod\flopenr\WIDTH=s32'00000000000000000000000000100000.
+Deleting now unused module regfile.
+Deleting now unused module $paramod\flopr\WIDTH=s32'00000000000000000000000000100000.
+Deleting now unused module $paramod\mux2\WIDTH=s32'00000000000000000000000000000101.
+Deleting now unused module $paramod\mux3\WIDTH=s32'00000000000000000000000000100000.
+Deleting now unused module $paramod\mux2\WIDTH=s32'00000000000000000000000000100000.
+Deleting now unused module $paramod\mux2\WIDTH=s32'00000000000000000000000000000001.
+Deleting now unused module maindec.
+Deleting now unused module magcompare32.
+Deleting now unused module magcompare2c.
+Deleting now unused module magcompare2b.
+Deleting now unused module $paramod\mux2\WIDTH=s32'00000000000000000000000000000100.
+Deleting now unused module $paramod\mux5\WIDTH=s32'00000000000000000000000000100000.
+Deleting now unused module signext.
+Deleting now unused module shifter.
+Deleting now unused module datapath.
+Deleting now unused module controller.
+Deleting now unused module aludec.
+Deleting now unused module alu.
+Deleting now unused module adder.
+<suppressed ~59 debug messages>
+
+25.5. Executing OPT_EXPR pass (perform const folding).
+Optimizing module riscv.
+<suppressed ~2 debug messages>
+
+25.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \riscv..
+Removed 7 unused cells and 149 unused wires.
+<suppressed ~14 debug messages>
+
+25.7. Executing CHECK pass (checking for obvious problems).
+Checking module riscv...
+Found and reported 0 problems.
+
+25.8. Executing OPT pass (performing simple optimizations).
+
+25.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module riscv.
+
+25.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\riscv'.
+Computing hashes of 688 cells of `\riscv'.
+Finding duplicate cells in `\riscv'.
+Computing hashes of 588 cells of `\riscv'.
+Finding duplicate cells in `\riscv'.
+Computing hashes of 585 cells of `\riscv'.
+Finding duplicate cells in `\riscv'.
+Computing hashes of 584 cells of `\riscv'.
+Finding duplicate cells in `\riscv'.
+<suppressed ~312 debug messages>
+Removed a total of 104 cells.
+
+25.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \riscv..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~72 debug messages>
+
+25.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \riscv.
+    Consolidated identical input bits for $mux cell $flatten\dp.\rf.$procmux$184:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139
+      New ports: A=1'0, B=1'1, Y=$flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [0]
+      New connections: $flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [31:1] = { $flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [0] $flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [0] $flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [0] $flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [0] $flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [0] $flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [0] $flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [0] $flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [0] $flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [0] $flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [0] $flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [0] $flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [0] $flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [0] $flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [0] $flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [0] $flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [0] $flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [0] $flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [0] $flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [0] $flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [0] $flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [0] $flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [0] $flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [0] $flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [0] $flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [0] $flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [0] $flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [0] $flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [0] $flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [0] $flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [0] $flatten\dp.\rf.$0$memwr$\rf$/home/lunarch/rtl_lec_src/regfile.v:15$135_EN[31:0]$139 [0] }
+    New ctrl vector for $pmux cell $flatten\c.\ad.$procmux$332: $auto$opt_reduce.cc:137:opt_pmux$431
+    New ctrl vector for $pmux cell $flatten\c.\ad.$procmux$313: { $auto$opt_reduce.cc:137:opt_pmux$433 $flatten\c.\ad.$procmux$316_CMP $flatten\c.\ad.$procmux$317_CMP $flatten\c.\ad.$procmux$318_CMP }
+    New ctrl vector for $pmux cell $flatten\c.\ad.$procmux$305: $auto$opt_reduce.cc:137:opt_pmux$435
+    New ctrl vector for $pmux cell $flatten\c.\ad.$procmux$257: $auto$opt_reduce.cc:137:opt_pmux$437
+    New ctrl vector for $pmux cell $flatten\c.\ad.$procmux$239: $auto$opt_reduce.cc:137:opt_pmux$439
+  Optimizing cells in module \riscv.
+Performed a total of 6 changes.
+
+25.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\riscv'.
+Computing hashes of 589 cells of `\riscv'.
+Finding duplicate cells in `\riscv'.
+Computing hashes of 588 cells of `\riscv'.
+Finding duplicate cells in `\riscv'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+25.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+25.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \riscv..
+Removed 0 unused cells and 105 unused wires.
+<suppressed ~1 debug messages>
+
+25.8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module riscv.
+
+25.8.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+25.8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \riscv..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~71 debug messages>
+
+25.8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \riscv.
+Performed a total of 0 changes.
+
+25.8.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\riscv'.
+Computing hashes of 588 cells of `\riscv'.
+Finding duplicate cells in `\riscv'.
+Removed a total of 0 cells.
+
+25.8.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+25.8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \riscv..
+
+25.8.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module riscv.
+
+25.8.16. Finished fast OPT passes. (There is nothing left to do.)
+
+25.9. Executing FSM pass (extract and optimize FSM).
+
+25.9.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+25.9.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+25.9.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+25.9.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \riscv..
+
+25.9.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+25.9.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+25.9.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+25.9.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+25.10. Executing OPT pass (performing simple optimizations).
+
+25.10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module riscv.
+
+25.10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\riscv'.
+Computing hashes of 588 cells of `\riscv'.
+Finding duplicate cells in `\riscv'.
+Removed a total of 0 cells.
+
+25.10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \riscv..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~71 debug messages>
+
+25.10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \riscv.
+Performed a total of 0 changes.
+
+25.10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\riscv'.
+Computing hashes of 588 cells of `\riscv'.
+Finding duplicate cells in `\riscv'.
+Removed a total of 0 cells.
+
+25.10.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+25.10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \riscv..
+
+25.10.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module riscv.
+
+25.10.9. Finished fast OPT passes. (There is nothing left to do.)
+
+25.11. Executing WREDUCE pass (reducing word size of cells).
+Removed top 28 address bits (of 32) from memory init port riscv.$flatten\c.\ad.$auto$mem.cc:351:emit$180 ($flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178).
+Removed top 2 bits (of 4) from mux cell riscv.$flatten\c.\ad.$procmux$305 ($mux).
+Removed top 2 bits (of 3) from port B of cell riscv.$flatten\c.\ad.$procmux$309_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell riscv.$flatten\c.\ad.$procmux$314_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell riscv.$flatten\c.\ad.$procmux$315_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell riscv.$flatten\c.\ad.$procmux$334_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell riscv.$flatten\c.\ad.$procmux$335_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell riscv.$flatten\c.\ad.$procmux$340_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell riscv.$flatten\c.\md.$procmux$197_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell riscv.$flatten\c.\md.$procmux$198_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell riscv.$flatten\c.\md.$procmux$201_CMP0 ($eq).
+Removed top 5 bits (of 7) from port B of cell riscv.$flatten\c.\md.$procmux$202_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell riscv.$flatten\c.\md.$procmux$203_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell riscv.$flatten\c.\md.$procmux$194_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell riscv.$flatten\dp.\shift.$sub$/home/lunarch/rtl_lec_src/shifter.v:8$156 ($sub).
+Removed top 1 bits (of 2) from port B of cell riscv.$flatten\dp.\shift.$procmux$213_CMP0 ($eq).
+Removed top 1 bits (of 33) from port Y of cell riscv.$flatten\dp.\alu.$xor$/home/lunarch/rtl_lec_src/alu.v:15$9 ($xor).
+Removed top 1 bits (of 33) from port A of cell riscv.$flatten\dp.\alu.$xor$/home/lunarch/rtl_lec_src/alu.v:15$9 ($xor).
+Removed top 1 bits (of 33) from port B of cell riscv.$flatten\dp.\alu.$xor$/home/lunarch/rtl_lec_src/alu.v:15$9 ($xor).
+Removed top 1 bits (of 33) from port Y of cell riscv.$flatten\dp.\alu.$and$/home/lunarch/rtl_lec_src/alu.v:20$11 ($and).
+Removed top 1 bits (of 33) from port A of cell riscv.$flatten\dp.\alu.$and$/home/lunarch/rtl_lec_src/alu.v:20$11 ($and).
+Removed top 1 bits (of 33) from port B of cell riscv.$flatten\dp.\alu.$and$/home/lunarch/rtl_lec_src/alu.v:20$11 ($and).
+Removed top 1 bits (of 33) from port Y of cell riscv.$flatten\dp.\alu.$or$/home/lunarch/rtl_lec_src/alu.v:21$12 ($or).
+Removed top 1 bits (of 33) from port A of cell riscv.$flatten\dp.\alu.$or$/home/lunarch/rtl_lec_src/alu.v:21$12 ($or).
+Removed top 1 bits (of 33) from port B of cell riscv.$flatten\dp.\alu.$or$/home/lunarch/rtl_lec_src/alu.v:21$12 ($or).
+Removed top 1 bits (of 3) from port B of cell riscv.$flatten\dp.\alu.$procmux$357_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell riscv.$flatten\dp.\alu.$procmux$358_CMP0 ($eq).
+Removed top 2 bits (of 3) from port B of cell riscv.$flatten\dp.\alu.$procmux$359_CMP0 ($eq).
+Removed top 2 bits (of 3) from port B of cell riscv.$flatten\dp.\se.\m1.$procmux$208_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell riscv.$flatten\dp.\se.\m1.$procmux$207_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell riscv.$flatten\dp.\se.\m1.$procmux$206_CMP0 ($eq).
+Removed top 29 bits (of 32) from port B of cell riscv.$flatten\dp.\pcadder.$add$/home/lunarch/rtl_lec_src/adder.v:4$1 ($add).
+Removed top 1 bits (of 33) from wire riscv.$flatten\dp.\alu.$or$/home/lunarch/rtl_lec_src/alu.v:21$12_Y.
+Removed top 1 bits (of 33) from wire riscv.$flatten\dp.\alu.$and$/home/lunarch/rtl_lec_src/alu.v:20$11_Y.
+Removed top 2 bits (of 4) from wire riscv.$flatten\c.\ad.$procmux$305_Y.
+
+25.12. Executing PEEPOPT pass (run peephole optimizers).
+
+25.13. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \riscv..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~1 debug messages>
+
+25.14. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module riscv:
+  creating $macc model for $flatten\dp.\pcimm.$add$/home/lunarch/rtl_lec_src/adder.v:4$1 ($add).
+  creating $macc model for $flatten\dp.\pcadder.$add$/home/lunarch/rtl_lec_src/adder.v:4$1 ($add).
+  creating $macc model for $flatten\dp.\alu.$add$/home/lunarch/rtl_lec_src/alu.v:14$8 ($add).
+  creating $macc model for $flatten\dp.\alu.$add$/home/lunarch/rtl_lec_src/alu.v:14$7 ($add).
+  creating $macc model for $flatten\dp.\shift.$sub$/home/lunarch/rtl_lec_src/shifter.v:8$156 ($sub).
+  merging $macc model for $flatten\dp.\alu.$add$/home/lunarch/rtl_lec_src/alu.v:14$7 into $flatten\dp.\alu.$add$/home/lunarch/rtl_lec_src/alu.v:14$8.
+  creating $alu model for $macc $flatten\dp.\shift.$sub$/home/lunarch/rtl_lec_src/shifter.v:8$156.
+  creating $alu model for $macc $flatten\dp.\alu.$add$/home/lunarch/rtl_lec_src/alu.v:14$8.
+  creating $alu model for $macc $flatten\dp.\pcadder.$add$/home/lunarch/rtl_lec_src/adder.v:4$1.
+  creating $alu model for $macc $flatten\dp.\pcimm.$add$/home/lunarch/rtl_lec_src/adder.v:4$1.
+  creating $alu cell for $flatten\dp.\pcimm.$add$/home/lunarch/rtl_lec_src/adder.v:4$1: $auto$alumacc.cc:548:replace_alu$443
+  creating $alu cell for $flatten\dp.\pcadder.$add$/home/lunarch/rtl_lec_src/adder.v:4$1: $auto$alumacc.cc:548:replace_alu$446
+  creating $alu cell for $flatten\dp.\alu.$add$/home/lunarch/rtl_lec_src/alu.v:14$8: $auto$alumacc.cc:548:replace_alu$449
+  creating $alu cell for $flatten\dp.\shift.$sub$/home/lunarch/rtl_lec_src/shifter.v:8$156: $auto$alumacc.cc:548:replace_alu$452
+  created 4 $alu and 0 $macc cells.
+
+25.15. Executing SHARE pass (SAT-based resource sharing).
+Found 6 cells in module riscv that may be considered for resource sharing.
+  Analyzing resource sharing options for $flatten\c.\ad.$auto$mem.cc:305:emit$179 ($memrd_v2):
+    Found cell that is never activated: $flatten\dp.\alu.$add$/home/lunarch/rtl_lec_src/alu.v:14$7
+    Found 16 activation_patterns using ctrl signal { \dp.storepcmux.s $flatten\dp.\rf.$logic_and$/home/lunarch/rtl_lec_src/regfile.v:15$141_Y $flatten\dp.\alu.$procmux$360_CMP $flatten\dp.\alu.$procmux$359_CMP $flatten\dp.\alu.$procmux$358_CMP $flatten\dp.\alu.$procmux$357_CMP $flatten\dp.\alu.$procmux$356_CMP \dp.srccmux.s \dp.halfbytemux1.s \c.md.controls [7] \c.md.controls [2] $flatten\c.\ad.$procmux$218_CMP \c.mx2.s }.
+    No candidates found.
+  Analyzing resource sharing options for $flatten\dp.\shift.$shl$/home/lunarch/rtl_lec_src/shifter.v:8$157 ($shl):
+    Found 1 activation_patterns using ctrl signal { $flatten\dp.\shift.$procmux$212_CMP \dp.srccmux.s }.
+    Found 1 candidates: $flatten\dp.\shift.$shl$/home/lunarch/rtl_lec_src/shifter.v:12$160
+    Analyzing resource sharing with $flatten\dp.\shift.$shl$/home/lunarch/rtl_lec_src/shifter.v:12$160 ($shl):
+      Found 1 activation_patterns using ctrl signal { $flatten\dp.\shift.$procmux$214_CMP \dp.srccmux.s }.
+      Activation pattern for cell $flatten\dp.\shift.$shl$/home/lunarch/rtl_lec_src/shifter.v:8$157: { $flatten\dp.\shift.$procmux$212_CMP \dp.srccmux.s } = 2'11
+      Activation pattern for cell $flatten\dp.\shift.$shl$/home/lunarch/rtl_lec_src/shifter.v:12$160: { $flatten\dp.\shift.$procmux$214_CMP \dp.srccmux.s } = 2'11
+      Size of SAT problem: 24 cells, 456 variables, 1298 clauses
+      According to the SAT solver this pair of cells can be shared.
+      Activation signal for $flatten\dp.\shift.$shl$/home/lunarch/rtl_lec_src/shifter.v:8$157: $auto$share.cc:1066:make_cell_activation_logic$455
+      New cell: $auto$share.cc:667:make_supercell$462 ($shl)
+  Analyzing resource sharing options for $auto$share.cc:667:make_supercell$462 ($shl):
+    Found 2 activation_patterns using ctrl signal { $flatten\dp.\shift.$procmux$214_CMP $flatten\dp.\shift.$procmux$212_CMP \dp.srccmux.s }.
+    No candidates found.
+  Analyzing resource sharing options for $flatten\dp.\rf.$memrd$\rf$/home/lunarch/rtl_lec_src/regfile.v:17$146 ($memrd):
+    Found 1 activation_patterns using ctrl signal $flatten\dp.\rf.$ne$/home/lunarch/rtl_lec_src/regfile.v:17$145_Y.
+    Found 1 candidates: $flatten\dp.\rf.$memrd$\rf$/home/lunarch/rtl_lec_src/regfile.v:18$149
+    Analyzing resource sharing with $flatten\dp.\rf.$memrd$\rf$/home/lunarch/rtl_lec_src/regfile.v:18$149 ($memrd):
+      Found 1 activation_patterns using ctrl signal $flatten\dp.\rf.$ne$/home/lunarch/rtl_lec_src/regfile.v:18$148_Y.
+      Forbidden control signals for this pair of cells: \dp.pcmux.s
+      Activation pattern for cell $flatten\dp.\rf.$memrd$\rf$/home/lunarch/rtl_lec_src/regfile.v:17$146: $flatten\dp.\rf.$ne$/home/lunarch/rtl_lec_src/regfile.v:17$145_Y = 1'1
+      Activation pattern for cell $flatten\dp.\rf.$memrd$\rf$/home/lunarch/rtl_lec_src/regfile.v:18$149: $flatten\dp.\rf.$ne$/home/lunarch/rtl_lec_src/regfile.v:18$148_Y = 1'1
+      Size of SAT problem: 14 cells, 372 variables, 1050 clauses
+      According to the SAT solver this pair of cells can not be shared.
+      Model from SAT solver: { $flatten\dp.\rf.$ne$/home/lunarch/rtl_lec_src/regfile.v:18$148_Y $flatten\dp.\rf.$ne$/home/lunarch/rtl_lec_src/regfile.v:17$145_Y } = 2'11
+  Analyzing resource sharing options for $flatten\dp.\rf.$memrd$\rf$/home/lunarch/rtl_lec_src/regfile.v:18$149 ($memrd):
+    Found 1 activation_patterns using ctrl signal $flatten\dp.\rf.$ne$/home/lunarch/rtl_lec_src/regfile.v:18$148_Y.
+    No candidates found.
+  Analyzing resource sharing options for $flatten\dp.\shift.$shr$/home/lunarch/rtl_lec_src/shifter.v:8$155 ($shr):
+    Found 2 activation_patterns using ctrl signal { $flatten\dp.\shift.$procmux$213_CMP $flatten\dp.\shift.$procmux$212_CMP \dp.srccmux.s }.
+    No candidates found.
+Removing 3 cells in module riscv:
+  Removing cell $flatten\dp.\shift.$shl$/home/lunarch/rtl_lec_src/shifter.v:12$160 ($shl).
+  Removing cell $flatten\dp.\shift.$shl$/home/lunarch/rtl_lec_src/shifter.v:8$157 ($shl).
+  Removing cell $flatten\dp.\alu.$add$/home/lunarch/rtl_lec_src/alu.v:14$7 ($add).
+
+25.16. Executing OPT pass (performing simple optimizations).
+
+25.16.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module riscv.
+
+25.16.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\riscv'.
+Computing hashes of 591 cells of `\riscv'.
+Finding duplicate cells in `\riscv'.
+Computing hashes of 590 cells of `\riscv'.
+Finding duplicate cells in `\riscv'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+25.16.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \riscv..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~75 debug messages>
+
+25.16.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \riscv.
+Performed a total of 0 changes.
+
+25.16.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\riscv'.
+Computing hashes of 590 cells of `\riscv'.
+Finding duplicate cells in `\riscv'.
+Removed a total of 0 cells.
+
+25.16.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+25.16.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \riscv..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~2 debug messages>
+
+25.16.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module riscv.
+
+25.16.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+25.16.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \riscv..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~75 debug messages>
+
+25.16.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \riscv.
+Performed a total of 0 changes.
+
+25.16.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\riscv'.
+Computing hashes of 589 cells of `\riscv'.
+Finding duplicate cells in `\riscv'.
+Removed a total of 0 cells.
+
+25.16.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+25.16.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \riscv..
+
+25.16.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module riscv.
+
+25.16.16. Finished fast OPT passes. (There is nothing left to do.)
+
+25.17. Executing MEMORY pass.
+
+25.17.1. Executing OPT_MEM pass (optimize memories).
+riscv.$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178: removing const-0 lane 8
+riscv.$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178: removing const-0 lane 9
+riscv.$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178: removing const-0 lane 10
+riscv.$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178: removing const-0 lane 11
+Performed a total of 1 transformations.
+
+25.17.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+25.17.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+  Analyzing riscv.dp.rf.rf write port 0.
+
+25.17.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+25.17.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+Checking read port `\dp.rf.rf'[0] in module `\riscv': no output FF found.
+Checking read port `\dp.rf.rf'[1] in module `\riscv': no output FF found.
+Checking read port `$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178'[0] in module `\riscv': no output FF found.
+Checking read port address `\dp.rf.rf'[0] in module `\riscv': no address FF found.
+Checking read port address `\dp.rf.rf'[1] in module `\riscv': no address FF found.
+Checking read port address `$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178'[0] in module `\riscv': no address FF found.
+
+25.17.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \riscv..
+
+25.17.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+Consolidating read ports of memory riscv.dp.rf.rf by address:
+
+25.17.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+25.17.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \riscv..
+
+25.17.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+25.18. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \riscv..
+
+25.19. Executing OPT pass (performing simple optimizations).
+
+25.19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module riscv.
+<suppressed ~11 debug messages>
+
+25.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\riscv'.
+Computing hashes of 577 cells of `\riscv'.
+Finding duplicate cells in `\riscv'.
+Removed a total of 0 cells.
+
+25.19.3. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $flatten\dp.\pcreg.$procdff$369 ($adff) from module riscv (D = \dp.pcreg.d [1:0], Q = \dp.pcreg.q [1:0]).
+
+25.19.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \riscv..
+Removed 1 unused cells and 10 unused wires.
+<suppressed ~2 debug messages>
+
+25.19.5. Rerunning OPT passes. (Removed registers in this run.)
+
+25.19.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module riscv.
+<suppressed ~1 debug messages>
+
+25.19.7. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\riscv'.
+Computing hashes of 577 cells of `\riscv'.
+Finding duplicate cells in `\riscv'.
+Removed a total of 0 cells.
+
+25.19.8. Executing OPT_DFF pass (perform DFF optimizations).
+
+25.19.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \riscv..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+25.19.10. Finished fast OPT passes.
+
+25.20. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+Mapping memory \dp.rf.rf in module \riscv:
+  created 32 $dff cells and 0 static cells of width 32.
+  read interface: 0 $dff and 62 $mux cells.
+  write interface: 32 write mux blocks.
+Mapping memory $flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178 in module \riscv:
+  created 16 $dff cells and 0 static cells of width 8.
+  read interface: 0 $dff and 15 $mux cells.
+  write interface: 0 write mux blocks.
+
+25.21. Executing OPT pass (performing simple optimizations).
+
+25.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module riscv.
+<suppressed ~12 debug messages>
+
+25.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\riscv'.
+Computing hashes of 799 cells of `\riscv'.
+Finding duplicate cells in `\riscv'.
+Removed a total of 0 cells.
+
+25.21.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \riscv..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~416 debug messages>
+
+25.21.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \riscv.
+    Consolidated identical input bits for $mux cell $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][3][6]$1008:
+      Old ports: A=8'00000000, B=8'01010010, Y=$memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][3]$a$988
+      New ports: A=1'0, B=1'1, Y=$memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][3]$a$988 [1]
+      New connections: { $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][3]$a$988 [7:2] $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][3]$a$988 [0] } = { 1'0 $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][3]$a$988 [1] 1'0 $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][3]$a$988 [1] 3'000 }
+    Consolidated identical input bits for $mux cell $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][3][0]$990:
+      Old ports: A=8'00000010, B=8'00010010, Y=$memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][0]$a$979
+      New ports: A=1'0, B=1'1, Y=$memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][0]$a$979 [4]
+      New connections: { $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][0]$a$979 [7:5] $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][0]$a$979 [3:0] } = 7'0000010
+    Consolidated identical input bits for $mux cell $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][3][4]$1002:
+      Old ports: A=8'00000110, B=8'00000000, Y=$memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][2]$a$985
+      New ports: A=1'1, B=1'0, Y=$memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][2]$a$985 [1]
+      New connections: { $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][2]$a$985 [7:2] $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][2]$a$985 [0] } = { 5'00000 $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][2]$a$985 [1] 1'0 }
+    Consolidated identical input bits for $mux cell $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][3][3]$999:
+      Old ports: A=8'00000001, B=8'00000000, Y=$memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][1]$b$983
+      New ports: A=1'1, B=1'0, Y=$memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][1]$b$983 [0]
+      New connections: $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][1]$b$983 [7:1] = 7'0000000
+    Consolidated identical input bits for $mux cell $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][3][2]$996:
+      Old ports: A=8'00001000, B=8'00110010, Y=$memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][1]$a$982
+      New ports: A=2'10, B=2'01, Y={ $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][1]$a$982 [3] $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][1]$a$982 [1] }
+      New connections: { $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][1]$a$982 [7:4] $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][1]$a$982 [2] $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][1]$a$982 [0] } = { 2'00 $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][1]$a$982 [1] $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][1]$a$982 [1] 2'00 }
+    Consolidated identical input bits for $pmux cell $flatten\dp.\se.\m1.$procmux$204:
+      Old ports: A={ \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31:20] }, B={ \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31:25] \instr [11:7] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [7] \instr [30:25] \instr [11:8] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [19:12] \instr [20] \instr [30:21] \instr [31:12] 12'000000000000 }, Y=\dp.pcextmux.d0
+      New ports: A={ \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31:20] }, B={ \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31:25] \instr [11:7] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [7] \instr [30:25] \instr [11:8] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [31] \instr [19:12] \instr [20] \instr [30:21] \instr [30:12] 12'000000000000 }, Y=\dp.pcextmux.d0 [30:0]
+      New connections: \dp.pcextmux.d0 [31] = \instr [31]
+    Consolidated identical input bits for $mux cell $flatten\dp.\halfbytemux1.$ternary$/home/lunarch/rtl_lec_src/mux3.v:6$171:
+      Old ports: A=\readdata, B={ \dp.halfbytemux1.d1 [16] \dp.halfbytemux1.d1 [16] \dp.halfbytemux1.d1 [16] \dp.halfbytemux1.d1 [16] \dp.halfbytemux1.d1 [16] \dp.halfbytemux1.d1 [16] \dp.halfbytemux1.d1 [16] \dp.halfbytemux1.d1 [16] \dp.halfbytemux1.d1 [16] \dp.halfbytemux1.d1 [16] \dp.halfbytemux1.d1 [16] \dp.halfbytemux1.d1 [16] \dp.halfbytemux1.d1 [16] \dp.halfbytemux1.d1 [16] \dp.halfbytemux1.d1 [16] \dp.halfbytemux1.d1 [16] \readdata [15:0] }, Y=$flatten\dp.\halfbytemux1.$ternary$/home/lunarch/rtl_lec_src/mux3.v:6$171_Y
+      New ports: A=\readdata [31:16], B={ \dp.halfbytemux1.d1 [16] \dp.halfbytemux1.d1 [16] \dp.halfbytemux1.d1 [16] \dp.halfbytemux1.d1 [16] \dp.halfbytemux1.d1 [16] \dp.halfbytemux1.d1 [16] \dp.halfbytemux1.d1 [16] \dp.halfbytemux1.d1 [16] \dp.halfbytemux1.d1 [16] \dp.halfbytemux1.d1 [16] \dp.halfbytemux1.d1 [16] \dp.halfbytemux1.d1 [16] \dp.halfbytemux1.d1 [16] \dp.halfbytemux1.d1 [16] \dp.halfbytemux1.d1 [16] \dp.halfbytemux1.d1 [16] }, Y=$flatten\dp.\halfbytemux1.$ternary$/home/lunarch/rtl_lec_src/mux3.v:6$171_Y [31:16]
+      New connections: $flatten\dp.\halfbytemux1.$ternary$/home/lunarch/rtl_lec_src/mux3.v:6$171_Y [15:0] = \readdata [15:0]
+    Consolidated identical input bits for $mux cell $flatten\dp.\halfbytemux2.$ternary$/home/lunarch/rtl_lec_src/mux3.v:6$171:
+      Old ports: A=\dp.halfbytemux2.d0, B={ 16'0000000000000000 \dp.halfbytemux2.d0 [15:0] }, Y=$flatten\dp.\halfbytemux2.$ternary$/home/lunarch/rtl_lec_src/mux3.v:6$171_Y
+      New ports: A=\dp.halfbytemux2.d0 [31:16], B=16'0000000000000000, Y=$flatten\dp.\halfbytemux2.$ternary$/home/lunarch/rtl_lec_src/mux3.v:6$171_Y [31:16]
+      New connections: $flatten\dp.\halfbytemux2.$ternary$/home/lunarch/rtl_lec_src/mux3.v:6$171_Y [15:0] = \dp.halfbytemux2.d0 [15:0]
+    Consolidated identical input bits for $mux cell $auto$share.cc:660:make_supercell$459:
+      Old ports: A={ \dp.alu.a [31] \dp.pcsrcmux.d0 [30:0] }, B={ \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] }, Y=$auto$share.cc:657:make_supercell$457
+      New ports: A=\dp.pcsrcmux.d0 [30:0], B={ \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] \dp.alu.a [31] }, Y=$auto$share.cc:657:make_supercell$457 [30:0]
+      New connections: $auto$share.cc:657:make_supercell$457 [31] = \dp.alu.a [31]
+    Consolidated identical input bits for $mux cell $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][3][1]$993:
+      Old ports: A=8'00000111, B=8'10000111, Y=$memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][0]$b$980
+      New ports: A=1'0, B=1'1, Y=$memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][0]$b$980 [7]
+      New connections: $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][0]$b$980 [6:0] = 7'0000111
+    Consolidated identical input bits for $pmux cell $flatten\c.\md.$procmux$193:
+      Old ports: A=17'00000000000000000, B=170'00000100000010000100001100101000000000001010010000100110011000000010001101100010000110000011000000000000000110000000100000010000000000000000011000100000001100110000000100, Y=\c.md.controls
+      New ports: A=14'00000000000000, B=140'00010000001000000110010100000000101001000101001100000010010110001000110001100000000000011000000100001000000000000001100010000011011000000100, Y={ \c.md.controls [15:14] \c.md.controls [12:4] \c.md.controls [2:0] }
+      New connections: { \c.md.controls [16] \c.md.controls [13] \c.md.controls [3] } = { \c.md.controls [7] \c.md.controls [1] 1'0 }
+    New ctrl vector for $pmux cell $flatten\c.\ad.$procmux$339: $flatten\c.\ad.$procmux$223_CMP
+    Consolidated identical input bits for $mux cell $flatten\c.\ad.$procmux$305:
+      Old ports: A=2'00, B=2'10, Y=$auto$wreduce.cc:513:run$442 [1:0]
+      New ports: A=1'0, B=1'1, Y=$auto$wreduce.cc:513:run$442 [1]
+      New connections: $auto$wreduce.cc:513:run$442 [0] = 1'0
+    New ctrl vector for $pmux cell $flatten\c.\ad.$procmux$254: $flatten\c.\ad.$procmux$223_CMP
+    New ctrl vector for $pmux cell $flatten\c.\ad.$procmux$235: $flatten\c.\ad.$procmux$223_CMP
+    New ctrl vector for $pmux cell $flatten\c.\ad.$procmux$217: $flatten\c.\ad.$procmux$223_CMP
+  Optimizing cells in module \riscv.
+    Consolidated identical input bits for $mux cell $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][3]$987:
+      Old ports: A=$memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][3]$a$988, B=8'00000000, Y=$memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][1]$b$977
+      New ports: A=$memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][3]$a$988 [1], B=1'0, Y=$memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][1]$b$977 [1]
+      New connections: { $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][1]$b$977 [7:2] $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][1]$b$977 [0] } = { 1'0 $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][1]$b$977 [1] 1'0 $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][1]$b$977 [1] 3'000 }
+    Consolidated identical input bits for $mux cell $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][2]$984:
+      Old ports: A=$memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][2]$a$985, B=8'00000000, Y=$memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][1]$a$976
+      New ports: A=$memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][2]$a$985 [1], B=1'0, Y=$memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][1]$a$976 [1]
+      New connections: { $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][1]$a$976 [7:2] $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][1]$a$976 [0] } = { 5'00000 $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][1]$a$976 [1] 1'0 }
+    Consolidated identical input bits for $mux cell $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][1]$981:
+      Old ports: A=$memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][1]$a$982, B=$memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][1]$b$983, Y=$memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][0]$b$974
+      New ports: A={ $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][1]$a$982 [3] $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][1]$a$982 [1] 1'0 }, B={ 2'00 $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][1]$b$983 [0] }, Y={ $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][0]$b$974 [3] $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][0]$b$974 [1:0] }
+      New connections: { $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][0]$b$974 [7:4] $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][0]$b$974 [2] } = { 2'00 $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][0]$b$974 [1] $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][0]$b$974 [1] 1'0 }
+    Consolidated identical input bits for $mux cell $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][0]$978:
+      Old ports: A=$memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][0]$a$979, B=$memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][0]$b$980, Y=$memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][0]$a$973
+      New ports: A={ 1'0 $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][0]$a$979 [4] 1'0 }, B={ $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][2][0]$b$980 [7] 2'01 }, Y={ $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][0]$a$973 [7] $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][0]$a$973 [4] $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][0]$a$973 [0] }
+      New connections: { $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][0]$a$973 [6:5] $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][0]$a$973 [3:1] } = { 3'000 $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][0]$a$973 [0] 1'1 }
+    Consolidated identical input bits for $mux cell $flatten\dp.\halfbytemux1.$ternary$/home/lunarch/rtl_lec_src/mux3.v:6$172:
+      Old ports: A=$flatten\dp.\halfbytemux1.$ternary$/home/lunarch/rtl_lec_src/mux3.v:6$171_Y, B={ \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \readdata [7:0] }, Y=\dp.resmux.d1
+      New ports: A={ $flatten\dp.\halfbytemux1.$ternary$/home/lunarch/rtl_lec_src/mux3.v:6$171_Y [31:16] \readdata [15:8] }, B={ \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] \dp.halfbytemux1.d2 [8] }, Y=\dp.resmux.d1 [31:8]
+      New connections: \dp.resmux.d1 [7:0] = \readdata [7:0]
+    Consolidated identical input bits for $mux cell $flatten\dp.\halfbytemux2.$ternary$/home/lunarch/rtl_lec_src/mux3.v:6$172:
+      Old ports: A=$flatten\dp.\halfbytemux2.$ternary$/home/lunarch/rtl_lec_src/mux3.v:6$171_Y, B={ 24'000000000000000000000000 \dp.halfbytemux2.d0 [7:0] }, Y=\writedata
+      New ports: A={ $flatten\dp.\halfbytemux2.$ternary$/home/lunarch/rtl_lec_src/mux3.v:6$171_Y [31:16] \dp.halfbytemux2.d0 [15:8] }, B=24'000000000000000000000000, Y=\writedata [31:8]
+      New connections: \writedata [7:0] = \dp.halfbytemux2.d0 [7:0]
+  Optimizing cells in module \riscv.
+    Consolidated identical input bits for $mux cell $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][1]$975:
+      Old ports: A=$memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][1]$a$976, B=$memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][1]$b$977, Y=$memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][0][0]$b$971
+      New ports: A={ 1'0 $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][1]$a$976 [1] $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][1]$a$976 [1] }, B={ $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][1]$b$977 [1] 1'0 $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][1]$b$977 [1] }, Y={ $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][0][0]$b$971 [4] $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][0][0]$b$971 [2:1] }
+      New connections: { $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][0][0]$b$971 [7:5] $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][0][0]$b$971 [3] $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][0][0]$b$971 [0] } = { 1'0 $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][0][0]$b$971 [4] 3'000 }
+    Consolidated identical input bits for $mux cell $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][0]$972:
+      Old ports: A=$memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][0]$a$973, B=$memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][0]$b$974, Y=$memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][0][0]$a$970
+      New ports: A={ $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][0]$a$973 [7] 1'0 $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][0]$a$973 [4] 1'0 $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][0]$a$973 [0] 1'1 $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][0]$a$973 [0] }, B={ 1'0 $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][0]$b$974 [1] $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][0]$b$974 [1] $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][0]$b$974 [3] 1'0 $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][1][0]$b$974 [1:0] }, Y={ $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][0][0]$a$970 [7] $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][0][0]$a$970 [5:0] }
+      New connections: $memory$flatten\c.\ad.$auto$proc_rom.cc:155:do_switch$178$rdmux[0][0][0]$a$970 [6] = 1'0
+  Optimizing cells in module \riscv.
+Performed a total of 24 changes.
+
+25.21.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\riscv'.
+Computing hashes of 799 cells of `\riscv'.
+Finding duplicate cells in `\riscv'.
+Computing hashes of 796 cells of `\riscv'.
+Finding duplicate cells in `\riscv'.
+<suppressed ~9 debug messages>
+Removed a total of 3 cells.
+
+25.21.6. Executing OPT_SHARE pass.
+
+25.21.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+25.21.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \riscv..
+Removed 0 unused cells and 122 unused wires.
+<suppressed ~1 debug messages>
+
+25.21.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module riscv.
+<suppressed ~8 debug messages>
+
+25.21.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+25.21.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \riscv..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~382 debug messages>
+
+25.21.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \riscv.
+Performed a total of 0 changes.
+
+25.21.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\riscv'.
+Computing hashes of 794 cells of `\riscv'.
+Finding duplicate cells in `\riscv'.
+Computing hashes of 793 cells of `\riscv'.
+Finding duplicate cells in `\riscv'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+25.21.14. Executing OPT_SHARE pass.
+
+25.21.15. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $memory\dp.rf.rf[0]$475 ($dff) from module riscv (D = \dp.rf.wd3, Q = \dp.rf.rf[0]).
+Adding EN signal on $memory\dp.rf.rf[1]$477 ($dff) from module riscv (D = \dp.rf.wd3, Q = \dp.rf.rf[1]).
+Adding EN signal on $memory\dp.rf.rf[2]$479 ($dff) from module riscv (D = \dp.rf.wd3, Q = \dp.rf.rf[2]).
+Adding EN signal on $memory\dp.rf.rf[3]$481 ($dff) from module riscv (D = \dp.rf.wd3, Q = \dp.rf.rf[3]).
+Adding EN signal on $memory\dp.rf.rf[4]$483 ($dff) from module riscv (D = \dp.rf.wd3, Q = \dp.rf.rf[4]).
+Adding EN signal on $memory\dp.rf.rf[5]$485 ($dff) from module riscv (D = \dp.rf.wd3, Q = \dp.rf.rf[5]).
+Adding EN signal on $memory\dp.rf.rf[6]$487 ($dff) from module riscv (D = \dp.rf.wd3, Q = \dp.rf.rf[6]).
+Adding EN signal on $memory\dp.rf.rf[7]$489 ($dff) from module riscv (D = \dp.rf.wd3, Q = \dp.rf.rf[7]).
+Adding EN signal on $memory\dp.rf.rf[8]$491 ($dff) from module riscv (D = \dp.rf.wd3, Q = \dp.rf.rf[8]).
+Adding EN signal on $memory\dp.rf.rf[9]$493 ($dff) from module riscv (D = \dp.rf.wd3, Q = \dp.rf.rf[9]).
+Adding EN signal on $memory\dp.rf.rf[10]$495 ($dff) from module riscv (D = \dp.rf.wd3, Q = \dp.rf.rf[10]).
+Adding EN signal on $memory\dp.rf.rf[11]$497 ($dff) from module riscv (D = \dp.rf.wd3, Q = \dp.rf.rf[11]).
+Adding EN signal on $memory\dp.rf.rf[12]$499 ($dff) from module riscv (D = \dp.rf.wd3, Q = \dp.rf.rf[12]).
+Adding EN signal on $memory\dp.rf.rf[13]$501 ($dff) from module riscv (D = \dp.rf.wd3, Q = \dp.rf.rf[13]).
+Adding EN signal on $memory\dp.rf.rf[14]$503 ($dff) from module riscv (D = \dp.rf.wd3, Q = \dp.rf.rf[14]).
+Adding EN signal on $memory\dp.rf.rf[15]$505 ($dff) from module riscv (D = \dp.rf.wd3, Q = \dp.rf.rf[15]).
+Adding EN signal on $memory\dp.rf.rf[16]$507 ($dff) from module riscv (D = \dp.rf.wd3, Q = \dp.rf.rf[16]).
+Adding EN signal on $memory\dp.rf.rf[17]$509 ($dff) from module riscv (D = \dp.rf.wd3, Q = \dp.rf.rf[17]).
+Adding EN signal on $memory\dp.rf.rf[18]$511 ($dff) from module riscv (D = \dp.rf.wd3, Q = \dp.rf.rf[18]).
+Adding EN signal on $memory\dp.rf.rf[19]$513 ($dff) from module riscv (D = \dp.rf.wd3, Q = \dp.rf.rf[19]).
+Adding EN signal on $memory\dp.rf.rf[20]$515 ($dff) from module riscv (D = \dp.rf.wd3, Q = \dp.rf.rf[20]).
+Adding EN signal on $memory\dp.rf.rf[21]$517 ($dff) from module riscv (D = \dp.rf.wd3, Q = \dp.rf.rf[21]).
+Adding EN signal on $memory\dp.rf.rf[22]$519 ($dff) from module riscv (D = \dp.rf.wd3, Q = \dp.rf.rf[22]).
+Adding EN signal on $memory\dp.rf.rf[23]$521 ($dff) from module riscv (D = \dp.rf.wd3, Q = \dp.rf.rf[23]).
+Adding EN signal on $memory\dp.rf.rf[24]$523 ($dff) from module riscv (D = \dp.rf.wd3, Q = \dp.rf.rf[24]).
+Adding EN signal on $memory\dp.rf.rf[25]$525 ($dff) from module riscv (D = \dp.rf.wd3, Q = \dp.rf.rf[25]).
+Adding EN signal on $memory\dp.rf.rf[26]$527 ($dff) from module riscv (D = \dp.rf.wd3, Q = \dp.rf.rf[26]).
+Adding EN signal on $memory\dp.rf.rf[27]$529 ($dff) from module riscv (D = \dp.rf.wd3, Q = \dp.rf.rf[27]).
+Adding EN signal on $memory\dp.rf.rf[28]$531 ($dff) from module riscv (D = \dp.rf.wd3, Q = \dp.rf.rf[28]).
+Adding EN signal on $memory\dp.rf.rf[29]$533 ($dff) from module riscv (D = \dp.rf.wd3, Q = \dp.rf.rf[29]).
+Adding EN signal on $memory\dp.rf.rf[30]$535 ($dff) from module riscv (D = \dp.rf.wd3, Q = \dp.rf.rf[30]).
+Adding EN signal on $memory\dp.rf.rf[31]$537 ($dff) from module riscv (D = \dp.rf.wd3, Q = \dp.rf.rf[31]).
+
+25.21.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \riscv..
+Removed 32 unused cells and 35 unused wires.
+<suppressed ~33 debug messages>
+
+25.21.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module riscv.
+
+25.21.18. Rerunning OPT passes. (Maybe there is more to do..)
+
+25.21.19. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \riscv..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~158 debug messages>
+
+25.21.20. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \riscv.
+Performed a total of 0 changes.
+
+25.21.21. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\riscv'.
+Computing hashes of 761 cells of `\riscv'.
+Finding duplicate cells in `\riscv'.
+Removed a total of 0 cells.
+
+25.21.22. Executing OPT_SHARE pass.
+
+25.21.23. Executing OPT_DFF pass (perform DFF optimizations).
+
+25.21.24. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \riscv..
+
+25.21.25. Executing OPT_EXPR pass (perform const folding).
+Optimizing module riscv.
+
+25.21.26. Finished fast OPT passes. (There is nothing left to do.)
+
+25.22. Executing TECHMAP pass (map to technology primitives).
+
+25.22.1. Executing Verilog-2005 frontend: /usr/local/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/local/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+25.22.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $dffe.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $adffe.
+Using template $paramod$constmap:6965c8fb94e3888eb117e045d212c5289fe95d6e$paramod$65b247ea06a847990f5821813abbc3df9880ca64\_90_shift_ops_shr_shl_sshl_sshr for cells of type $shl.
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod$a40b3a69ab2154dca9743e30e1e84efb03b892b4\_90_alu for cells of type $alu.
+Using template $paramod$cc6a978c1b57cdb49efcec348c88d8e28bf1a01f\_90_alu for cells of type $alu.
+Using template $paramod$44a13d10af618e7fbe7b9aad2f6151ffcee1e2fa\_90_alu for cells of type $alu.
+Using template $paramod$fbc7873bff55778c0b3173955b7e4bce1d9d6834\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $pmux.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using template $paramod$constmap:6111415c3ecfd9bb520e2072bfee38e7d8bfb139$paramod$feecc7a0dbd012970970f2858f15e786e251f677\_90_shift_ops_shr_shl_sshl_sshr for cells of type $shr.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000100000 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000100000 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000011110 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000011110 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000100001 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000100001 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000110 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000110 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~2560 debug messages>
+
+25.23. Executing OPT pass (performing simple optimizations).
+
+25.23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module riscv.
+<suppressed ~1122 debug messages>
+
+25.23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\riscv'.
+Computing hashes of 6314 cells of `\riscv'.
+Finding duplicate cells in `\riscv'.
+Computing hashes of 6086 cells of `\riscv'.
+Finding duplicate cells in `\riscv'.
+Computing hashes of 6040 cells of `\riscv'.
+Finding duplicate cells in `\riscv'.
+Computing hashes of 6029 cells of `\riscv'.
+Finding duplicate cells in `\riscv'.
+<suppressed ~855 debug messages>
+Removed a total of 285 cells.
+
+25.23.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+25.23.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \riscv..
+Removed 84 unused cells and 776 unused wires.
+<suppressed ~85 debug messages>
+
+25.23.5. Finished fast OPT passes.
+
+25.24. Executing ABC pass (technology mapping using ABC).
+
+25.24.1. Extracting gate netlist of module `\riscv' to `<abc-temp-dir>/input.blif'..
+Replacing 2 occurrences of constant undef bits with constant zero bits
+
+25.24.1.1. Executed ABC.
+Extracted 4830 gates and 5953 wires to a netlist network with 1120 inputs and 164 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: UC Berkeley, ABC 1.01 (compiled Sep 13 2026 13:24:41)
+ABC: abc 01> empty
+ABC: abc 01> source <abc-temp-dir>/abc.script
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+ABC: 
+ABC: YOSYS_ABC_DONE 
+
+25.24.1.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:     1059
+ABC RESULTS:            ANDNOT cells:      321
+ABC RESULTS:               MUX cells:     1386
+ABC RESULTS:              NAND cells:     1996
+ABC RESULTS:               NOR cells:       77
+ABC RESULTS:               NOT cells:       79
+ABC RESULTS:                OR cells:      679
+ABC RESULTS:             ORNOT cells:      361
+ABC RESULTS:              XNOR cells:       60
+ABC RESULTS:               XOR cells:       80
+ABC RESULTS:              ZERO cells:        1
+ABC RESULTS:        internal signals:     4669
+ABC RESULTS:           input signals:     1120
+ABC RESULTS:          output signals:      164
+Removing temp directory.
+Removing global temp directory.
+
+25.25. Executing OPT pass (performing simple optimizations).
+
+25.25.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module riscv.
+<suppressed ~2 debug messages>
+
+25.25.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\riscv'.
+Computing hashes of 7213 cells of `\riscv'.
+Finding duplicate cells in `\riscv'.
+Removed a total of 0 cells.
+
+25.25.3. Executing OPT_DFF pass (perform DFF optimizations).
+Handling never-active EN on $auto$ff.cc:337:slice$2140 ($_DFFE_PP_) from module riscv (removing D path).
+Handling never-active EN on $auto$ff.cc:337:slice$2109 ($_DFFE_PP_) from module riscv (removing D path).
+Handling never-active EN on $auto$ff.cc:337:slice$2110 ($_DFFE_PP_) from module riscv (removing D path).
+Handling never-active EN on $auto$ff.cc:337:slice$2111 ($_DFFE_PP_) from module riscv (removing D path).
+Handling never-active EN on $auto$ff.cc:337:slice$2112 ($_DFFE_PP_) from module riscv (removing D path).
+Handling never-active EN on $auto$ff.cc:337:slice$2113 ($_DFFE_PP_) from module riscv (removing D path).
+Handling never-active EN on $auto$ff.cc:337:slice$2114 ($_DFFE_PP_) from module riscv (removing D path).
+Handling never-active EN on $auto$ff.cc:337:slice$2115 ($_DFFE_PP_) from module riscv (removing D path).
+Handling never-active EN on $auto$ff.cc:337:slice$2116 ($_DFFE_PP_) from module riscv (removing D path).
+Handling never-active EN on $auto$ff.cc:337:slice$2117 ($_DFFE_PP_) from module riscv (removing D path).
+Handling never-active EN on $auto$ff.cc:337:slice$2118 ($_DFFE_PP_) from module riscv (removing D path).
+Handling never-active EN on $auto$ff.cc:337:slice$2119 ($_DFFE_PP_) from module riscv (removing D path).
+Handling never-active EN on $auto$ff.cc:337:slice$2120 ($_DFFE_PP_) from module riscv (removing D path).
+Handling never-active EN on $auto$ff.cc:337:slice$2121 ($_DFFE_PP_) from module riscv (removing D path).
+Handling never-active EN on $auto$ff.cc:337:slice$2122 ($_DFFE_PP_) from module riscv (removing D path).
+Handling never-active EN on $auto$ff.cc:337:slice$2123 ($_DFFE_PP_) from module riscv (removing D path).
+Handling never-active EN on $auto$ff.cc:337:slice$2124 ($_DFFE_PP_) from module riscv (removing D path).
+Handling never-active EN on $auto$ff.cc:337:slice$2125 ($_DFFE_PP_) from module riscv (removing D path).
+Handling never-active EN on $auto$ff.cc:337:slice$2126 ($_DFFE_PP_) from module riscv (removing D path).
+Handling never-active EN on $auto$ff.cc:337:slice$2127 ($_DFFE_PP_) from module riscv (removing D path).
+Handling never-active EN on $auto$ff.cc:337:slice$2128 ($_DFFE_PP_) from module riscv (removing D path).
+Handling never-active EN on $auto$ff.cc:337:slice$2129 ($_DFFE_PP_) from module riscv (removing D path).
+Handling never-active EN on $auto$ff.cc:337:slice$2130 ($_DFFE_PP_) from module riscv (removing D path).
+Handling never-active EN on $auto$ff.cc:337:slice$2131 ($_DFFE_PP_) from module riscv (removing D path).
+Handling never-active EN on $auto$ff.cc:337:slice$2132 ($_DFFE_PP_) from module riscv (removing D path).
+Handling never-active EN on $auto$ff.cc:337:slice$2133 ($_DFFE_PP_) from module riscv (removing D path).
+Handling never-active EN on $auto$ff.cc:337:slice$2134 ($_DFFE_PP_) from module riscv (removing D path).
+Handling never-active EN on $auto$ff.cc:337:slice$2135 ($_DFFE_PP_) from module riscv (removing D path).
+Handling never-active EN on $auto$ff.cc:337:slice$2136 ($_DFFE_PP_) from module riscv (removing D path).
+Handling never-active EN on $auto$ff.cc:337:slice$2137 ($_DFFE_PP_) from module riscv (removing D path).
+Handling never-active EN on $auto$ff.cc:337:slice$2138 ($_DFFE_PP_) from module riscv (removing D path).
+Handling never-active EN on $auto$ff.cc:337:slice$2139 ($_DFFE_PP_) from module riscv (removing D path).
+
+25.25.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \riscv..
+Removed 0 unused cells and 2911 unused wires.
+<suppressed ~249 debug messages>
+
+25.25.5. Rerunning OPT passes. (Removed registers in this run.)
+
+25.25.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module riscv.
+
+25.25.7. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\riscv'.
+Computing hashes of 7181 cells of `\riscv'.
+Finding duplicate cells in `\riscv'.
+Removed a total of 0 cells.
+
+25.25.8. Executing OPT_DFF pass (perform DFF optimizations).
+
+25.25.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \riscv..
+
+25.25.10. Finished fast OPT passes.
+
+25.26. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `riscv'. Setting top module to riscv.
+
+25.26.1. Analyzing design hierarchy..
+Top module:  \riscv
+
+25.26.2. Analyzing design hierarchy..
+Top module:  \riscv
+Removed 0 unused modules.
+
+25.27. Printing statistics.
+
+=== riscv ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     6136 wires
+     9068 wire bits
+      170 public wires
+     3102 public wire bits
+       10 ports
+      165 port bits
+     7181 cells
+      321   $_ANDNOT_
+     1059   $_AND_
+        2   $_DFFE_PP0P_
+      992   $_DFFE_PP_
+       30   $_DFF_PP0_
+     1386   $_MUX_
+     1996   $_NAND_
+       77   $_NOR_
+       79   $_NOT_
+      361   $_ORNOT_
+      679   $_OR_
+       60   $_XNOR_
+       80   $_XOR_
+       59   $scopeinfo
+
+25.28. Executing CHECK pass (checking for obvious problems).
+Checking module riscv...
+Found and reported 0 problems.
+
+26. Executing DFFLIBMAP pass (mapping DFF/DLATCH cells to sequential cells from liberty file).
+  cell sky130_fd_sc_hd__dfxtp_1 (noninv, pins=3, area=20.02) is a direct match for cell type $_DFF_P_.
+  cell sky130_fd_sc_hd__dfrtn_1 (noninv, pins=4, area=25.02) is a direct match for cell type $_DFF_NN0_.
+  cell sky130_fd_sc_hd__dfrtp_1 (noninv, pins=4, area=25.02) is a direct match for cell type $_DFF_PN0_.
+  cell sky130_fd_sc_hd__dfstp_1 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+  cell sky130_fd_sc_hd__edfxtp_1 (noninv, pins=4, area=30.03) is a direct match for cell type $_DFFE_PP_.
+  cell sky130_fd_sc_hd__dfbbn_1 (noninv, pins=6, area=32.53) is a direct match for cell type $_DFFSR_NNN_.
+  cell sky130_fd_sc_hd__dfbbp_1 (noninv, pins=6, area=32.53) is a direct match for cell type $_DFFSR_PNN_.
+  cell sky130_fd_sc_hd__dlxtn_1 (noninv, pins=3, area=15.01) is a direct match for cell type $_DLATCH_N_.
+  cell sky130_fd_sc_hd__lpflow_inputisolatch_1 (noninv, pins=3, area=13.76) is a direct match for cell type $_DLATCH_P_.
+  cell sky130_fd_sc_hd__dlrtn_1 (noninv, pins=4, area=17.52) is a direct match for cell type $_DLATCH_NN0_.
+  cell sky130_fd_sc_hd__dlrtp_1 (noninv, pins=4, area=16.27) is a direct match for cell type $_DLATCH_PN0_.
+  final dff/dlatch cell mappings:
+    unmapped dff/dlatch cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_1 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    \sky130_fd_sc_hd__dfrtn_1 _DFF_NN0_ (.CLK_N( C), .D( D), .Q( Q), .RESET_B( R));
+    unmapped dff/dlatch cell: $_DFF_NN1_
+    unmapped dff/dlatch cell: $_DFF_NP0_
+    unmapped dff/dlatch cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_1 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_1 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff/dlatch cell: $_DFF_PP0_
+    unmapped dff/dlatch cell: $_DFF_PP1_
+    unmapped dff/dlatch cell: $_DFFE_NN_
+    unmapped dff/dlatch cell: $_DFFE_NP_
+    unmapped dff/dlatch cell: $_DFFE_PN_
+    \sky130_fd_sc_hd__edfxtp_1 _DFFE_PP_ (.CLK( C), .D( D), .DE( E), .Q( Q));
+    \sky130_fd_sc_hd__dfbbn_1 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff/dlatch cell: $_DFFSR_NNP_
+    unmapped dff/dlatch cell: $_DFFSR_NPN_
+    unmapped dff/dlatch cell: $_DFFSR_NPP_
+    \sky130_fd_sc_hd__dfbbp_1 _DFFSR_PNN_ (.CLK( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff/dlatch cell: $_DFFSR_PNP_
+    unmapped dff/dlatch cell: $_DFFSR_PPN_
+    unmapped dff/dlatch cell: $_DFFSR_PPP_
+    \sky130_fd_sc_hd__dlxtn_1 _DLATCH_N_ (.D( D), .GATE_N( E), .Q( Q));
+    \sky130_fd_sc_hd__lpflow_inputisolatch_1 _DLATCH_P_ (.D( D), .Q( Q), .SLEEP_B( E));
+    \sky130_fd_sc_hd__dlrtn_1 _DLATCH_NN0_ (.D( D), .GATE_N( E), .Q( Q), .RESET_B( R));
+    unmapped dff/dlatch cell: $_DLATCH_NN1_
+    unmapped dff/dlatch cell: $_DLATCH_NP0_
+    unmapped dff/dlatch cell: $_DLATCH_NP1_
+    \sky130_fd_sc_hd__dlrtp_1 _DLATCH_PN0_ (.D( D), .GATE( E), .Q( Q), .RESET_B( R));
+    unmapped dff/dlatch cell: $_DLATCH_PN1_
+    unmapped dff/dlatch cell: $_DLATCH_PP0_
+    unmapped dff/dlatch cell: $_DLATCH_PP1_
+    unmapped dff/dlatch cell: $_DLATCHSR_NNN_
+    unmapped dff/dlatch cell: $_DLATCHSR_NNP_
+    unmapped dff/dlatch cell: $_DLATCHSR_NPN_
+    unmapped dff/dlatch cell: $_DLATCHSR_NPP_
+    unmapped dff/dlatch cell: $_DLATCHSR_PNN_
+    unmapped dff/dlatch cell: $_DLATCHSR_PNP_
+    unmapped dff/dlatch cell: $_DLATCHSR_PPN_
+    unmapped dff/dlatch cell: $_DLATCHSR_PPP_
+
+26.1. Executing DFFLEGALIZE pass (convert FFs and LATCHes to types supported by the target).
+<suppressed ~24 debug messages>
+Mapping DFF/DLATCH cells in module `\riscv':
+  mapped 992 $_DFFE_PP_ cells to \sky130_fd_sc_hd__edfxtp_1 cells.
+  mapped 32 $_DFF_PN0_ cells to \sky130_fd_sc_hd__dfrtp_1 cells.
+
+27. Executing ABC pass (technology mapping using ABC).
+
+27.1. Extracting gate netlist of module `\riscv' to `<abc-temp-dir>/input.blif'..
+ABC: using cached merged SCL: /tmp/yosys-liberty-scl-cache-1000/yosys_merged_c70c57e1.scl (1 files)
+Replacing 64 occurrences of constant undef bits with constant zero bits
+
+27.1.1. Executed ABC.
+Extracted 6132 gates and 7222 wires to a netlist network with 1089 inputs and 194 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: UC Berkeley, ABC 1.01 (compiled Sep 13 2026 13:24:41)
+ABC: abc 01> empty
+ABC: abc 01> source <abc-temp-dir>/abc.script
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_scl /tmp/yosys-liberty-scl-cache-1000/yosys_merged_c70c57e1.scl 
+ABC: Warning: Detected 9 multi-output cells (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+ABC: 
+ABC: YOSYS_ABC_DONE 
+
+27.1.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__a2111oi_0 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__a211o_1 cells:       10
+ABC RESULTS:   sky130_fd_sc_hd__a211oi_1 cells:       26
+ABC RESULTS:   sky130_fd_sc_hd__a21boi_0 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__a21o_1 cells:       19
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_1 cells:      496
+ABC RESULTS:   sky130_fd_sc_hd__a221o_1 cells:       10
+ABC RESULTS:   sky130_fd_sc_hd__a221oi_1 cells:       46
+ABC RESULTS:   sky130_fd_sc_hd__a222oi_1 cells:        9
+ABC RESULTS:   sky130_fd_sc_hd__a22o_1 cells:       21
+ABC RESULTS:   sky130_fd_sc_hd__a22oi_1 cells:       83
+ABC RESULTS:   sky130_fd_sc_hd__a2bb2oi_1 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__a311o_1 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__a311oi_1 cells:       15
+ABC RESULTS:   sky130_fd_sc_hd__a31o_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a31oi_1 cells:       45
+ABC RESULTS:   sky130_fd_sc_hd__a32o_1 cells:       11
+ABC RESULTS:   sky130_fd_sc_hd__a32oi_1 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__a41o_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a41oi_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__and2_0 cells:       24
+ABC RESULTS:   sky130_fd_sc_hd__and3_1 cells:       10
+ABC RESULTS:   sky130_fd_sc_hd__and3b_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__clkinv_1 cells:       86
+ABC RESULTS:   sky130_fd_sc_hd__lpflow_inputiso1p_1 cells:       24
+ABC RESULTS:   sky130_fd_sc_hd__lpflow_isobufsrc_1 cells:       45
+ABC RESULTS:   sky130_fd_sc_hd__maj3_1 cells:       12
+ABC RESULTS:   sky130_fd_sc_hd__mux2_1 cells:       37
+ABC RESULTS:   sky130_fd_sc_hd__mux2i_1 cells:      205
+ABC RESULTS:   sky130_fd_sc_hd__mux4_2 cells:      232
+ABC RESULTS:   sky130_fd_sc_hd__nand2_1 cells:      492
+ABC RESULTS:   sky130_fd_sc_hd__nand2b_1 cells:       34
+ABC RESULTS:   sky130_fd_sc_hd__nand3_1 cells:       64
+ABC RESULTS:   sky130_fd_sc_hd__nand3b_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nand4_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__nand4bb_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor2_1 cells:      361
+ABC RESULTS:   sky130_fd_sc_hd__nor2b_1 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__nor3_1 cells:       35
+ABC RESULTS:   sky130_fd_sc_hd__nor3b_1 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__nor4_1 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__nor4b_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o2111ai_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__o211ai_1 cells:       48
+ABC RESULTS:   sky130_fd_sc_hd__o21a_1 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_0 cells:      458
+ABC RESULTS:   sky130_fd_sc_hd__o21bai_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o221a_1 cells:       12
+ABC RESULTS:   sky130_fd_sc_hd__o221ai_1 cells:      205
+ABC RESULTS:   sky130_fd_sc_hd__o22a_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__o22ai_1 cells:       52
+ABC RESULTS:   sky130_fd_sc_hd__o311a_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o311ai_0 cells:       12
+ABC RESULTS:   sky130_fd_sc_hd__o31a_1 cells:       15
+ABC RESULTS:   sky130_fd_sc_hd__o31ai_1 cells:       19
+ABC RESULTS:   sky130_fd_sc_hd__o32a_1 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__o32ai_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or3_1 cells:       14
+ABC RESULTS:   sky130_fd_sc_hd__or3b_1 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__or4_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__xnor2_1 cells:       71
+ABC RESULTS:   sky130_fd_sc_hd__xor2_1 cells:       55
+ABC RESULTS:        internal signals:     5939
+ABC RESULTS:           input signals:     1089
+ABC RESULTS:          output signals:      194
+Removing temp directory.
+Removing global temp directory.
+
+28. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \riscv..
+Removed 59 unused cells and 7345 unused wires.
+<suppressed ~187 debug messages>
+
+29. Executing HIERARCHY pass (managing design hierarchy).
+
+29.1. Analyzing design hierarchy..
+Top module:  \riscv
+
+29.2. Analyzing design hierarchy..
+Top module:  \riscv
+Removed 0 unused modules.
+
+30. Executing Verilog-2005 frontend: /home/lunarch/orfs-clean/flow/results/sky130hd/riscv32i/base/1_synth_lec.v
+Parsing Verilog input from `/home/lunarch/orfs-clean/flow/results/sky130hd/riscv32i/base/1_synth_lec.v' to AST representation.
+Generating RTLIL representation for module `\riscv'.
+Successfully finished Verilog frontend.
+
+31. Executing HIERARCHY pass (managing design hierarchy).
+
+31.1. Analyzing design hierarchy..
+Top module:  \riscv
+
+31.2. Analyzing design hierarchy..
+Top module:  \riscv
+Removed 0 unused modules.
+
+32. Executing EQUIV_MAKE pass (creating equiv checking module).
+Presumably equivalent wires: suspend_gold (\suspend_gold), suspend_gate (\suspend_gate) -> suspend
+Presumably equivalent wires: memread_gold (\memread_gold), memread_gate (\memread_gate) -> memread
+Presumably equivalent wires: readdata_gold (\readdata_gold), readdata_gate (\readdata_gate) -> readdata
+Presumably equivalent wires: writedata_gold (\writedata_gold), writedata_gate (\writedata_gate) -> writedata
+Presumably equivalent wires: aluout_gold (\aluout_gold), aluout_gate (\aluout_gate) -> aluout
+Presumably equivalent wires: memwrite_gold (\memwrite_gold), memwrite_gate (\memwrite_gate) -> memwrite
+Presumably equivalent wires: instr_gold (\instr_gold), instr_gate (\instr_gate) -> instr
+Presumably equivalent wires: pc_gold (\pc_gold), pc_gate (\pc_gate) -> pc
+Presumably equivalent wires: reset_gold (\reset_gold), reset_gate (\reset_gate) -> reset
+Presumably equivalent wires: clk_gold (\clk_gold), clk_gate (\clk_gate) -> clk
+Changing input Q of cell dp.pcreg.q[9]$_DFF_PP0__gate (sky130_fd_sc_hd__dfrtp_1): \pc_gate [9] -> \pc [9]
+Changing input Q of cell dp.pcreg.q[8]$_DFF_PP0__gate (sky130_fd_sc_hd__dfrtp_1): \pc_gate [8] -> \pc [8]
+Changing input Q of cell dp.pcreg.q[7]$_DFF_PP0__gate (sky130_fd_sc_hd__dfrtp_1): \pc_gate [7] -> \pc [7]
+Changing input Q of cell dp.pcreg.q[6]$_DFF_PP0__gate (sky130_fd_sc_hd__dfrtp_1): \pc_gate [6] -> \pc [6]
+Changing input Q of cell dp.pcreg.q[5]$_DFF_PP0__gate (sky130_fd_sc_hd__dfrtp_1): \pc_gate [5] -> \pc [5]
+Changing input Q of cell dp.pcreg.q[4]$_DFF_PP0__gate (sky130_fd_sc_hd__dfrtp_1): \pc_gate [4] -> \pc [4]
+Changing input Q of cell dp.pcreg.q[3]$_DFF_PP0__gate (sky130_fd_sc_hd__dfrtp_1): \pc_gate [3] -> \pc [3]
+Changing input Q of cell dp.pcreg.q[31]$_DFF_PP0__gate (sky130_fd_sc_hd__dfrtp_1): \pc_gate [31] -> \pc [31]
+Changing input Q of cell dp.pcreg.q[30]$_DFF_PP0__gate (sky130_fd_sc_hd__dfrtp_1): \pc_gate [30] -> \pc [30]
+Changing input Q of cell dp.pcreg.q[2]$_DFF_PP0__gate (sky130_fd_sc_hd__dfrtp_1): \pc_gate [2] -> \pc [2]
+Changing input Q of cell dp.pcreg.q[29]$_DFF_PP0__gate (sky130_fd_sc_hd__dfrtp_1): \pc_gate [29] -> \pc [29]
+Changing input Q of cell dp.pcreg.q[28]$_DFF_PP0__gate (sky130_fd_sc_hd__dfrtp_1): \pc_gate [28] -> \pc [28]
+Changing input Q of cell dp.pcreg.q[27]$_DFF_PP0__gate (sky130_fd_sc_hd__dfrtp_1): \pc_gate [27] -> \pc [27]
+Changing input Q of cell dp.pcreg.q[26]$_DFF_PP0__gate (sky130_fd_sc_hd__dfrtp_1): \pc_gate [26] -> \pc [26]
+Changing input Q of cell dp.pcreg.q[25]$_DFF_PP0__gate (sky130_fd_sc_hd__dfrtp_1): \pc_gate [25] -> \pc [25]
+Changing input Q of cell dp.pcreg.q[24]$_DFF_PP0__gate (sky130_fd_sc_hd__dfrtp_1): \pc_gate [24] -> \pc [24]
+Changing input Q of cell dp.pcreg.q[23]$_DFF_PP0__gate (sky130_fd_sc_hd__dfrtp_1): \pc_gate [23] -> \pc [23]
+Changing input Q of cell dp.pcreg.q[22]$_DFF_PP0__gate (sky130_fd_sc_hd__dfrtp_1): \pc_gate [22] -> \pc [22]
+Changing input Q of cell dp.pcreg.q[21]$_DFF_PP0__gate (sky130_fd_sc_hd__dfrtp_1): \pc_gate [21] -> \pc [21]
+Changing input Q of cell dp.pcreg.q[20]$_DFF_PP0__gate (sky130_fd_sc_hd__dfrtp_1): \pc_gate [20] -> \pc [20]
+Changing input Q of cell dp.pcreg.q[19]$_DFF_PP0__gate (sky130_fd_sc_hd__dfrtp_1): \pc_gate [19] -> \pc [19]
+Changing input Q of cell dp.pcreg.q[18]$_DFF_PP0__gate (sky130_fd_sc_hd__dfrtp_1): \pc_gate [18] -> \pc [18]
+Changing input Q of cell dp.pcreg.q[17]$_DFF_PP0__gate (sky130_fd_sc_hd__dfrtp_1): \pc_gate [17] -> \pc [17]
+Changing input Q of cell dp.pcreg.q[16]$_DFF_PP0__gate (sky130_fd_sc_hd__dfrtp_1): \pc_gate [16] -> \pc [16]
+Changing input Q of cell dp.pcreg.q[15]$_DFF_PP0__gate (sky130_fd_sc_hd__dfrtp_1): \pc_gate [15] -> \pc [15]
+Changing input Q of cell dp.pcreg.q[14]$_DFF_PP0__gate (sky130_fd_sc_hd__dfrtp_1): \pc_gate [14] -> \pc [14]
+Changing input Q of cell dp.pcreg.q[13]$_DFF_PP0__gate (sky130_fd_sc_hd__dfrtp_1): \pc_gate [13] -> \pc [13]
+Changing input Q of cell dp.pcreg.q[12]$_DFF_PP0__gate (sky130_fd_sc_hd__dfrtp_1): \pc_gate [12] -> \pc [12]
+Changing input Q of cell dp.pcreg.q[11]$_DFF_PP0__gate (sky130_fd_sc_hd__dfrtp_1): \pc_gate [11] -> \pc [11]
+Changing input Q of cell dp.pcreg.q[10]$_DFF_PP0__gate (sky130_fd_sc_hd__dfrtp_1): \pc_gate [10] -> \pc [10]
+Changing input X of cell _7757__gate (sky130_fd_sc_hd__buf_4): \writedata_gate [7] -> \writedata [7]
+Changing input X of cell _7756__gate (sky130_fd_sc_hd__buf_4): \writedata_gate [6] -> \writedata [6]
+Changing input X of cell _7755__gate (sky130_fd_sc_hd__buf_4): \writedata_gate [5] -> \writedata [5]
+Changing input X of cell _7754__gate (sky130_fd_sc_hd__buf_4): \writedata_gate [4] -> \writedata [4]
+Changing input X of cell _7753__gate (sky130_fd_sc_hd__buf_4): \writedata_gate [3] -> \writedata [3]
+Changing input X of cell _7752__gate (sky130_fd_sc_hd__buf_4): \writedata_gate [2] -> \writedata [2]
+Changing input X of cell _7751__gate (sky130_fd_sc_hd__buf_4): \writedata_gate [1] -> \writedata [1]
+Changing input X of cell _7750__gate (sky130_fd_sc_hd__buf_4): \writedata_gate [0] -> \writedata [0]
+Changing input X of cell _7749__gate (sky130_fd_sc_hd__buf_4): \pc_gate [1] -> \pc [1]
+Changing input X of cell _7748__gate (sky130_fd_sc_hd__buf_4): \pc_gate [0] -> \pc [0]
+Changing input B of cell _7657__gate (sky130_fd_sc_hd__ha_1): \pc_gate [3] -> \pc [3]
+Changing input A of cell _7657__gate (sky130_fd_sc_hd__ha_1): \pc_gate [2] -> \pc [2]
+Changing input A2 of cell _7636__gate (sky130_fd_sc_hd__o221ai_1): \aluout_gate [31] -> \aluout [31]
+Changing input A1 of cell _7636__gate (sky130_fd_sc_hd__o221ai_1): \memread_gate -> \memread
+Changing input X of cell _7633__gate (sky130_fd_sc_hd__a211o_1): \aluout_gate [31] -> \aluout [31]
+Changing input A1 of cell _7604__gate (sky130_fd_sc_hd__a21oi_1): \pc_gate [31] -> \pc [31]
+Changing input A of cell _7602__gate (sky130_fd_sc_hd__xnor2_1): \pc_gate [31] -> \pc [31]
+Changing input A of cell _7601__gate (sky130_fd_sc_hd__nand3_1): \pc_gate [30] -> \pc [30]
+Changing input Y of cell _7600__gate (sky130_fd_sc_hd__nor2_1): \writedata_gate [31] -> \writedata [31]
+Changing input Y of cell _7543__gate (sky130_fd_sc_hd__nor2_1): \suspend_gate -> \suspend
+Changing input X of cell _7542__gate (sky130_fd_sc_hd__and2_1): \writedata_gate [8] -> \writedata [8]
+Changing input X of cell _7541__gate (sky130_fd_sc_hd__and2_1): \writedata_gate [9] -> \writedata [9]
+Changing input Y of cell _7540__gate (sky130_fd_sc_hd__nor2_1): \writedata_gate [10] -> \writedata [10]
+Changing input Y of cell _7539__gate (sky130_fd_sc_hd__nor2_1): \writedata_gate [11] -> \writedata [11]
+Changing input Y of cell _7538__gate (sky130_fd_sc_hd__nor2_1): \writedata_gate [12] -> \writedata [12]
+Changing input Y of cell _7537__gate (sky130_fd_sc_hd__nor2_1): \writedata_gate [13] -> \writedata [13]
+Changing input X of cell _7536__gate (sky130_fd_sc_hd__and2_1): \writedata_gate [14] -> \writedata [14]
+Changing input C of cell _7535__gate (sky130_fd_sc_hd__nand3_1): \memwrite_gate -> \memwrite
+Changing input Y of cell _7534__gate (sky130_fd_sc_hd__nor2_1): \writedata_gate [15] -> \writedata [15]
+Changing input Y of cell _7532__gate (sky130_fd_sc_hd__nor2_1): \writedata_gate [16] -> \writedata [16]
+Changing input Y of cell _7531__gate (sky130_fd_sc_hd__nor2_1): \writedata_gate [17] -> \writedata [17]
+Changing input X of cell _7530__gate (sky130_fd_sc_hd__and2_1): \writedata_gate [18] -> \writedata [18]
+Changing input X of cell _7529__gate (sky130_fd_sc_hd__and2_1): \writedata_gate [19] -> \writedata [19]
+Changing input Y of cell _7528__gate (sky130_fd_sc_hd__nor2_1): \writedata_gate [20] -> \writedata [20]
+Changing input Y of cell _7527__gate (sky130_fd_sc_hd__nor2_1): \writedata_gate [21] -> \writedata [21]
+Changing input X of cell _7526__gate (sky130_fd_sc_hd__and2_1): \writedata_gate [22] -> \writedata [22]
+Changing input Y of cell _7525__gate (sky130_fd_sc_hd__nor2_1): \writedata_gate [23] -> \writedata [23]
+Changing input Y of cell _7524__gate (sky130_fd_sc_hd__nor2_1): \writedata_gate [24] -> \writedata [24]
+Changing input Y of cell _7523__gate (sky130_fd_sc_hd__nor2_1): \writedata_gate [25] -> \writedata [25]
+Changing input X of cell _7522__gate (sky130_fd_sc_hd__and2_1): \writedata_gate [26] -> \writedata [26]
+Changing input X of cell _7521__gate (sky130_fd_sc_hd__and2_1): \writedata_gate [27] -> \writedata [27]
+Changing input X of cell _7520__gate (sky130_fd_sc_hd__and2_1): \writedata_gate [28] -> \writedata [28]
+Changing input Y of cell _7518__gate (sky130_fd_sc_hd__nor2_1): \writedata_gate [29] -> \writedata [29]
+Changing input Y of cell _7517__gate (sky130_fd_sc_hd__nor2_1): \writedata_gate [30] -> \writedata [30]
+Changing input B of cell _7515__gate (sky130_fd_sc_hd__nand2_1): \memwrite_gate -> \memwrite
+Changing input A of cell _7415__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [2] -> \pc [2]
+Changing input A of cell _7413__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [3] -> \pc [3]
+Changing input A of cell _7410__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [4] -> \pc [4]
+Changing input A of cell _7408__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [5] -> \pc [5]
+Changing input A of cell _7405__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [6] -> \pc [6]
+Changing input A of cell _7403__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [7] -> \pc [7]
+Changing input A of cell _7401__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [8] -> \pc [8]
+Changing input A of cell _7399__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [9] -> \pc [9]
+Changing input A of cell _7396__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [10] -> \pc [10]
+Changing input A of cell _7393__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [11] -> \pc [11]
+Changing input A of cell _7390__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [12] -> \pc [12]
+Changing input A of cell _7388__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [13] -> \pc [13]
+Changing input A of cell _7386__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [14] -> \pc [14]
+Changing input A of cell _7384__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [15] -> \pc [15]
+Changing input A of cell _7382__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [16] -> \pc [16]
+Changing input A of cell _7380__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [17] -> \pc [17]
+Changing input A of cell _7377__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [18] -> \pc [18]
+Changing input A of cell _7374__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [19] -> \pc [19]
+Changing input A of cell _7372__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [20] -> \pc [20]
+Changing input A of cell _7368__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [21] -> \pc [21]
+Changing input A of cell _7364__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [22] -> \pc [22]
+Changing input A of cell _7361__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [23] -> \pc [23]
+Changing input A of cell _7359__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [24] -> \pc [24]
+Changing input A of cell _7357__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [25] -> \pc [25]
+Changing input A of cell _7355__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [26] -> \pc [26]
+Changing input A of cell _7353__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [27] -> \pc [27]
+Changing input A of cell _7351__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [28] -> \pc [28]
+Changing input A of cell _7348__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [29] -> \pc [29]
+Changing input A of cell _7346__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [30] -> \pc [30]
+Changing input B1 of cell _7268__gate (sky130_fd_sc_hd__a221o_1): \aluout_gate [0] -> \aluout [0]
+Changing input B1 of cell _7265__gate (sky130_fd_sc_hd__o221a_2): \aluout_gate [1] -> \aluout [1]
+Changing input B1 of cell _7263__gate (sky130_fd_sc_hd__o221a_2): \aluout_gate [2] -> \aluout [2]
+Changing input A1 of cell _7262__gate (sky130_fd_sc_hd__a22oi_1): \pc_gate [2] -> \pc [2]
+Changing input B1 of cell _7261__gate (sky130_fd_sc_hd__o221a_2): \aluout_gate [3] -> \aluout [3]
+Changing input B1 of cell _7259__gate (sky130_fd_sc_hd__o221a_2): \aluout_gate [4] -> \aluout [4]
+Changing input A2 of cell _7256__gate (sky130_fd_sc_hd__a21oi_1): \aluout_gate [5] -> \aluout [5]
+Changing input A2 of cell _7252__gate (sky130_fd_sc_hd__o211ai_1): \aluout_gate [6] -> \aluout [6]
+Changing input A1 of cell _7252__gate (sky130_fd_sc_hd__o211ai_1): \memread_gate -> \memread
+Changing input B1 of cell _7250__gate (sky130_fd_sc_hd__o221a_2): \aluout_gate [7] -> \aluout [7]
+Changing input B of cell _7242__gate (sky130_fd_sc_hd__nor3_1): \memread_gate -> \memread
+Changing input A1 of cell _7239__gate (sky130_fd_sc_hd__o21ai_0): \aluout_gate [9] -> \aluout [9]
+Changing input A1 of cell _7237__gate (sky130_fd_sc_hd__o211a_1): \aluout_gate [10] -> \aluout [10]
+Changing input A2 of cell _7228__gate (sky130_fd_sc_hd__o21ai_0): \aluout_gate [12] -> \aluout [12]
+Changing input A2 of cell _7223__gate (sky130_fd_sc_hd__o21ai_0): \aluout_gate [13] -> \aluout [13]
+Changing input A1 of cell _7223__gate (sky130_fd_sc_hd__o21ai_0): \memread_gate -> \memread
+Changing input A1 of cell _7220__gate (sky130_fd_sc_hd__o21a_1): \aluout_gate [14] -> \aluout [14]
+Changing input A2 of cell _7211__gate (sky130_fd_sc_hd__o31a_1): \aluout_gate [16] -> \aluout [16]
+Changing input A1 of cell _7211__gate (sky130_fd_sc_hd__o31a_1): \memread_gate -> \memread
+Changing input A1 of cell _7204__gate (sky130_fd_sc_hd__o221ai_1): \aluout_gate [17] -> \aluout [17]
+Changing input A2 of cell _7199__gate (sky130_fd_sc_hd__o21ai_0): \aluout_gate [18] -> \aluout [18]
+Changing input A1 of cell _7199__gate (sky130_fd_sc_hd__o21ai_0): \memread_gate -> \memread
+Changing input A2 of cell _7193__gate (sky130_fd_sc_hd__o221ai_1): \aluout_gate [19] -> \aluout [19]
+Changing input A2 of cell _7189__gate (sky130_fd_sc_hd__o221ai_1): \aluout_gate [20] -> \aluout [20]
+Changing input A2 of cell _7185__gate (sky130_fd_sc_hd__o221ai_1): \aluout_gate [21] -> \aluout [21]
+Changing input A2 of cell _7181__gate (sky130_fd_sc_hd__o221ai_1): \aluout_gate [22] -> \aluout [22]
+Changing input A1 of cell _7171__gate (sky130_fd_sc_hd__o21ai_0): \aluout_gate [24] -> \aluout [24]
+Changing input A2 of cell _7165__gate (sky130_fd_sc_hd__o221ai_1): \aluout_gate [25] -> \aluout [25]
+Changing input A2 of cell _7161__gate (sky130_fd_sc_hd__o221ai_1): \aluout_gate [26] -> \aluout [26]
+Changing input A1 of cell _7161__gate (sky130_fd_sc_hd__o221ai_1): \memread_gate -> \memread
+Changing input A1 of cell _7156__gate (sky130_fd_sc_hd__o221ai_1): \aluout_gate [27] -> \aluout [27]
+Changing input A1 of cell _7144__gate (sky130_fd_sc_hd__o31ai_1): \memread_gate -> \memread
+Changing input A1 of cell _7136__gate (sky130_fd_sc_hd__a211o_1): \aluout_gate [29] -> \aluout [29]
+Changing input A2 of cell _7124__gate (sky130_fd_sc_hd__o22ai_1): \memread_gate -> \memread
+Changing input A1 of cell _7124__gate (sky130_fd_sc_hd__o22ai_1): \aluout_gate [30] -> \aluout [30]
+Changing input A0 of cell _7108__gate (sky130_fd_sc_hd__mux2i_1): \pc_gate [2] -> \pc [2]
+Changing input B of cell _7102__gate (sky130_fd_sc_hd__xnor2_1): \pc_gate [4] -> \pc [4]
+Changing input A of cell _7099__gate (sky130_fd_sc_hd__xor2_1): \pc_gate [5] -> \pc [5]
+Changing input C of cell _7098__gate (sky130_fd_sc_hd__nand3_1): \pc_gate [3] -> \pc [3]
+Changing input B of cell _7098__gate (sky130_fd_sc_hd__nand3_1): \pc_gate [4] -> \pc [4]
+Changing input A of cell _7098__gate (sky130_fd_sc_hd__nand3_1): \pc_gate [2] -> \pc [2]
+Changing input A of cell _7095__gate (sky130_fd_sc_hd__xor2_1): \pc_gate [6] -> \pc [6]
+Changing input C of cell _7094__gate (sky130_fd_sc_hd__nand3_1): \pc_gate [4] -> \pc [4]
+Changing input B of cell _7094__gate (sky130_fd_sc_hd__nand3_1): \pc_gate [5] -> \pc [5]
+Changing input A of cell _7091__gate (sky130_fd_sc_hd__xnor2_1): \pc_gate [7] -> \pc [7]
+Changing input A of cell _7086__gate (sky130_fd_sc_hd__xor2_1): \pc_gate [8] -> \pc [8]
+Changing input A of cell _7079__gate (sky130_fd_sc_hd__xor2_1): \pc_gate [9] -> \pc [9]
+Changing input A of cell _7078__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [8] -> \pc [8]
+Changing input A of cell _7074__gate (sky130_fd_sc_hd__xor2_1): \pc_gate [10] -> \pc [10]
+Changing input C of cell _7073__gate (sky130_fd_sc_hd__nand4_1): \pc_gate [8] -> \pc [8]
+Changing input B of cell _7073__gate (sky130_fd_sc_hd__nand4_1): \pc_gate [9] -> \pc [9]
+Changing input A of cell _7068__gate (sky130_fd_sc_hd__xnor2_1): \pc_gate [11] -> \pc [11]
+Changing input A of cell _7059__gate (sky130_fd_sc_hd__xor2_1): \pc_gate [12] -> \pc [12]
+Changing input A of cell _7058__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [11] -> \pc [11]
+Changing input A of cell _7051__gate (sky130_fd_sc_hd__xor2_1): \pc_gate [13] -> \pc [13]
+Changing input B of cell _7050__gate (sky130_fd_sc_hd__nand3_1): \pc_gate [11] -> \pc [11]
+Changing input A of cell _7050__gate (sky130_fd_sc_hd__nand3_1): \pc_gate [12] -> \pc [12]
+Changing input A of cell _7046__gate (sky130_fd_sc_hd__xor2_1): \pc_gate [14] -> \pc [14]
+Changing input C of cell _7045__gate (sky130_fd_sc_hd__nand4_1): \pc_gate [11] -> \pc [11]
+Changing input B of cell _7045__gate (sky130_fd_sc_hd__nand4_1): \pc_gate [12] -> \pc [12]
+Changing input A of cell _7045__gate (sky130_fd_sc_hd__nand4_1): \pc_gate [13] -> \pc [13]
+Changing input A of cell _7041__gate (sky130_fd_sc_hd__xnor2_1): \pc_gate [15] -> \pc [15]
+Changing input A of cell _7038__gate (sky130_fd_sc_hd__xor2_1): \pc_gate [16] -> \pc [16]
+Changing input A of cell _7037__gate (sky130_fd_sc_hd__nand3_1): \pc_gate [15] -> \pc [15]
+Changing input A of cell _7034__gate (sky130_fd_sc_hd__xor2_1): \pc_gate [17] -> \pc [17]
+Changing input B of cell _7033__gate (sky130_fd_sc_hd__nand3_1): \pc_gate [15] -> \pc [15]
+Changing input A of cell _7033__gate (sky130_fd_sc_hd__nand3_1): \pc_gate [16] -> \pc [16]
+Changing input A of cell _7030__gate (sky130_fd_sc_hd__xnor2_1): \pc_gate [18] -> \pc [18]
+Changing input A of cell _7022__gate (sky130_fd_sc_hd__xor2_1): \pc_gate [19] -> \pc [19]
+Changing input A of cell _7021__gate (sky130_fd_sc_hd__nand3_1): \pc_gate [18] -> \pc [18]
+Changing input A of cell _7011__gate (sky130_fd_sc_hd__xnor2_1): \pc_gate [20] -> \pc [20]
+Changing input A of cell _7004__gate (sky130_fd_sc_hd__xnor2_1): \pc_gate [21] -> \pc [21]
+Changing input A of cell _7000__gate (sky130_fd_sc_hd__xor2_1): \pc_gate [22] -> \pc [22]
+Changing input A of cell _6999__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [21] -> \pc [21]
+Changing input A of cell _6995__gate (sky130_fd_sc_hd__xnor2_1): \pc_gate [23] -> \pc [23]
+Changing input B of cell _6994__gate (sky130_fd_sc_hd__and3_1): \pc_gate [21] -> \pc [21]
+Changing input A of cell _6994__gate (sky130_fd_sc_hd__and3_1): \pc_gate [22] -> \pc [22]
+Changing input A of cell _6990__gate (sky130_fd_sc_hd__xor2_1): \pc_gate [24] -> \pc [24]
+Changing input A of cell _6985__gate (sky130_fd_sc_hd__xnor2_1): \pc_gate [25] -> \pc [25]
+Changing input A of cell _6982__gate (sky130_fd_sc_hd__xnor2_1): \pc_gate [26] -> \pc [26]
+Changing input A of cell _6980__gate (sky130_fd_sc_hd__inv_1): \pc_gate [25] -> \pc [25]
+Changing input A of cell _6977__gate (sky130_fd_sc_hd__xor2_1): \pc_gate [27] -> \pc [27]
+Changing input B of cell _6976__gate (sky130_fd_sc_hd__nand3_1): \pc_gate [25] -> \pc [25]
+Changing input A of cell _6976__gate (sky130_fd_sc_hd__nand3_1): \pc_gate [26] -> \pc [26]
+Changing input A of cell _6971__gate (sky130_fd_sc_hd__xnor2_1): \pc_gate [28] -> \pc [28]
+Changing input A of cell _6930__gate (sky130_fd_sc_hd__xor2_1): \pc_gate [29] -> \pc [29]
+Changing input A of cell _6929__gate (sky130_fd_sc_hd__nand3_1): \pc_gate [28] -> \pc [28]
+Changing input A of cell _6928__gate (sky130_fd_sc_hd__and3_1): \pc_gate [24] -> \pc [24]
+Changing input B of cell _6924__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [3] -> \pc [3]
+Changing input A of cell _6924__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [2] -> \pc [2]
+Changing input A of cell _6874__gate (sky130_fd_sc_hd__xnor2_1): \pc_gate [30] -> \pc [30]
+Changing input B of cell _6872__gate (sky130_fd_sc_hd__and3_1): \pc_gate [28] -> \pc [28]
+Changing input A of cell _6872__gate (sky130_fd_sc_hd__and3_1): \pc_gate [29] -> \pc [29]
+Changing input C of cell _6871__gate (sky130_fd_sc_hd__and3_1): \pc_gate [25] -> \pc [25]
+Changing input B of cell _6871__gate (sky130_fd_sc_hd__and3_1): \pc_gate [26] -> \pc [26]
+Changing input A of cell _6871__gate (sky130_fd_sc_hd__and3_1): \pc_gate [27] -> \pc [27]
+Changing input A of cell _6870__gate (sky130_fd_sc_hd__nand3_1): \pc_gate [24] -> \pc [24]
+Changing input C of cell _6869__gate (sky130_fd_sc_hd__and3_1): \pc_gate [21] -> \pc [21]
+Changing input B of cell _6869__gate (sky130_fd_sc_hd__and3_1): \pc_gate [22] -> \pc [22]
+Changing input A of cell _6869__gate (sky130_fd_sc_hd__and3_1): \pc_gate [23] -> \pc [23]
+Changing input A of cell _6867__gate (sky130_fd_sc_hd__nand2_1): \pc_gate [20] -> \pc [20]
+Changing input B of cell _6866__gate (sky130_fd_sc_hd__and3_1): \pc_gate [18] -> \pc [18]
+Changing input A of cell _6866__gate (sky130_fd_sc_hd__and3_1): \pc_gate [19] -> \pc [19]
+Changing input C of cell _6865__gate (sky130_fd_sc_hd__and3_1): \pc_gate [15] -> \pc [15]
+Changing input B of cell _6865__gate (sky130_fd_sc_hd__and3_1): \pc_gate [16] -> \pc [16]
+Changing input A of cell _6865__gate (sky130_fd_sc_hd__and3_1): \pc_gate [17] -> \pc [17]
+Changing input D of cell _6864__gate (sky130_fd_sc_hd__nand4_1): \pc_gate [11] -> \pc [11]
+Changing input C of cell _6864__gate (sky130_fd_sc_hd__nand4_1): \pc_gate [12] -> \pc [12]
+Changing input B of cell _6864__gate (sky130_fd_sc_hd__nand4_1): \pc_gate [13] -> \pc [13]
+Changing input A of cell _6864__gate (sky130_fd_sc_hd__nand4_1): \pc_gate [14] -> \pc [14]
+Changing input C of cell _6863__gate (sky130_fd_sc_hd__nand3_1): \pc_gate [8] -> \pc [8]
+Changing input B of cell _6863__gate (sky130_fd_sc_hd__nand3_1): \pc_gate [9] -> \pc [9]
+Changing input A of cell _6863__gate (sky130_fd_sc_hd__nand3_1): \pc_gate [10] -> \pc [10]
+Changing input C of cell _6860__gate (sky130_fd_sc_hd__nand3_1): \pc_gate [4] -> \pc [4]
+Changing input B of cell _6860__gate (sky130_fd_sc_hd__nand3_1): \pc_gate [5] -> \pc [5]
+Changing input A of cell _6860__gate (sky130_fd_sc_hd__nand3_1): \pc_gate [6] -> \pc [6]
+Changing input A of cell _6859__gate (sky130_fd_sc_hd__inv_1): \pc_gate [7] -> \pc [7]
+Changing input Y of cell _6858__gate (sky130_fd_sc_hd__o22ai_1): \aluout_gate [0] -> \aluout [0]
+Changing input Y of cell _6830__gate (sky130_fd_sc_hd__o22ai_1): \aluout_gate [1] -> \aluout [1]
+Changing input X of cell _6815__gate (sky130_fd_sc_hd__o221a_2): \aluout_gate [2] -> \aluout [2]
+Changing input X of cell _6800__gate (sky130_fd_sc_hd__o22a_1): \aluout_gate [3] -> \aluout [3]
+Changing input Y of cell _6785__gate (sky130_fd_sc_hd__a22oi_1): \aluout_gate [4] -> \aluout [4]
+Changing input X of cell _6771__gate (sky130_fd_sc_hd__o22a_1): \aluout_gate [5] -> \aluout [5]
+Changing input X of cell _6756__gate (sky130_fd_sc_hd__a221o_1): \aluout_gate [6] -> \aluout [6]
+Changing input Y of cell _6739__gate (sky130_fd_sc_hd__o221ai_1): \aluout_gate [7] -> \aluout [7]
+Changing input Y of cell _6725__gate (sky130_fd_sc_hd__a21oi_1): \aluout_gate [8] -> \aluout [8]
+Changing input Y of cell _6707__gate (sky130_fd_sc_hd__o2bb2ai_1): \aluout_gate [9] -> \aluout [9]
+Changing input Y of cell _6691__gate (sky130_fd_sc_hd__o221ai_1): \aluout_gate [10] -> \aluout [10]
+Changing input X of cell _6673__gate (sky130_fd_sc_hd__or2_2): \aluout_gate [11] -> \aluout [11]
+Changing input Y of cell _6660__gate (sky130_fd_sc_hd__o22ai_1): \aluout_gate [12] -> \aluout [12]
+Changing input Y of cell _6645__gate (sky130_fd_sc_hd__o211ai_1): \aluout_gate [13] -> \aluout [13]
+Changing input Y of cell _6626__gate (sky130_fd_sc_hd__nand2_1): \aluout_gate [14] -> \aluout [14]
+Changing input X of cell _6607__gate (sky130_fd_sc_hd__a21o_1): \aluout_gate [15] -> \aluout [15]
+Changing input Y of cell _6587__gate (sky130_fd_sc_hd__o32ai_1): \aluout_gate [16] -> \aluout [16]
+Changing input Y of cell _6561__gate (sky130_fd_sc_hd__o22ai_1): \aluout_gate [17] -> \aluout [17]
+Changing input Y of cell _6542__gate (sky130_fd_sc_hd__o2bb2ai_1): \aluout_gate [18] -> \aluout [18]
+Changing input Y of cell _6521__gate (sky130_fd_sc_hd__o22ai_1): \aluout_gate [19] -> \aluout [19]
+Changing input Y of cell _6494__gate (sky130_fd_sc_hd__o22ai_1): \aluout_gate [20] -> \aluout [20]
+Changing input Y of cell _6477__gate (sky130_fd_sc_hd__o2bb2ai_1): \aluout_gate [21] -> \aluout [21]
+Changing input Y of cell _6459__gate (sky130_fd_sc_hd__o22ai_1): \aluout_gate [22] -> \aluout [22]
+Changing input X of cell _6437__gate (sky130_fd_sc_hd__a21o_1): \aluout_gate [23] -> \aluout [23]
+Changing input Y of cell _6412__gate (sky130_fd_sc_hd__o2bb2ai_1): \aluout_gate [24] -> \aluout [24]
+Changing input Y of cell _6385__gate (sky130_fd_sc_hd__o22ai_1): \aluout_gate [25] -> \aluout [25]
+Changing input Y of cell _6353__gate (sky130_fd_sc_hd__o2bb2ai_1): \aluout_gate [26] -> \aluout [26]
+Changing input Y of cell _6332__gate (sky130_fd_sc_hd__o32ai_1): \aluout_gate [27] -> \aluout [27]
+Changing input X of cell _6298__gate (sky130_fd_sc_hd__or2_2): \aluout_gate [28] -> \aluout [28]
+Changing input Y of cell _6243__gate (sky130_fd_sc_hd__o2bb2ai_1): \aluout_gate [29] -> \aluout [29]
+Changing input X of cell _6140__gate (sky130_fd_sc_hd__clkbuf_1): \memread_gate -> \memread
+Changing input Y of cell _6135__gate (sky130_fd_sc_hd__o22ai_1): \aluout_gate [30] -> \aluout [30]
+Changing input B1 of cell _6037__gate (sky130_fd_sc_hd__a221oi_1): \memwrite_gate -> \memwrite
+Changing input B1 of cell _6026__gate (sky130_fd_sc_hd__a221oi_1): \memwrite_gate -> \memwrite
+Changing input Y of cell _6024__gate (sky130_fd_sc_hd__nor2_1): \memwrite_gate -> \memwrite
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$18384_gold (sky130_fd_sc_hd__nor2_1): \writedata_gold [7] -> \writedata [7]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$18435_gold (sky130_fd_sc_hd__clkinv_1): \writedata_gold [6] -> \writedata [6]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$18473_gold (sky130_fd_sc_hd__maj3_1): \writedata_gold [7] -> \writedata [7]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$18475_gold (sky130_fd_sc_hd__maj3_1): \writedata_gold [7] -> \writedata [7]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$18492_gold (sky130_fd_sc_hd__a21boi_0): \writedata_gold [5] -> \writedata [5]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$18546_gold (sky130_fd_sc_hd__clkinv_1): \writedata_gold [4] -> \writedata [4]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$18577_gold (sky130_fd_sc_hd__maj3_1): \writedata_gold [5] -> \writedata [5]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$18580_gold (sky130_fd_sc_hd__maj3_1): \writedata_gold [5] -> \writedata [5]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$18598_gold (sky130_fd_sc_hd__a21oi_1): \writedata_gold [3] -> \writedata [3]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$18645_gold (sky130_fd_sc_hd__clkinv_1): \writedata_gold [2] -> \writedata [2]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$18676_gold (sky130_fd_sc_hd__maj3_1): \writedata_gold [3] -> \writedata [3]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$18678_gold (sky130_fd_sc_hd__maj3_1): \writedata_gold [3] -> \writedata [3]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$18731_gold (sky130_fd_sc_hd__clkinv_1): \writedata_gold [1] -> \writedata [1]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$18783_gold (sky130_fd_sc_hd__clkinv_1): \writedata_gold [0] -> \writedata [0]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$18810_gold (sky130_fd_sc_hd__clkinv_1): \memwrite_gold -> \memwrite
+Changing input B1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$18811_gold (sky130_fd_sc_hd__a22oi_1): \memwrite_gold -> \memwrite
+Changing input A_N of cell $abc$16994$auto$blifparse.cc:397:parse_blif$18818_gold (sky130_fd_sc_hd__nand2b_1): \pc_gold [0] -> \pc [0]
+Changing input A0 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$18823_gold (sky130_fd_sc_hd__mux2i_1): \pc_gold [1] -> \pc [1]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$18826_gold (sky130_fd_sc_hd__mux2_1): \pc_gold [1] -> \pc [1]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$18828_gold (sky130_fd_sc_hd__mux2_1): \pc_gold [0] -> \pc [0]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$18830_gold (sky130_fd_sc_hd__clkinv_1): \memread_gold -> \memread
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$18860_gold (sky130_fd_sc_hd__nand2_1): \writedata_gold [0] -> \writedata [0]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$18901_gold (sky130_fd_sc_hd__a21o_1): \writedata_gold [3] -> \writedata [3]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$18902_gold (sky130_fd_sc_hd__a21oi_1): \writedata_gold [3] -> \writedata [3]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$18988_gold (sky130_fd_sc_hd__o21ai_0): \aluout_gold [2] -> \aluout [2]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$18989_gold (sky130_fd_sc_hd__nor2_1): \memread_gold -> \memread
+Changing input B of cell $abc$16994$auto$blifparse.cc:397:parse_blif$18989_gold (sky130_fd_sc_hd__nor2_1): \aluout_gold [2] -> \aluout [2]
+Changing input A0 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$18994_gold (sky130_fd_sc_hd__mux2i_1): \pc_gold [2] -> \pc [2]
+Changing input A0 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$18998_gold (sky130_fd_sc_hd__mux2_1): \pc_gold [2] -> \pc [2]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19069_gold (sky130_fd_sc_hd__a21oi_1): \aluout_gold [3] -> \aluout [3]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19070_gold (sky130_fd_sc_hd__nor2_1): \memread_gold -> \memread
+Changing input B of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19070_gold (sky130_fd_sc_hd__nor2_1): \aluout_gold [3] -> \aluout [3]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19072_gold (sky130_fd_sc_hd__nand2_1): \pc_gold [2] -> \pc [2]
+Changing input B of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19072_gold (sky130_fd_sc_hd__nand2_1): \pc_gold [3] -> \pc [3]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19073_gold (sky130_fd_sc_hd__xor2_1): \pc_gold [2] -> \pc [2]
+Changing input B of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19073_gold (sky130_fd_sc_hd__xor2_1): \pc_gold [3] -> \pc [3]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19076_gold (sky130_fd_sc_hd__a21oi_1): \pc_gold [3] -> \pc [3]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19121_gold (sky130_fd_sc_hd__a31oi_1): \aluout_gold [4] -> \aluout [4]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19122_gold (sky130_fd_sc_hd__nor2_1): \memread_gold -> \memread
+Changing input B of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19122_gold (sky130_fd_sc_hd__nor2_1): \aluout_gold [4] -> \aluout [4]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19124_gold (sky130_fd_sc_hd__xnor2_1): \pc_gold [4] -> \pc [4]
+Changing input A0 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19125_gold (sky130_fd_sc_hd__mux2i_1): \pc_gold [4] -> \pc [4]
+Changing input B of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19377_gold (sky130_fd_sc_hd__nor2_1): \memwrite_gold -> \memwrite
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19403_gold (sky130_fd_sc_hd__nand2_1): \writedata_gold [5] -> \writedata [5]
+Changing input X of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19451_gold (sky130_fd_sc_hd__o31a_1): \aluout_gold [30] -> \aluout [30]
+Changing input X of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19508_gold (sky130_fd_sc_hd__o31a_1): \aluout_gold [29] -> \aluout [29]
+Changing input X of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19533_gold (sky130_fd_sc_hd__o32a_1): \aluout_gold [28] -> \aluout [28]
+Changing input X of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19564_gold (sky130_fd_sc_hd__o31a_1): \aluout_gold [27] -> \aluout [27]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19581_gold (sky130_fd_sc_hd__a21oi_1): \aluout_gold [26] -> \aluout [26]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19605_gold (sky130_fd_sc_hd__a31oi_1): \aluout_gold [25] -> \aluout [25]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19623_gold (sky130_fd_sc_hd__a21oi_1): \aluout_gold [24] -> \aluout [24]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19643_gold (sky130_fd_sc_hd__a31oi_1): \aluout_gold [23] -> \aluout [23]
+Changing input X of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19657_gold (sky130_fd_sc_hd__o32a_1): \aluout_gold [22] -> \aluout [22]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19673_gold (sky130_fd_sc_hd__a31oi_1): \aluout_gold [21] -> \aluout [21]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19684_gold (sky130_fd_sc_hd__a21oi_1): \aluout_gold [20] -> \aluout [20]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19695_gold (sky130_fd_sc_hd__a31oi_1): \aluout_gold [19] -> \aluout [19]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19704_gold (sky130_fd_sc_hd__nor2_1): \aluout_gold [18] -> \aluout [18]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19719_gold (sky130_fd_sc_hd__a31oi_1): \aluout_gold [17] -> \aluout [17]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19734_gold (sky130_fd_sc_hd__a22oi_1): \aluout_gold [16] -> \aluout [16]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19749_gold (sky130_fd_sc_hd__a31oi_1): \aluout_gold [15] -> \aluout [15]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19761_gold (sky130_fd_sc_hd__a31oi_1): \aluout_gold [14] -> \aluout [14]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19777_gold (sky130_fd_sc_hd__a31oi_1): \aluout_gold [13] -> \aluout [13]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19785_gold (sky130_fd_sc_hd__a21oi_1): \aluout_gold [12] -> \aluout [12]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19795_gold (sky130_fd_sc_hd__nor2_1): \aluout_gold [11] -> \aluout [11]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19805_gold (sky130_fd_sc_hd__a21oi_1): \aluout_gold [10] -> \aluout [10]
+Changing input X of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19819_gold (sky130_fd_sc_hd__o31a_1): \aluout_gold [9] -> \aluout [9]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19830_gold (sky130_fd_sc_hd__a21oi_1): \aluout_gold [8] -> \aluout [8]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19842_gold (sky130_fd_sc_hd__a22oi_1): \aluout_gold [7] -> \aluout [7]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19853_gold (sky130_fd_sc_hd__a31oi_1): \aluout_gold [6] -> \aluout [6]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19865_gold (sky130_fd_sc_hd__a31oi_1): \aluout_gold [5] -> \aluout [5]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19878_gold (sky130_fd_sc_hd__a31oi_1): \aluout_gold [1] -> \aluout [1]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19906_gold (sky130_fd_sc_hd__nor2_1): \aluout_gold [0] -> \aluout [0]
+Changing input A0 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19909_gold (sky130_fd_sc_hd__mux2i_1): \pc_gold [0] -> \pc [0]
+Changing input A0 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19911_gold (sky130_fd_sc_hd__mux2i_1): \pc_gold [6] -> \pc [6]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19914_gold (sky130_fd_sc_hd__o21ai_0): \pc_gold [5] -> \pc [5]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19921_gold (sky130_fd_sc_hd__o21ai_0): \pc_gold [7] -> \pc [7]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19922_gold (sky130_fd_sc_hd__o211ai_1): \pc_gold [7] -> \pc [7]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19926_gold (sky130_fd_sc_hd__nand4_1): \pc_gold [2] -> \pc [2]
+Changing input B of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19926_gold (sky130_fd_sc_hd__nand4_1): \pc_gold [3] -> \pc [3]
+Changing input C of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19926_gold (sky130_fd_sc_hd__nand4_1): \pc_gold [4] -> \pc [4]
+Changing input D of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19926_gold (sky130_fd_sc_hd__nand4_1): \pc_gold [5] -> \pc [5]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19927_gold (sky130_fd_sc_hd__lpflow_isobufsrc_1): \pc_gold [6] -> \pc [6]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19928_gold (sky130_fd_sc_hd__xor2_1): \pc_gold [7] -> \pc [7]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19932_gold (sky130_fd_sc_hd__xnor2_1): \pc_gold [6] -> \pc [6]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19935_gold (sky130_fd_sc_hd__a31oi_1): \pc_gold [2] -> \pc [2]
+Changing input A2 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19935_gold (sky130_fd_sc_hd__a31oi_1): \pc_gold [3] -> \pc [3]
+Changing input A3 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19935_gold (sky130_fd_sc_hd__a31oi_1): \pc_gold [4] -> \pc [4]
+Changing input B1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19935_gold (sky130_fd_sc_hd__a31oi_1): \pc_gold [5] -> \pc [5]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19939_gold (sky130_fd_sc_hd__nor2_1): \memread_gold -> \memread
+Changing input B of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19939_gold (sky130_fd_sc_hd__nor2_1): \aluout_gold [5] -> \aluout [5]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19944_gold (sky130_fd_sc_hd__nor2_1): \memread_gold -> \memread
+Changing input B of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19944_gold (sky130_fd_sc_hd__nor2_1): \aluout_gold [6] -> \aluout [6]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19949_gold (sky130_fd_sc_hd__nor2_1): \memread_gold -> \memread
+Changing input B of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19949_gold (sky130_fd_sc_hd__nor2_1): \aluout_gold [7] -> \aluout [7]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19955_gold (sky130_fd_sc_hd__nor2_1): \writedata_gold [30] -> \writedata [30]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19956_gold (sky130_fd_sc_hd__nor2_1): \writedata_gold [29] -> \writedata [29]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19957_gold (sky130_fd_sc_hd__nor2_1): \writedata_gold [28] -> \writedata [28]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19958_gold (sky130_fd_sc_hd__nor2_1): \writedata_gold [27] -> \writedata [27]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19959_gold (sky130_fd_sc_hd__nor2_1): \writedata_gold [26] -> \writedata [26]
+Changing input X of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19960_gold (sky130_fd_sc_hd__lpflow_isobufsrc_1): \writedata_gold [25] -> \writedata [25]
+Changing input X of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19961_gold (sky130_fd_sc_hd__lpflow_isobufsrc_1): \writedata_gold [24] -> \writedata [24]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19962_gold (sky130_fd_sc_hd__nor2_1): \writedata_gold [23] -> \writedata [23]
+Changing input X of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19963_gold (sky130_fd_sc_hd__lpflow_isobufsrc_1): \writedata_gold [22] -> \writedata [22]
+Changing input X of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19964_gold (sky130_fd_sc_hd__lpflow_isobufsrc_1): \writedata_gold [21] -> \writedata [21]
+Changing input X of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19965_gold (sky130_fd_sc_hd__lpflow_isobufsrc_1): \writedata_gold [20] -> \writedata [20]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19966_gold (sky130_fd_sc_hd__nor2_1): \writedata_gold [19] -> \writedata [19]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19967_gold (sky130_fd_sc_hd__nor2_1): \writedata_gold [18] -> \writedata [18]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19968_gold (sky130_fd_sc_hd__nor2_1): \writedata_gold [17] -> \writedata [17]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19969_gold (sky130_fd_sc_hd__nor2_1): \writedata_gold [16] -> \writedata [16]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19971_gold (sky130_fd_sc_hd__nor2_1): \writedata_gold [15] -> \writedata [15]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19972_gold (sky130_fd_sc_hd__nor2_1): \writedata_gold [14] -> \writedata [14]
+Changing input X of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19973_gold (sky130_fd_sc_hd__lpflow_isobufsrc_1): \writedata_gold [13] -> \writedata [13]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19974_gold (sky130_fd_sc_hd__nor2_1): \writedata_gold [12] -> \writedata [12]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19975_gold (sky130_fd_sc_hd__nor2_1): \writedata_gold [11] -> \writedata [11]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19976_gold (sky130_fd_sc_hd__nor2_1): \writedata_gold [10] -> \writedata [10]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19977_gold (sky130_fd_sc_hd__nor2_1): \writedata_gold [9] -> \writedata [9]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19978_gold (sky130_fd_sc_hd__nor2_1): \writedata_gold [8] -> \writedata [8]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19979_gold (sky130_fd_sc_hd__nand2_1): \pc_gold [26] -> \pc [26]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19983_gold (sky130_fd_sc_hd__nand2_1): \pc_gold [25] -> \pc [25]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19988_gold (sky130_fd_sc_hd__a21oi_1): \pc_gold [24] -> \pc [24]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19992_gold (sky130_fd_sc_hd__nand2_1): \pc_gold [23] -> \pc [23]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19993_gold (sky130_fd_sc_hd__nor2_1): \pc_gold [23] -> \pc [23]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$19996_gold (sky130_fd_sc_hd__nand2_1): \pc_gold [22] -> \pc [22]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20000_gold (sky130_fd_sc_hd__nor2_1): \pc_gold [21] -> \pc [21]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20005_gold (sky130_fd_sc_hd__nand2_1): \pc_gold [20] -> \pc [20]
+Changing input A0 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20009_gold (sky130_fd_sc_hd__mux2i_1): \pc_gold [19] -> \pc [19]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20014_gold (sky130_fd_sc_hd__a21oi_1): \pc_gold [18] -> \pc [18]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20019_gold (sky130_fd_sc_hd__nand2_1): \pc_gold [17] -> \pc [17]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20020_gold (sky130_fd_sc_hd__nor2_1): \pc_gold [17] -> \pc [17]
+Changing input A0 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20024_gold (sky130_fd_sc_hd__mux2i_1): \pc_gold [16] -> \pc [16]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20028_gold (sky130_fd_sc_hd__a21oi_1): \pc_gold [15] -> \pc [15]
+Changing input A0 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20033_gold (sky130_fd_sc_hd__mux2i_1): \pc_gold [14] -> \pc [14]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20039_gold (sky130_fd_sc_hd__and2_0): \pc_gold [13] -> \pc [13]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20044_gold (sky130_fd_sc_hd__o21ai_0): \pc_gold [12] -> \pc [12]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20045_gold (sky130_fd_sc_hd__o211ai_1): \pc_gold [12] -> \pc [12]
+Changing input A0 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20047_gold (sky130_fd_sc_hd__mux2i_1): \pc_gold [11] -> \pc [11]
+Changing input A0 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20050_gold (sky130_fd_sc_hd__mux2i_1): \pc_gold [10] -> \pc [10]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20054_gold (sky130_fd_sc_hd__o21ai_0): \pc_gold [9] -> \pc [9]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20058_gold (sky130_fd_sc_hd__a21oi_1): \pc_gold [8] -> \pc [8]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20092_gold (sky130_fd_sc_hd__nand2_1): \pc_gold [27] -> \pc [27]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20093_gold (sky130_fd_sc_hd__nor2_1): \pc_gold [27] -> \pc [27]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20098_gold (sky130_fd_sc_hd__nand3_1): \pc_gold [7] -> \pc [7]
+Changing input B of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20098_gold (sky130_fd_sc_hd__nand3_1): \pc_gold [8] -> \pc [8]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20099_gold (sky130_fd_sc_hd__lpflow_isobufsrc_1): \pc_gold [9] -> \pc [9]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20100_gold (sky130_fd_sc_hd__nand3_1): \pc_gold [11] -> \pc [11]
+Changing input B of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20100_gold (sky130_fd_sc_hd__nand3_1): \pc_gold [10] -> \pc [10]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20101_gold (sky130_fd_sc_hd__lpflow_isobufsrc_1): \pc_gold [12] -> \pc [12]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20102_gold (sky130_fd_sc_hd__nand3_1): \pc_gold [14] -> \pc [14]
+Changing input B of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20102_gold (sky130_fd_sc_hd__nand3_1): \pc_gold [13] -> \pc [13]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20103_gold (sky130_fd_sc_hd__lpflow_isobufsrc_1): \pc_gold [15] -> \pc [15]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20104_gold (sky130_fd_sc_hd__nand3_1): \pc_gold [17] -> \pc [17]
+Changing input B of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20104_gold (sky130_fd_sc_hd__nand3_1): \pc_gold [16] -> \pc [16]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20105_gold (sky130_fd_sc_hd__lpflow_isobufsrc_1): \pc_gold [18] -> \pc [18]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20106_gold (sky130_fd_sc_hd__nand3_1): \pc_gold [20] -> \pc [20]
+Changing input B of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20106_gold (sky130_fd_sc_hd__nand3_1): \pc_gold [19] -> \pc [19]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20107_gold (sky130_fd_sc_hd__lpflow_isobufsrc_1): \pc_gold [21] -> \pc [21]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20108_gold (sky130_fd_sc_hd__nand3_1): \pc_gold [23] -> \pc [23]
+Changing input B of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20108_gold (sky130_fd_sc_hd__nand3_1): \pc_gold [22] -> \pc [22]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20109_gold (sky130_fd_sc_hd__lpflow_isobufsrc_1): \pc_gold [24] -> \pc [24]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20110_gold (sky130_fd_sc_hd__nand3_1): \pc_gold [26] -> \pc [26]
+Changing input B of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20110_gold (sky130_fd_sc_hd__nand3_1): \pc_gold [25] -> \pc [25]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20111_gold (sky130_fd_sc_hd__lpflow_isobufsrc_1): \pc_gold [27] -> \pc [27]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20112_gold (sky130_fd_sc_hd__xor2_1): \pc_gold [27] -> \pc [27]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20121_gold (sky130_fd_sc_hd__nand2_1): \memread_gold -> \memread
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20124_gold (sky130_fd_sc_hd__o21ai_0): \memread_gold -> \memread
+Changing input A2 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20124_gold (sky130_fd_sc_hd__o21ai_0): \aluout_gold [27] -> \aluout [27]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20126_gold (sky130_fd_sc_hd__nor2_1): \memread_gold -> \memread
+Changing input B of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20126_gold (sky130_fd_sc_hd__nor2_1): \aluout_gold [8] -> \aluout [8]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20128_gold (sky130_fd_sc_hd__a21o_1): \pc_gold [7] -> \pc [7]
+Changing input B1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20128_gold (sky130_fd_sc_hd__a21o_1): \pc_gold [8] -> \pc [8]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20135_gold (sky130_fd_sc_hd__nor2_1): \memread_gold -> \memread
+Changing input B of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20135_gold (sky130_fd_sc_hd__nor2_1): \aluout_gold [9] -> \aluout [9]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20139_gold (sky130_fd_sc_hd__xnor2_1): \pc_gold [9] -> \pc [9]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20144_gold (sky130_fd_sc_hd__a21oi_1): \pc_gold [25] -> \pc [25]
+Changing input B1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20144_gold (sky130_fd_sc_hd__a21oi_1): \pc_gold [26] -> \pc [26]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20150_gold (sky130_fd_sc_hd__o21ai_0): \memread_gold -> \memread
+Changing input A2 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20150_gold (sky130_fd_sc_hd__o21ai_0): \aluout_gold [26] -> \aluout [26]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20152_gold (sky130_fd_sc_hd__nor2_1): \memread_gold -> \memread
+Changing input B of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20152_gold (sky130_fd_sc_hd__nor2_1): \aluout_gold [10] -> \aluout [10]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20155_gold (sky130_fd_sc_hd__xor2_1): \pc_gold [10] -> \pc [10]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20161_gold (sky130_fd_sc_hd__xnor2_1): \pc_gold [25] -> \pc [25]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20165_gold (sky130_fd_sc_hd__nor2_1): \memread_gold -> \memread
+Changing input B of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20165_gold (sky130_fd_sc_hd__nor2_1): \aluout_gold [25] -> \aluout [25]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20170_gold (sky130_fd_sc_hd__nor2_1): \memread_gold -> \memread
+Changing input B of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20170_gold (sky130_fd_sc_hd__nor2_1): \aluout_gold [11] -> \aluout [11]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20174_gold (sky130_fd_sc_hd__a21oi_1): \pc_gold [10] -> \pc [10]
+Changing input B1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20174_gold (sky130_fd_sc_hd__a21oi_1): \pc_gold [11] -> \pc [11]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20179_gold (sky130_fd_sc_hd__nor2_1): \memread_gold -> \memread
+Changing input B of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20179_gold (sky130_fd_sc_hd__nor2_1): \aluout_gold [12] -> \aluout [12]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20182_gold (sky130_fd_sc_hd__xnor2_1): \pc_gold [12] -> \pc [12]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20186_gold (sky130_fd_sc_hd__nor2_1): \memread_gold -> \memread
+Changing input B of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20186_gold (sky130_fd_sc_hd__nor2_1): \aluout_gold [13] -> \aluout [13]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20190_gold (sky130_fd_sc_hd__xor2_1): \pc_gold [13] -> \pc [13]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20194_gold (sky130_fd_sc_hd__nor2_1): \memread_gold -> \memread
+Changing input B of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20194_gold (sky130_fd_sc_hd__nor2_1): \aluout_gold [14] -> \aluout [14]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20197_gold (sky130_fd_sc_hd__a21oi_1): \pc_gold [13] -> \pc [13]
+Changing input B1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20197_gold (sky130_fd_sc_hd__a21oi_1): \pc_gold [14] -> \pc [14]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20203_gold (sky130_fd_sc_hd__xnor2_1): \pc_gold [24] -> \pc [24]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20208_gold (sky130_fd_sc_hd__o21ai_0): \memread_gold -> \memread
+Changing input A2 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20208_gold (sky130_fd_sc_hd__o21ai_0): \aluout_gold [24] -> \aluout [24]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20212_gold (sky130_fd_sc_hd__xnor2_1): \pc_gold [15] -> \pc [15]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20215_gold (sky130_fd_sc_hd__nor2_1): \memread_gold -> \memread
+Changing input B of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20215_gold (sky130_fd_sc_hd__nor2_1): \aluout_gold [15] -> \aluout [15]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20220_gold (sky130_fd_sc_hd__a21o_1): \pc_gold [22] -> \pc [22]
+Changing input B1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20220_gold (sky130_fd_sc_hd__a21o_1): \pc_gold [23] -> \pc [23]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20227_gold (sky130_fd_sc_hd__o21ai_0): \memread_gold -> \memread
+Changing input A2 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20227_gold (sky130_fd_sc_hd__o21ai_0): \aluout_gold [23] -> \aluout [23]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20230_gold (sky130_fd_sc_hd__xnor2_1): \pc_gold [22] -> \pc [22]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20236_gold (sky130_fd_sc_hd__o21ai_0): \memread_gold -> \memread
+Changing input A2 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20236_gold (sky130_fd_sc_hd__o21ai_0): \aluout_gold [22] -> \aluout [22]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20241_gold (sky130_fd_sc_hd__xor2_1): \pc_gold [21] -> \pc [21]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20247_gold (sky130_fd_sc_hd__o21ai_0): \memread_gold -> \memread
+Changing input A2 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20247_gold (sky130_fd_sc_hd__o21ai_0): \aluout_gold [21] -> \aluout [21]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20251_gold (sky130_fd_sc_hd__a21o_1): \pc_gold [19] -> \pc [19]
+Changing input B1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20251_gold (sky130_fd_sc_hd__a21o_1): \pc_gold [20] -> \pc [20]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20258_gold (sky130_fd_sc_hd__o21ai_0): \memread_gold -> \memread
+Changing input A2 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20258_gold (sky130_fd_sc_hd__o21ai_0): \aluout_gold [20] -> \aluout [20]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20262_gold (sky130_fd_sc_hd__xnor2_1): \pc_gold [19] -> \pc [19]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20268_gold (sky130_fd_sc_hd__o21ai_0): \memread_gold -> \memread
+Changing input A2 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20268_gold (sky130_fd_sc_hd__o21ai_0): \aluout_gold [19] -> \aluout [19]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20272_gold (sky130_fd_sc_hd__xor2_1): \pc_gold [18] -> \pc [18]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20278_gold (sky130_fd_sc_hd__o21ai_0): \memread_gold -> \memread
+Changing input A2 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20278_gold (sky130_fd_sc_hd__o21ai_0): \aluout_gold [18] -> \aluout [18]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20282_gold (sky130_fd_sc_hd__a21o_1): \pc_gold [16] -> \pc [16]
+Changing input B1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20282_gold (sky130_fd_sc_hd__a21o_1): \pc_gold [17] -> \pc [17]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20289_gold (sky130_fd_sc_hd__o21ai_0): \memread_gold -> \memread
+Changing input A2 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20289_gold (sky130_fd_sc_hd__o21ai_0): \aluout_gold [17] -> \aluout [17]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20292_gold (sky130_fd_sc_hd__o21ai_0): \memread_gold -> \memread
+Changing input A2 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20292_gold (sky130_fd_sc_hd__o21ai_0): \aluout_gold [1] -> \aluout [1]
+Changing input A0 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20293_gold (sky130_fd_sc_hd__mux2i_1): \pc_gold [1] -> \pc [1]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20296_gold (sky130_fd_sc_hd__nor2_1): \suspend_gold -> \suspend
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20298_gold (sky130_fd_sc_hd__xor2_1): \pc_gold [16] -> \pc [16]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20303_gold (sky130_fd_sc_hd__o21ai_0): \memread_gold -> \memread
+Changing input A2 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20303_gold (sky130_fd_sc_hd__o21ai_0): \aluout_gold [16] -> \aluout [16]
+Changing input A0 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20307_gold (sky130_fd_sc_hd__mux2i_1): \pc_gold [29] -> \pc [29]
+Changing input A0 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20308_gold (sky130_fd_sc_hd__mux2i_1): \pc_gold [28] -> \pc [28]
+Changing input A0 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20317_gold (sky130_fd_sc_hd__mux2i_1): \pc_gold [30] -> \pc [30]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20321_gold (sky130_fd_sc_hd__nand3_1): \pc_gold [29] -> \pc [29]
+Changing input B of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20321_gold (sky130_fd_sc_hd__nand3_1): \pc_gold [28] -> \pc [28]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20322_gold (sky130_fd_sc_hd__nand4_1): \pc_gold [29] -> \pc [29]
+Changing input B of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20322_gold (sky130_fd_sc_hd__nand4_1): \pc_gold [28] -> \pc [28]
+Changing input C of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20322_gold (sky130_fd_sc_hd__nand4_1): \pc_gold [30] -> \pc [30]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20323_gold (sky130_fd_sc_hd__xnor2_1): \pc_gold [30] -> \pc [30]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20327_gold (sky130_fd_sc_hd__o21ai_0): \memread_gold -> \memread
+Changing input A2 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20327_gold (sky130_fd_sc_hd__o21ai_0): \aluout_gold [30] -> \aluout [30]
+Changing input C of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20336_gold (sky130_fd_sc_hd__or4_1): \memread_gold -> \memread
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20383_gold (sky130_fd_sc_hd__mux2i_1): \pc_gold [2] -> \pc [2]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20397_gold (sky130_fd_sc_hd__a21oi_1): \aluout_gold [31] -> \aluout [31]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20400_gold (sky130_fd_sc_hd__nand2_1): \pc_gold [31] -> \pc [31]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20405_gold (sky130_fd_sc_hd__xnor2_1): \pc_gold [31] -> \pc [31]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20409_gold (sky130_fd_sc_hd__o21ai_0): \memread_gold -> \memread
+Changing input A2 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20409_gold (sky130_fd_sc_hd__o21ai_0): \aluout_gold [31] -> \aluout [31]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20412_gold (sky130_fd_sc_hd__a21oi_1): \pc_gold [28] -> \pc [28]
+Changing input B1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20412_gold (sky130_fd_sc_hd__a21oi_1): \pc_gold [29] -> \pc [29]
+Changing input A of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20416_gold (sky130_fd_sc_hd__xor2_1): \pc_gold [28] -> \pc [28]
+Changing input Y of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20447_gold (sky130_fd_sc_hd__nor2_1): \writedata_gold [31] -> \writedata [31]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20452_gold (sky130_fd_sc_hd__o21ai_0): \memread_gold -> \memread
+Changing input A2 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20452_gold (sky130_fd_sc_hd__o21ai_0): \aluout_gold [29] -> \aluout [29]
+Changing input A1 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20461_gold (sky130_fd_sc_hd__o21ai_0): \memread_gold -> \memread
+Changing input A2 of cell $abc$16994$auto$blifparse.cc:397:parse_blif$20461_gold (sky130_fd_sc_hd__o21ai_0): \aluout_gold [28] -> \aluout [28]
+Changing input Q of cell $auto$ff.cc:337:slice$2219_gold (sky130_fd_sc_hd__dfrtp_1): \pc_gold [27] -> \pc [27]
+Changing input Q of cell $auto$ff.cc:337:slice$2220_gold (sky130_fd_sc_hd__dfrtp_1): \pc_gold [28] -> \pc [28]
+Changing input Q of cell $auto$ff.cc:337:slice$2221_gold (sky130_fd_sc_hd__dfrtp_1): \pc_gold [29] -> \pc [29]
+Changing input Q of cell $auto$ff.cc:337:slice$2222_gold (sky130_fd_sc_hd__dfrtp_1): \pc_gold [30] -> \pc [30]
+Changing input Q of cell $auto$ff.cc:337:slice$2224_gold (sky130_fd_sc_hd__dfrtp_1): \pc_gold [0] -> \pc [0]
+Changing input Q of cell $auto$ff.cc:337:slice$2195_gold (sky130_fd_sc_hd__dfrtp_1): \pc_gold [3] -> \pc [3]
+Changing input Q of cell $auto$ff.cc:337:slice$2196_gold (sky130_fd_sc_hd__dfrtp_1): \pc_gold [4] -> \pc [4]
+Changing input Q of cell $auto$ff.cc:337:slice$2197_gold (sky130_fd_sc_hd__dfrtp_1): \pc_gold [5] -> \pc [5]
+Changing input Q of cell $auto$ff.cc:337:slice$2198_gold (sky130_fd_sc_hd__dfrtp_1): \pc_gold [6] -> \pc [6]
+Changing input Q of cell $auto$ff.cc:337:slice$2199_gold (sky130_fd_sc_hd__dfrtp_1): \pc_gold [7] -> \pc [7]
+Changing input Q of cell $auto$ff.cc:337:slice$2200_gold (sky130_fd_sc_hd__dfrtp_1): \pc_gold [8] -> \pc [8]
+Changing input Q of cell $auto$ff.cc:337:slice$2201_gold (sky130_fd_sc_hd__dfrtp_1): \pc_gold [9] -> \pc [9]
+Changing input Q of cell $auto$ff.cc:337:slice$2202_gold (sky130_fd_sc_hd__dfrtp_1): \pc_gold [10] -> \pc [10]
+Changing input Q of cell $auto$ff.cc:337:slice$2203_gold (sky130_fd_sc_hd__dfrtp_1): \pc_gold [11] -> \pc [11]
+Changing input Q of cell $auto$ff.cc:337:slice$2204_gold (sky130_fd_sc_hd__dfrtp_1): \pc_gold [12] -> \pc [12]
+Changing input Q of cell $auto$ff.cc:337:slice$2205_gold (sky130_fd_sc_hd__dfrtp_1): \pc_gold [13] -> \pc [13]
+Changing input Q of cell $auto$ff.cc:337:slice$2206_gold (sky130_fd_sc_hd__dfrtp_1): \pc_gold [14] -> \pc [14]
+Changing input Q of cell $auto$ff.cc:337:slice$2207_gold (sky130_fd_sc_hd__dfrtp_1): \pc_gold [15] -> \pc [15]
+Changing input Q of cell $auto$ff.cc:337:slice$2208_gold (sky130_fd_sc_hd__dfrtp_1): \pc_gold [16] -> \pc [16]
+Changing input Q of cell $auto$ff.cc:337:slice$2209_gold (sky130_fd_sc_hd__dfrtp_1): \pc_gold [17] -> \pc [17]
+Changing input Q of cell $auto$ff.cc:337:slice$2210_gold (sky130_fd_sc_hd__dfrtp_1): \pc_gold [18] -> \pc [18]
+Changing input Q of cell $auto$ff.cc:337:slice$2211_gold (sky130_fd_sc_hd__dfrtp_1): \pc_gold [19] -> \pc [19]
+Changing input Q of cell $auto$ff.cc:337:slice$2212_gold (sky130_fd_sc_hd__dfrtp_1): \pc_gold [20] -> \pc [20]
+Changing input Q of cell $auto$ff.cc:337:slice$2213_gold (sky130_fd_sc_hd__dfrtp_1): \pc_gold [21] -> \pc [21]
+Changing input Q of cell $auto$ff.cc:337:slice$2214_gold (sky130_fd_sc_hd__dfrtp_1): \pc_gold [22] -> \pc [22]
+Changing input Q of cell $auto$ff.cc:337:slice$2215_gold (sky130_fd_sc_hd__dfrtp_1): \pc_gold [23] -> \pc [23]
+Changing input Q of cell $auto$ff.cc:337:slice$2216_gold (sky130_fd_sc_hd__dfrtp_1): \pc_gold [24] -> \pc [24]
+Changing input Q of cell $auto$ff.cc:337:slice$2217_gold (sky130_fd_sc_hd__dfrtp_1): \pc_gold [25] -> \pc [25]
+Changing input Q of cell $auto$ff.cc:337:slice$2218_gold (sky130_fd_sc_hd__dfrtp_1): \pc_gold [26] -> \pc [26]
+Changing input Q of cell $auto$ff.cc:337:slice$2194_gold (sky130_fd_sc_hd__dfrtp_1): \pc_gold [2] -> \pc [2]
+Changing input Q of cell $auto$ff.cc:337:slice$2223_gold (sky130_fd_sc_hd__dfrtp_1): \pc_gold [31] -> \pc [31]
+Changing input Q of cell $auto$ff.cc:337:slice$2225_gold (sky130_fd_sc_hd__dfrtp_1): \pc_gold [1] -> \pc [1]
+Setting undriven nets to undef: \dp.ISRmux.d0_gold [1:0]
+Setting undriven nets to undef: \suspend_gold
+Setting undriven nets to undef: \memread_gold
+Setting undriven nets to undef: \writedata_gold
+Setting undriven nets to undef: \aluout_gold
+Setting undriven nets to undef: \memwrite_gold
+Setting undriven nets to undef: \pc_gold
+Setting undriven nets to undef: \memread_gate
+Setting undriven nets to undef: \memwrite_gate
+Setting undriven nets to undef: \suspend_gate
+Setting undriven nets to undef: \aluout_gate
+Setting undriven nets to undef: \pc_gate
+Setting undriven nets to undef: \writedata_gate
+
+33. Executing HIERARCHY pass (managing design hierarchy).
+
+33.1. Analyzing design hierarchy..
+Top module:  \equiv
+
+33.2. Analyzing design hierarchy..
+Top module:  \equiv
+Removing unused module `\gate'.
+Removing unused module `\gold'.
+Removed 2 unused modules.
+
+34. Executing EQUIV_SIMPLE pass.
+Found 99 unproven $equiv cells (6 groups) in equiv:
+  Trying to prove $equiv for \memwrite:ezsat
+ success!
+  Trying to prove $equiv for \suspend:ezsat
+ success!
+  Trying to prove $equiv for \memread:ezsat
+ success!
+ Grouping SAT models for \pc:
+  Trying to prove $equiv for \pc [0]:ezsat
+ success!
+  Trying to prove $equiv for \pc [1]:ezsat
+ success!
+  Trying to prove $equiv for \pc [2]:ezsat
+ success!
+  Trying to prove $equiv for \pc [3]:ezsat
+ success!
+  Trying to prove $equiv for \pc [4]:ezsat
+ success!
+  Trying to prove $equiv for \pc [5]:ezsat
+ success!
+  Trying to prove $equiv for \pc [6]:ezsat
+ success!
+  Trying to prove $equiv for \pc [7]:ezsat
+ success!
+  Trying to prove $equiv for \pc [8]:ezsat
+ success!
+  Trying to prove $equiv for \pc [9]:ezsat
+ success!
+  Trying to prove $equiv for \pc [10]:ezsat
+ success!
+  Trying to prove $equiv for \pc [11]:ezsat
+ success!
+  Trying to prove $equiv for \pc [12]:ezsat
+ success!
+  Trying to prove $equiv for \pc [13]:ezsat
+ success!
+  Trying to prove $equiv for \pc [14]:ezsat
+ success!
+  Trying to prove $equiv for \pc [15]:ezsat
+ success!
+  Trying to prove $equiv for \pc [16]:ezsat
+ success!
+  Trying to prove $equiv for \pc [17]:ezsat
+ success!
+  Trying to prove $equiv for \pc [18]:ezsat
+ success!
+  Trying to prove $equiv for \pc [19]:ezsat
+ success!
+  Trying to prove $equiv for \pc [20]:ezsat
+ success!
+  Trying to prove $equiv for \pc [21]:ezsat
+ success!
+  Trying to prove $equiv for \pc [22]:ezsat
+ success!
+  Trying to prove $equiv for \pc [23]:ezsat
+ success!
+  Trying to prove $equiv for \pc [24]:ezsat
+ success!
+  Trying to prove $equiv for \pc [25]:ezsat
+ success!
+  Trying to prove $equiv for \pc [26]:ezsat
+ success!
+  Trying to prove $equiv for \pc [27]:ezsat
+ success!
+  Trying to prove $equiv for \pc [28]:ezsat
+ success!
+  Trying to prove $equiv for \pc [29]:ezsat
+ success!
+  Trying to prove $equiv for \pc [30]:ezsat
+ success!
+  Trying to prove $equiv for \pc [31]:ezsat
+ success!
+ Grouping SAT models for \aluout:
+  Trying to prove $equiv for \aluout [0]:ezsat
+ success!
+  Trying to prove $equiv for \aluout [1]:ezsat
+ success!
+  Trying to prove $equiv for \aluout [2]:ezsat
+ success!
+  Trying to prove $equiv for \aluout [3]:ezsat
+ success!
+  Trying to prove $equiv for \aluout [4]:ezsat
+ success!
+  Trying to prove $equiv for \aluout [5]:ezsat
+ success!
+  Trying to prove $equiv for \aluout [6]:ezsat
+ success!
+  Trying to prove $equiv for \aluout [7]:ezsat
+ success!
+  Trying to prove $equiv for \aluout [8]:ezsat
+ success!
+  Trying to prove $equiv for \aluout [9]:ezsat
+ success!
+  Trying to prove $equiv for \aluout [10]:ezsat
+ success!
+  Trying to prove $equiv for \aluout [11]:ezsat
+ success!
+  Trying to prove $equiv for \aluout [12]:ezsat
+ success!
+  Trying to prove $equiv for \aluout [13]:ezsat
+ success!
+  Trying to prove $equiv for \aluout [14]:ezsat
+ success!
+  Trying to prove $equiv for \aluout [15]:ezsat
+ success!
+  Trying to prove $equiv for \aluout [16]:ezsat
+ success!
+  Trying to prove $equiv for \aluout [17]:ezsat
+ success!
+  Trying to prove $equiv for \aluout [18]:ezsat
+ success!
+  Trying to prove $equiv for \aluout [19]:ezsat
+ success!
+  Trying to prove $equiv for \aluout [20]:ezsat
+ success!
+  Trying to prove $equiv for \aluout [21]:ezsat
+ success!
+  Trying to prove $equiv for \aluout [22]:ezsat
+ success!
+  Trying to prove $equiv for \aluout [23]:ezsat
+ success!
+  Trying to prove $equiv for \aluout [24]:ezsat
+ success!
+  Trying to prove $equiv for \aluout [25]:ezsat
+ success!
+  Trying to prove $equiv for \aluout [26]:ezsat
+ success!
+  Trying to prove $equiv for \aluout [27]:ezsat
+ success!
+  Trying to prove $equiv for \aluout [28]:ezsat
+ success!
+  Trying to prove $equiv for \aluout [29]:ezsat
+ success!
+  Trying to prove $equiv for \aluout [30]:ezsat
+ success!
+  Trying to prove $equiv for \aluout [31]:ezsat
+ success!
+ Grouping SAT models for \writedata:
+  Trying to prove $equiv for \writedata [0]:ezsat
+ success!
+  Trying to prove $equiv for \writedata [1]:ezsat
+ success!
+  Trying to prove $equiv for \writedata [2]:ezsat
+ success!
+  Trying to prove $equiv for \writedata [3]:ezsat
+ success!
+  Trying to prove $equiv for \writedata [4]:ezsat
+ success!
+  Trying to prove $equiv for \writedata [5]:ezsat
+ success!
+  Trying to prove $equiv for \writedata [6]:ezsat
+ success!
+  Trying to prove $equiv for \writedata [7]:ezsat
+ success!
+  Trying to prove $equiv for \writedata [8]:ezsat
+ success!
+  Trying to prove $equiv for \writedata [9]:ezsat
+ success!
+  Trying to prove $equiv for \writedata [10]:ezsat
+ success!
+  Trying to prove $equiv for \writedata [11]:ezsat
+ success!
+  Trying to prove $equiv for \writedata [12]:ezsat
+ success!
+  Trying to prove $equiv for \writedata [13]:ezsat
+ success!
+  Trying to prove $equiv for \writedata [14]:ezsat
+ success!
+  Trying to prove $equiv for \writedata [15]:ezsat
+ success!
+  Trying to prove $equiv for \writedata [16]:ezsat
+ success!
+  Trying to prove $equiv for \writedata [17]:ezsat
+ success!
+  Trying to prove $equiv for \writedata [18]:ezsat
+ success!
+  Trying to prove $equiv for \writedata [19]:ezsat
+ success!
+  Trying to prove $equiv for \writedata [20]:ezsat
+ success!
+  Trying to prove $equiv for \writedata [21]:ezsat
+ success!
+  Trying to prove $equiv for \writedata [22]:ezsat
+ success!
+  Trying to prove $equiv for \writedata [23]:ezsat
+ success!
+  Trying to prove $equiv for \writedata [24]:ezsat
+ success!
+  Trying to prove $equiv for \writedata [25]:ezsat
+ success!
+  Trying to prove $equiv for \writedata [26]:ezsat
+ success!
+  Trying to prove $equiv for \writedata [27]:ezsat
+ success!
+  Trying to prove $equiv for \writedata [28]:ezsat
+ success!
+  Trying to prove $equiv for \writedata [29]:ezsat
+ success!
+  Trying to prove $equiv for \writedata [30]:ezsat
+ success!
+  Trying to prove $equiv for \writedata [31]:ezsat
+ success!
+Proved 99 previously unproven $equiv cells.
+
+35. Executing EQUIV_INDUCT pass.
+No selected unproven $equiv cells found in equiv.
+Proved 0 previously unproven $equiv cells.
+
+36. Executing EQUIV_STATUS pass.
+Found 99 $equiv cells in equiv:
+  Of those cells 99 are proven and 0 are unproven.
+  Equivalence successfully proven!
+
+Warnings: 9 unique messages, 9 total
+End of script. Logfile hash: b606012e2e, time: 2.44s, user: 1.03s, system: 0.09s, MEM: 126.31 MB peak
+Yosys 0.69+post (git sha1 143eb14f9cc55d6f8927e68523b0c9d2166ed02c, Release, GNU /usr/bin/c++ 13.3.0)
+Time spent: 59% 2x abc (1 sec), 10% 28x read_verilog (0 sec), ...
