@@ -55,6 +55,7 @@ At the tighter unrelaxed 6.0 ns constraint the same **PG2** path and a **PG8**
 ## Artifacts
 
 - `6_finish.rpt` — post-route timing / power / area report.
+- `wirelength.md` + `wirelength.json` — routed wire-length reference (signal **274.2 mm**, power 77.5 mm; per-layer breakdown).
 - `../orfs_sky130hd_riscv32i/` — `6_final.gds/.def/.v/.spef`, `6_drc.lyrdb`, layout PNGs.
-- `../timing/` — timing summary, `constraint_7ns.sdc`.
-- `../analysis/` — `dataflow.md`, `path_groups.md`.
+- `../timing/` — timing summary, `constraint_7ns.sdc`, Excel reports, interactive dashboard.
+- `../analysis/` — `dataflow.md`, `path_groups.md`, `glossary.md`, `design.svg`.

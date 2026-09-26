@@ -1,0 +1,33 @@
+{
+ "die_um": [
+  376.625,
+  376.625
+ ],
+ "units": 1000.0,
+ "signal": {
+  "by_layer": {
+   "met1": 104686.5,
+   "met2": 118212.3,
+   "li1": 0.0,
+   "met3": 33362.9,
+   "met4": 17629.4,
+   "met5": 340.4
+  },
+  "total_um": 274231.4,
+  "vias": 51506,
+  "routed_statements": 5601
+ },
+ "power": {
+  "by_layer": {
+   "met5": 10097.5,
+   "met4": 10000.8,
+   "met1": 51609.2,
+   "met3": 2943.5,
+   "met2": 2869.0
+  },
+  "total_um": 77520.1,
+  "vias": 5954,
+  "routed_statements": 2
+ },
+ "combined_total_um": 351751.5
+}
