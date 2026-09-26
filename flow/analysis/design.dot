@@ -1,0 +1,96 @@
+digraph riscv_design {
+  rankdir=LR;
+  graph [fontname="Helvetica", fontsize=12, splines=spline, nodesep=0.35, ranksep=0.7, bgcolor="white", labelloc="t", label="riscv (sky130hd/riscv32i) — design block diagram", fontsize=16];
+  node  [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=10,
+         fillcolor="#eef3fb", color="#3b6fb0", penwidth=1.2, margin="0.08,0.05"];
+  edge  [fontname="Helvetica", fontsize=8, color="#44546a", arrowsize=0.7, penwidth=1.0];
+
+  /* Ports */
+  instr    [shape=invhouse, fillcolor="#f0f0f0", color="#666666", label="instr[31:0]"];
+  readdata [shape=invhouse, fillcolor="#f0f0f0", color="#666666", label="readdata[31:0]"];
+  clk      [shape=invhouse, fillcolor="#f0f0f0", color="#666666", label="clk / reset"];
+  pc_out   [shape=house, fillcolor="#fff2cc", color="#ffb300", label="pc[31:0]"];
+  aluout   [shape=house, fillcolor="#fff2cc", color="#ffb300", label="aluout[31:0]"];
+  wdata    [shape=house, fillcolor="#fff2cc", color="#ffb300", label="writedata[31:0]"];
+
+  subgraph cluster_ctrl {
+    label="controller  (PG6 decode/control)"; fontsize=11; color="#999999"; style="rounded,dashed";
+    maindec  [label="maindec\nopcode → control", fillcolor="#e6e6e6", color="#888888"];
+    aludec   [label="aludec\nfunct → alucontrol", fillcolor="#e6e6e6", color="#888888"];
+    ctrlmux  [label="mx1 / mx2", fillcolor="#e6e6e6", color="#888888"];
+  }
+
+  subgraph cluster_dp {
+    label="datapath"; fontsize=11; color="#3b6fb0"; style="rounded";
+
+    /* PG1 PC / fetch */
+    pcreg    [label="pcreg\n(flopr, PC)", fillcolor="#d9e6fb", color="#4a86e8", penwidth=1.6];
+    pcadder  [label="adder +4", fillcolor="#d9e6fb", color="#4a86e8"];
+    pcimm    [label="adder pc+imm", fillcolor="#d9e6fb", color="#4a86e8"];
+    pcsrcmux [label="pcsrcmux\n(pcadd)", fillcolor="#d9e6fb", color="#4a86e8"];
+    pcmux    [label="pcmux\n(pcsrc)", fillcolor="#d9e6fb", color="#4a86e8"];
+    isrmux   [label="ISRmux", fillcolor="#d9e6fb", color="#4a86e8"];
+    pcextmux [label="pcextmux", fillcolor="#d9e6fb", color="#4a86e8"];
+
+    /* PG7 immediate */
+    signext  [label="signext\n(mux5, imm)", fillcolor="#d2e6e8", color="#76a5af"];
+
+    /* register file */
+    regfile  [label="regfile\n32×32, 2R1W, rf[0]=0", fillcolor="#fff2cc", color="#bf9000", penwidth=2.0];
+
+    /* PG2 execute/ALU */
+    rs1mux   [label="rs1mux", fillcolor="#f8d7da", color="#e06666"];
+    memsrcmux[label="memsrcmux\n(alusrc)", fillcolor="#f8d7da", color="#e06666"];
+    alu      [label="alu", fillcolor="#f4cccc", color="#e06666", penwidth=2.0];
+    srccmux  [label="srccmux\n(alu2src)", fillcolor="#f8d7da", color="#e06666"];
+
+    /* PG3 shift */
+    shifter  [label="shifter", fillcolor="#fce5cd", color="#f6b26b"];
+
+    /* PG5 compare */
+    magcmp   [label="magcompare32\n(2b×16, 2c×15)", fillcolor="#e6dff2", color="#8e7cc3", penwidth=1.6];
+
+    /* PG4 memory */
+    hb1      [label="halfbytemux1\n(load ext)", fillcolor="#d9ead3", color="#93c47d"];
+    hb2      [label="halfbytemux2\n(store mask)", fillcolor="#d9ead3", color="#93c47d"];
+    resmux   [label="resmux\n(memtoreg)", fillcolor="#d9ead3", color="#93c47d"];
+
+    /* PG8 output / write-back */
+    storepcmux[label="storepcmux\n(storepc)", fillcolor="#fff2cc", color="#ffb300"];
+  }
+
+  /* ---- control fan-out ---- */
+  instr -> maindec;
+  instr -> aludec;
+  maindec -> ctrlmux;
+  aludec  -> ctrlmux;
+  ctrlmux -> alu [label="control bus:\nalucontrol, shtype, pcsrc,\nalusrc, alu2src, memtoreg, regwrite",
+                  style=dashed, color="#999999", constraint=false, fontsize=9];
+
+  /* ---- PG1 fetch ---- */
+  pcreg -> pcadder -> pcmux;
+  pcreg -> pcsrcmux -> pcimm -> pcmux;
+  signext -> pcextmux -> pcimm;
+  pcmux -> isrmux -> pcreg [label="pcnext"];
+  pcreg -> pc_out;
+
+  /* ---- datapath ---- */
+  instr -> rs1mux -> regfile [label="ra1"];
+  instr -> regfile [label="ra2 / wa3"];
+  regfile -> alu     [label="srca2 (rd1)"];
+  regfile -> shifter;
+  regfile -> magcmp;
+  regfile -> hb2     [label="rd2"];
+  pcextmux -> memsrcmux -> alu [label="srcb"];
+  alu     -> srccmux;
+  shifter -> srccmux;
+  srccmux -> aluout;
+  srccmux -> resmux;
+  readdata -> hb1 -> resmux;
+  resmux -> storepcmux -> regfile [label="wd3 (result2)"];
+  pcreg  -> storepcmux [label="pctoreg"];
+  hb2    -> wdata;
+
+  /* ---- PG5 branch feedback ---- */
+  magcmp -> maindec [label="gt / lt / eq", color="#8e7cc3", style=dashed, penwidth=1.4];
+}

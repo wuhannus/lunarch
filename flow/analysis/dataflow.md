@@ -1,5 +1,10 @@
 # Data Flow — `riscv` (sky130hd/riscv32i baseline)
 
+> **Rendered design block diagram:** [`design.svg`](design.svg) ·
+> [`design.png`](design.png) · source: [`design.dot`](design.dot).
+> Blocks are colour-coded by path group (PG1–PG8, see `path_groups.md`).
+> Abbreviations: see `glossary.md`.
+
 Single-cycle RV32I core. Top module `riscv` = `controller` + `datapath`.
 All state lives in the **PC register** (`flopr`) and the **register file**
 (`regfile`, 32×32, `rf[0]` hard-wired to 0). There is no pipeline register,
