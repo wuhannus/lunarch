@@ -91,3 +91,23 @@ Artifacts for the timing-clean run: `6_finish.rpt`, `constraint_7ns.sdc`
 - To push beyond ~148 MHz requires an RTL/architecture change (e.g. up-sizing the ALU path harder, or pipelining the 5-stage design) — a clock relaxation alone cannot exceed the reg→reg limit.
 
 Full report: `6_finish.rpt`. DRC = 0 violations, LVS = match, LEC (RTL≡synth≡routed) = proven.
+
+## Detailed Timing Report & Excel Summary
+
+`riscv32i_timing_summary.xlsx` — per-path setup/hold summary (5 paths per clock
+group) extracted from the post-route database:
+
+| Sheet | Contents |
+|-------|----------|
+| **Timing Paths** | start/end point, report group, functional path group (PG1–PG8), launch-clock latency, data-path delay, data-path cells (logic levels), data arrival, capture-clock latency, clock skew, data required, slack/WNS, status |
+| **Summary** | clock period / fmax / WNS / TNS, per-group worst slack, worst hold slack |
+| **Clock Skew** | per-path launch vs capture clock latency and skew |
+| **Notes** | field definitions |
+
+Source data: `6_finish_timing_full.rpt` (`report_checks -path_delay max/min
+-group_path_count 5 -format full_clock_expanded`). Regenerate with
+`make_timing_excel.py` (`python3 make_timing_excel.py`).
+
+Baseline worst values: setup **WNS +0.0415 ns** (group `vclk_clk`,
+`rf[11][2] → aluout[20]`, 32 data-path cells), worst hold **+0.5849 ns**;
+worst reg→reg setup slack +0.2402 ns (group `clk`, 28 data-path cells).
