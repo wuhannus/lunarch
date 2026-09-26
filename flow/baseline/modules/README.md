@@ -4,8 +4,9 @@ Top-down view of the placed `sky130hd/riscv32i` die (`377.8 × 377.8 µm`) with
 cells coloured **by module**.
 
 - Image: `6_final_modules.png` / `6_final_modules.svg`
+- Interactive page: **`index.html`** (self-contained; open in a browser)
 - Counts: `module_counts.txt`
-- Generator: `make_module_layout.py`
+- Generator: `make_module_layout.py`, `make_module_html.py`
 
 ## How module info was obtained
 
