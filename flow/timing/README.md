@@ -92,22 +92,54 @@ Artifacts for the timing-clean run: `6_finish.rpt`, `constraint_7ns.sdc`
 
 Full report: `6_finish.rpt`. DRC = 0 violations, LVS = match, LEC (RTL≡synth≡routed) = proven.
 
-## Detailed Timing Report & Excel Summary
+## Detailed Timing Reports & Excel Summaries
 
-`riscv32i_timing_summary.xlsx` — per-path setup/hold summary (5 paths per clock
-group) extracted from the post-route database:
+### 1. `riscv32i_timing_summary_full.xlsx` — full endpoint summary
 
 | Sheet | Contents |
 |-------|----------|
-| **Timing Paths** | start/end point, report group, functional path group (PG1–PG8), launch-clock latency, data-path delay, data-path cells (logic levels), data arrival, capture-clock latency, clock skew, data required, slack/WNS, status |
-| **Summary** | clock period / fmax / WNS / TNS, per-group worst slack, worst hold slack |
+| **Worst 20 (detailed)** | start/end, report group, functional path group (PG1–PG8), launch-clock latency, data-path delay, logic levels, data arrival, capture-clock latency, clock skew, data required, slack/WNS |
+| **All endpoints (setup)** | 1,152 rows — worst setup path per endpoint (start, end, group, functional group, slack) |
+| **All endpoints (hold)** | 1,152 rows — worst hold path per endpoint |
+| **Summary** | clock period/fmax, #endpoints, WNS/TNS, slack distribution, endpoint categories |
 | **Clock Skew** | per-path launch vs capture clock latency and skew |
 | **Notes** | field definitions |
 
-Source data: `6_finish_timing_full.rpt` (`report_checks -path_delay max/min
--group_path_count 5 -format full_clock_expanded`). Regenerate with
-`make_timing_excel.py` (`python3 make_timing_excel.py`).
+Source: `6_finish_timing_full.rpt` (worst 5/group, `full_clock_expanded`) and
+`6_finish_all_endpoints_summary.rpt` (worst path per endpoint). Regenerate
+with `make_timing_excel.py`.
 
-Baseline worst values: setup **WNS +0.0415 ns** (group `vclk_clk`,
-`rf[11][2] → aluout[20]`, 32 data-path cells), worst hold **+0.5849 ns**;
-worst reg→reg setup slack +0.2402 ns (group `clk`, 28 data-path cells).
+Baseline: setup endpoints = 1,152 (`dp.rf.rf` 1,024, `dp.pcreg.q` 32,
+`aluout` 32, `writedata` 32, `pc` 32). Setup WNS **+0.0415 ns**
+(`rf[11][2] → aluout[20]`), TNS 0, 0 violations; worst hold **+0.5849 ns**.
+
+### 2. `riscv32i_worst10_path_details.xlsx` — per-cell / per-net delay baseline
+
+One sheet per worst-5 SETUP path for **PG2 (ALU/write-back, group `clk`)** and
+**PG8 (result-out, group `vclk_clk`)** — 10 sheets (`PG2-1..5`, `PG8-1..5`)
+plus an `Index` and `Definitions` sheet. Each path sheet breaks the path into
+its stages with **cell delay** and **wire (net) delay**:
+
+| Column | Meaning |
+|--------|---------|
+| Stage (instance) | cell instance (output pin) on the path |
+| Cell type | sky130 cell master |
+| Cell delay (ns) | delay through that cell |
+| Wire delay (ns) | interconnect (net RC) delay feeding that cell |
+| Time (ns) | cumulative arrival time at that cell output |
+
+Baseline totals (cell + wire):
+
+| Path | Group | Levels | Cell delay | Wire delay | Slack |
+|------|-------|-------:|-----------:|-----------:|------:|
+| PG2-1..5 | clk | 28 | 6.0955 ns | 0.0191 ns | +0.2402…+0.2442 |
+| PG8-1 | vclk_clk | 32 | 5.1832 ns | 0.0163 ns | +0.0415 |
+| PG8-2 | vclk_clk | 27 | 5.1702 ns | 0.0183 ns | +0.0602 |
+| PG8-3 | vclk_clk | 26 | 5.0645 ns | 0.0148 ns | +0.1694 |
+| PG8-4 | vclk_clk | 24 | 5.0506 ns | 0.0091 ns | +0.1890 |
+| PG8-5 | vclk_clk | 25 | 5.0364 ns | 0.0163 ns | +0.2008 |
+
+**Cell delay dominates** (~99.7% of the path); wire delay is negligible
+(<0.02 ns). Source: `6_finish_worst10_paths_detail.rpt`
+(`report_checks -group_path_count 5 -fields {net input_pin capacitance slew fanout} -format full`).
+Regenerate with `make_path_details.py`.
