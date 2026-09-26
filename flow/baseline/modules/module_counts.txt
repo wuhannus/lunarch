@@ -1,6 +1,6 @@
-other / unmapped (flattened opt logic)	#d9dee6	4236
-regfile (32x32 RF)	#e06666	877
+other / unmapped (flattened opt logic)	#d9dee6	3182
+regfile (32x32 RF)	#e06666	1901
 alu	#4a86e8	254
-datapath muxes	#8e7cc3	120
+datapath muxes	#8e7cc3	150
 adder (pcimm)	#f6b26b	38
 aludec (controller)	#76a5af	10

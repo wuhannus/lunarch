@@ -36,7 +36,7 @@ text = open(V, encoding='utf-8', errors='ignore').read()
 # cell -> connected nets
 cell_nets = {}
 for m in re.finditer(r'sky130_fd_sc_hd__[a-z0-9_]+[ \t]+([^ \t(]+)[ \t]*\((.*?)\);', text, re.S):
-    inst, ports = m.group(1), m.group(2)
+    inst, ports = m.group(1).replace('\\', ''), m.group(2)
     nets = re.findall(r'\.\w+\s*\(\s*([^)\s]+)\s*\)', ports)
     cell_nets[inst] = [n.replace('\\', '') for n in nets]
 

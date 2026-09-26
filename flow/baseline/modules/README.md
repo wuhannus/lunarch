@@ -31,19 +31,22 @@ module of the first module-prefixed net it touches.
 
 | Module | Colour | Cells |
 |--------|--------|------:|
-| regfile (32×32 RF) | `#e06666` red | 877 |
+| regfile (32×32 RF) | `#e06666` red | **1,901** |
 | alu | `#4a86e8` blue | 254 |
-| datapath muxes (`memsrcmux`, `ISRmux`, `result2`, `pcext`) | `#8e7cc3` purple | 120 |
+| datapath muxes (`memsrcmux`, `ISRmux`, `result2`, `pcext`) | `#8e7cc3` purple | 150 |
 | adder (`pcimm`, `pcadder`) | `#f6b26b` orange | 38 |
 | aludec (controller) | `#76a5af` teal | 10 |
-| **other / unmapped** (opt-merged logic, buffers, clock, fill) | `#d9dee6` grey | 4,236 |
+| **other / unmapped** (opt-merged logic, buffers, clock, fill) | `#d9dee6` grey | 3,182 |
 | **total placed** | | **5,535** |
 
-**2,353 / 5,535 cells (43%)** get an explicit module label — the large,
-name-preserving blocks (register file, ALU, address adders, datapath muxes,
-decoder). The remainder are the datapath's fine combinational logic (shifter,
-comparator, sign-extension, branch muxes) and the clock/resizer/fill cells whose
-nets were renamed during `opt`, so no module path survives for them.
+**2,353 / 5,535 cells (43%)** get an explicit module label.
+
+> **What the 1,901 regfile cells are:** the register file itself is 1,024
+> `edfxtp_1` flops (32×32), and the module label also covers the **877
+> combinational cells** that sit on `dp__rf__` nets (the read multiplexers and
+> address decode in `regfile.v` / the read path). An earlier build showed 877
+> because a name-escaping bug (`\` prefix on named instances) dropped the 1,024
+> flops; the fix includes them.
 
 ## Observations from the map
 
