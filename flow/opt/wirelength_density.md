@@ -49,9 +49,47 @@ route log (`Total wire length on LAYER …`). Same method, same die.
   low-density and **not routing-limited** — matching the DRC-clean result and
   the dominance of cell delay over wire delay.
 
+## Cell-area density (cell area / die area)
+
+Die area = **141,846 µm²** (376.625 µm) for every run, so density = Σ(std-cell
+area) / 141,846 µm².
+
+| Run | clk | ABC | Cell area (µm²) | **Cell area / die** |
+|-----|----:|-----|----------------:|--------------------:|
+| baseline (= p7_delay) | 7.0 | delay | 73,594 | **51.9 %** |
+| timing run | 5.0 | delay | 78,144 | **55.1 %** |
+| power run | 20.0 | area | 74,334 | **52.4 %** |
+| sweep p10_delay | 10.0 | delay | 70,730 | **49.9 %** |
+| sweep p7_area | 7.0 | area | 74,874 | **52.8 %** |
+| sweep p10_area | 10.0 | area | 74,645 | **52.6 %** |
+| kogge-stone | 5.0 | delay | 75,942 | **53.5 %** |
+
+(ORFS reports utilization ~1% higher — 53% baseline — because its "Design area"
+uses the padded/core area convention; the column above is the strict
+cell-area/die-area ratio you asked for.)
+
+### Density observations
+
+- Cell-area density is remarkably **flat: 49.9 – 55.1 %** (a ~5-point spread).
+- The **timing run is the densest (55.1 %)** — it up-sizes gates the hardest to
+  chase 5 ns (largest cell area of all runs, 78,144 µm²), which is also why it
+  burns the most power (29.3 mW).
+- The **relaxed/faster-clocked delay runs are the least dense** (p10_delay
+  49.9 %) — less resizing.
+- Area-ABC runs sit in the middle (~52.6 %): the mapper picks smaller cells but
+  the flow still sizes for the (loose) clock.
+- With the die fixed, density is essentially **a proxy for how hard the resizer
+  worked**, not for the mapper.
+
 ## Takeaway
 
-Changing the clock target and the ABC mapper changes **timing and power a lot**
-but **wire length ~not at all** (±4%) and **density ~not at all** (±7%). So the
-observed PPA differences come from **gate sizing / cell count**, not from
-physical congestion — reinforcing that the bottleneck is logic depth, not wires.
+Across every run the clock target and ABC objective change **timing and power a
+lot** but leave the physical design nearly constant:
+
+- **Signal wire length: 268–288 mm (±4 %)**
+- **Cell-area density: 49.9–55.1 % (±2.6 points)**
+
+So the PPA differences come from **gate sizing / logic depth**, not from wires
+or congestion. The die is ~half-full in every case, DRC is clean, and
+wire delay < 0.02 ns/path — reinforcing that the limiter is the single-cycle
+logic depth, not physical density.
