@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="680" font-family="Helvetica,Arial" font-size="13">
 <rect width="1000" height="680" fill="#ffffff"/>
-<text x="500.0" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f3a5f">AI-driven PPA sweep — riscv32i on sky130 (power normalized to 142.9 MHz baseline)</text>
+<text x="500.0" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f3a5f">AI-driven PPA sweep — riscv32i on sky130 (AS-RUN power, unfair across clocks)</text>
 <line x1="96" y1="606" x2="960" y2="606" stroke="#666"/>
 <line x1="96" y1="64" x2="96" y2="606" stroke="#666"/>
 <line x1="182" y1="64" x2="182" y2="606" stroke="#eef2f7"/>
@@ -35,43 +35,46 @@
 <text x="960" y="626" text-anchor="middle" fill="#555">165</text>
 <line x1="96" y1="606" x2="960" y2="606" stroke="#eef2f7"/>
 <line x1="91" y1="606" x2="96" y2="606" stroke="#999"/>
-<text x="86" y="610" text-anchor="end" fill="#555">18.0</text>
-<line x1="96" y1="529" x2="960" y2="529" stroke="#eef2f7"/>
-<line x1="91" y1="529" x2="96" y2="529" stroke="#999"/>
-<text x="86" y="533" text-anchor="end" fill="#555">18.5</text>
-<line x1="96" y1="451" x2="960" y2="451" stroke="#eef2f7"/>
-<line x1="91" y1="451" x2="96" y2="451" stroke="#999"/>
-<text x="86" y="455" text-anchor="end" fill="#555">19.0</text>
-<line x1="96" y1="374" x2="960" y2="374" stroke="#eef2f7"/>
-<line x1="91" y1="374" x2="96" y2="374" stroke="#999"/>
-<text x="86" y="378" text-anchor="end" fill="#555">19.5</text>
-<line x1="96" y1="296" x2="960" y2="296" stroke="#eef2f7"/>
-<line x1="91" y1="296" x2="96" y2="296" stroke="#999"/>
-<text x="86" y="300" text-anchor="end" fill="#555">20.0</text>
-<line x1="96" y1="219" x2="960" y2="219" stroke="#eef2f7"/>
-<line x1="91" y1="219" x2="96" y2="219" stroke="#999"/>
-<text x="86" y="223" text-anchor="end" fill="#555">20.5</text>
-<line x1="96" y1="141" x2="960" y2="141" stroke="#eef2f7"/>
-<line x1="91" y1="141" x2="96" y2="141" stroke="#999"/>
-<text x="86" y="145" text-anchor="end" fill="#555">21.0</text>
+<text x="86" y="610" text-anchor="end" fill="#555">0</text>
+<line x1="96" y1="538" x2="960" y2="538" stroke="#eef2f7"/>
+<line x1="91" y1="538" x2="96" y2="538" stroke="#999"/>
+<text x="86" y="542" text-anchor="end" fill="#555">4</text>
+<line x1="96" y1="470" x2="960" y2="470" stroke="#eef2f7"/>
+<line x1="91" y1="470" x2="96" y2="470" stroke="#999"/>
+<text x="86" y="474" text-anchor="end" fill="#555">8</text>
+<line x1="96" y1="403" x2="960" y2="403" stroke="#eef2f7"/>
+<line x1="91" y1="403" x2="96" y2="403" stroke="#999"/>
+<text x="86" y="407" text-anchor="end" fill="#555">12</text>
+<line x1="96" y1="335" x2="960" y2="335" stroke="#eef2f7"/>
+<line x1="91" y1="335" x2="96" y2="335" stroke="#999"/>
+<text x="86" y="339" text-anchor="end" fill="#555">16</text>
+<line x1="96" y1="267" x2="960" y2="267" stroke="#eef2f7"/>
+<line x1="91" y1="267" x2="96" y2="267" stroke="#999"/>
+<text x="86" y="271" text-anchor="end" fill="#555">20</text>
+<line x1="96" y1="200" x2="960" y2="200" stroke="#eef2f7"/>
+<line x1="91" y1="200" x2="96" y2="200" stroke="#999"/>
+<text x="86" y="204" text-anchor="end" fill="#555">24</text>
+<line x1="96" y1="132" x2="960" y2="132" stroke="#eef2f7"/>
+<line x1="91" y1="132" x2="96" y2="132" stroke="#999"/>
+<text x="86" y="136" text-anchor="end" fill="#555">28</text>
 <line x1="96" y1="64" x2="960" y2="64" stroke="#eef2f7"/>
 <line x1="91" y1="64" x2="96" y2="64" stroke="#999"/>
-<text x="86" y="68" text-anchor="end" fill="#555">21.5</text>
+<text x="86" y="68" text-anchor="end" fill="#555">32</text>
 <text x="528" y="658" text-anchor="middle" fill="#1f3a5f">fmax (MHz) → faster &amp; better</text>
-<text x="26" y="335" text-anchor="middle" fill="#1f3a5f" transform="rotate(-90 26 335)">total power @ 142.9 MHz (mW) → lower is better</text>
-<polyline points="398,500 794,479" fill="none" stroke="#1E7A46" stroke-width="2" stroke-dasharray="6 4"/>
-<circle cx="759" cy="151" r="6" fill="#4A86E8" stroke="#1f3a5f" stroke-width="1"/>
-<text x="768" y="143" fill="#1b2733">p5_delay</text>
-<circle cx="665" cy="337" r="6" fill="#4A86E8" stroke="#1f3a5f" stroke-width="1"/>
-<text x="674" y="329" fill="#1b2733">p7_delay</text>
-<circle cx="218" cy="433" r="6" fill="#4A86E8" stroke="#1f3a5f" stroke-width="1"/>
-<text x="227" y="425" fill="#1b2733">p10_delay</text>
-<rect x="788" y="473" width="12" height="12" fill="#E06666" stroke="#1f3a5f" stroke-width="1"/>
-<text x="803" y="471" fill="#1b2733">p7_area</text>
-<rect x="306" y="436" width="12" height="12" fill="#E06666" stroke="#1f3a5f" stroke-width="1"/>
-<text x="321" y="434" fill="#1b2733">p10_area</text>
-<rect x="392" y="494" width="12" height="12" fill="#E06666" stroke="#1f3a5f" stroke-width="1"/>
-<text x="407" y="492" fill="#1b2733">p20_area</text>
+<text x="26" y="335" text-anchor="middle" fill="#1f3a5f" transform="rotate(-90 26 335)">total power at each run’s own clock (mW)</text>
+<polyline points="398,495 794,288" fill="none" stroke="#1E7A46" stroke-width="2" stroke-dasharray="6 4"/>
+<circle cx="759" cy="110" r="6" fill="#4A86E8" stroke="#1f3a5f" stroke-width="1"/>
+<text x="768" y="102" fill="#1b2733">p5_delay</text>
+<circle cx="665" cy="272" r="6" fill="#4A86E8" stroke="#1f3a5f" stroke-width="1"/>
+<text x="674" y="264" fill="#1b2733">p7_delay</text>
+<circle cx="218" cy="379" r="6" fill="#4A86E8" stroke="#1f3a5f" stroke-width="1"/>
+<text x="227" y="371" fill="#1b2733">p10_delay</text>
+<rect x="788" y="282" width="12" height="12" fill="#E06666" stroke="#1f3a5f" stroke-width="1"/>
+<text x="803" y="280" fill="#1b2733">p7_area</text>
+<rect x="306" y="375" width="12" height="12" fill="#E06666" stroke="#1f3a5f" stroke-width="1"/>
+<text x="321" y="373" fill="#1b2733">p10_area</text>
+<rect x="392" y="489" width="12" height="12" fill="#E06666" stroke="#1f3a5f" stroke-width="1"/>
+<text x="407" y="487" fill="#1b2733">p20_area</text>
 <circle cx="122" cy="82" r="6" fill="#4A86E8" stroke="#1f3a5f"/>
 <text x="136" y="86" fill="#333">delay ABC (ABC_AREA=0)</text>
 <rect x="116" y="100" width="12" height="12" fill="#E06666" stroke="#1f3a5f"/>

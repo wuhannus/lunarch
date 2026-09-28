@@ -22,6 +22,12 @@ Reports in `timing_diematch/` and `power_diematch/`.
 | — combinational | 6.00 mW | 10.2 mW | 1.74 mW |
 | — clock | 5.79 mW | 8.16 mW | 2.05 mW |
 
+> **Power is frequency-dependent.** The totals above are *as-run at each point's
+> own clock*, so they are not directly comparable. Normalized to the 7.0 ns
+> baseline (142.9 MHz) the three points are **19.7 / 20.9 / 18.7 mW** — i.e. the
+> power run's advantage at equal frequency is **~5%**, not ~67%. See
+> `sweep/pareto_ppa.svg`.
+
 ## Differences made
 
 | Knob | Baseline | Run 1d (timing) | Run 2d (power) |
@@ -43,11 +49,13 @@ Die pinned to baseline (no extra whitespace this time).
    **−1.60 ns** against 5.0 ns. The limiter is the single-cycle
    **regfile → ALU → regfile** loop (cell-delay dominated). 200 MHz needs an
    **RTL pipelining** change, not P&R tuning.
-2. **Timing run traded power for almost no speed:** 19.7 → **29.3 mW (+49%)**
-   for +5.5 MHz.
-3. **Power run cut power by ~two-thirds:** 19.7 → **6.54 mW (−67%)**
-   (seq −65%, comb −71%, clock −65%), at the cost of fmax 147.9 → **132.5 MHz
-   (−10%)**.
+2. **Timing run traded power for almost no speed:** at equal frequency
+   19.7 → **20.9 mW (+6%)** for +5.5 MHz fmax. (As-run it looks like +49% only
+   because it is measured at 200 MHz versus the baseline's 142.9 MHz.)
+3. **Power run cut per-cycle energy by ~5%:** at equal frequency
+   19.7 → **18.7 mW (−5%)**, at the cost of fmax 147.9 → **132.5 MHz (−10%)**.
+   (The headline 19.7 → 6.54 mW is a frequency effect: it is measured at
+   50 MHz, so it must not be quoted as a power saving at the baseline clock.)
 4. **Die-matched result:** with the die pinned, the power run actually lands a
    *little faster* (132.5 vs 129.6 MHz) than the earlier larger-die run — smaller
    die ⇒ shorter wires — while power is essentially unchanged (6.54 vs 6.67 mW).
@@ -56,10 +64,13 @@ Die pinned to baseline (no extra whitespace this time).
 5. **Pareto front** (all at 376.6 µm die):
 
    ```
-   fmax  153.4 MHz  <---- Baseline 147.9 MHz ---->  132.5 MHz
-   power  29.3 mW           19.7 mW                  6.54 mW
+   fmax           155.4 / 153.4 MHz  <-- Baseline 147.9 MHz -->  132.5 MHz
+   power@142.9MHz  18.8 / 20.9 mW         19.7 mW               18.7 mW
    ```
+   (values normalized to the baseline clock; as-run totals are 18.8 / 29.3 /
+   6.54 mW at 7 / 5 / 20 ns respectively)
 
-6. **Recommendation:** if ≥130 MHz is acceptable, `ABC_AREA=1` + relaxed clock
-   gives a ~3× power saving; if maximum speed is needed, the 7.0 ns baseline is
-   already near the achievable optimum and further gains require a pipelined RTL.
+6. **Recommendation:** `ABC_AREA=1` gives a ~5% per-cycle energy saving (at
+   equal frequency) *and* higher fmax, so it dominates the delay mapper here;
+   if maximum speed is needed, the 7.0 ns baseline is already near the
+   achievable optimum and further gains require a pipelined RTL.
