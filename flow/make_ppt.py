@@ -382,7 +382,9 @@ add_table(s, ["Loop (endpoint FF)", "Run", "nand2", "nand3", "inv"], [
    header_size=13, body_size=12)
 text_panel(s, 7.75, 5.1, 5.2, 1.9, [
     "Extra cells split ~53% / ~47% between the register-file write-back loop and the PC/branch loop \u2014 both sequential loops were re-expressed.",
-], size=13)
+    "Avg logic levels/path: p7_delay 21.5 vs p7_area 24.7 \u2014 more levels.",
+    "Avg logical effort/stage: p7_delay 1.96 vs p7_area 1.68 \u2014 each stage is cheaper (\u03a3g \u2248 42 both).",
+], size=12)
 
 # ---- Why the loops prefer nand2 / nand3 / inverter cells ----
 body_slide("Why the critical loops prefer NAND2 / NAND3 / INVERTER cells", [
@@ -424,6 +426,32 @@ body_slide("Conclusions", [
     "The design is cell-delay dominated; wire delay < 0.02 ns per path \u2014 not wire-limited",
     "Next steps: pipelined microarchitecture to reach 200 MHz+; SRAM macro for the memories",
 ], size=21)
+
+# ---- backup: logical-effort distribution ----
+table_slide("Backup \u2014 logical-effort distribution (stages)",
+            ["g", "gate types", "p7_delay", "p7_area"], [
+    ["1.00", "inv / buf", "1,623", "719"],
+    ["1.33", "nand2", "181", "2,591"],
+    ["1.60\u20131.80", "a21o/a22o/o21a/o22a \u00b7 nand3", "694", "885"],
+    ["2.00", "aoi21 / oai21 / mux2 / ha", "1,516", "1,767"],
+    ["2.30\u20132.33", "aoi22 / oai22 / nor3", "285", "4"],
+    ["2.70", "aoi211/221/31 \u00b7 oai211", "381", "332"],
+    ["3.00", "aoi311 / oai311 / mux4", "388", "1"],
+    ["3.30", "aoi41", "295", "0"],
+    ["4.00", "xor2 / xnor2", "305", "221"],
+], col_w=[1.2, 5.2, 1.5, 1.5],
+   subtitle="per-stage g over the worst 264 paths of each run")
+
+# ---- acknowledgements ----
+body_slide("Acknowledgements", [
+    "OpenROAD + OpenROAD Flow Scripts \u2014 the open-source RTL\u2192GDS flow and STA.",
+    "Yosys \u2014 open-source synthesis and formal equivalence (equiv_*).",
+    "KLayout \u2014 GDS viewing, DRC and LVS.  Magic + netgen \u2014 extraction and LVS.",
+    "Kepler Formal \u2014 gate-level logical equivalence checking.",
+    "SkyWater Technology, Google and open_pdks \u2014 the open sky130 PDK and standard-cell library.",
+    "The RISC-V community, and J. E. Stine (Harris & Harris textbook reference core) whose RV32I design is the DUT.",
+    "With thanks to all these tool, PDK and research teams for making an open silicon flow possible.",
+], subtitle="thanks to the open-source tool, PDK and research communities", size=19)
 
 out = '/mnt/d/opencode/lunarch/flow/LUNARCH_AI_Driven_Chip_Design.pptx'
 prs.save(out)
