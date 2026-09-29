@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="560" font-family="Helvetica,Arial" font-size="13">
+<rect width="980" height="560" fill="#fff"/>
+<text x="490" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f3a5f">Two sequential loops (where the extra nand2/nand3/inv cells live)</text>
+<rect x="60" y="80" width="150" height="50" rx="7" fill="#f8d7da" stroke="#1f3a5f"/>
+<text x="135.0" y="109.0" text-anchor="middle" fill="#1b2733" font-weight="bold">regfile read (RF)</text>
+<rect x="250" y="80" width="120" height="50" rx="7" fill="#f8d7da" stroke="#1f3a5f"/>
+<text x="310.0" y="109.0" text-anchor="middle" fill="#1b2733" font-weight="bold">ALU / shift</text>
+<rect x="410" y="80" width="120" height="50" rx="7" fill="#f8d7da" stroke="#1f3a5f"/>
+<text x="470.0" y="109.0" text-anchor="middle" fill="#1b2733" font-weight="bold">write-back mux</text>
+<rect x="570" y="80" width="150" height="50" rx="7" fill="#f8d7da" stroke="#1f3a5f"/>
+<text x="645.0" y="109.0" text-anchor="middle" fill="#1b2733" font-weight="bold">regfile write (RF)</text>
+<path d="M210 105 H250" stroke="#c0392b" stroke-width="2" marker-end="url(#a)"/>
+<path d="M370 105 H410" stroke="#c0392b" stroke-width="2" marker-end="url(#a)"/>
+<path d="M530 105 H570" stroke="#c0392b" stroke-width="2" marker-end="url(#a)"/>
+<path d="M645 130 C645 200 135 200 135 130" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#a)"/>
+<text x="390" y="215" text-anchor="middle" fill="#c0392b" font-weight="bold">WRITE-BACK LOOP (PG2/3/4) — ~53% of extra cells</text>
+<rect x="60" y="300" width="150" height="50" rx="7" fill="#d9e6fb" stroke="#1f3a5f"/>
+<text x="135.0" y="329.0" text-anchor="middle" fill="#1b2733" font-weight="bold">pcreg (PC)</text>
+<rect x="250" y="300" width="120" height="50" rx="7" fill="#d9e6fb" stroke="#1f3a5f"/>
+<text x="310.0" y="329.0" text-anchor="middle" fill="#1b2733" font-weight="bold">PC +4 / +imm</text>
+<rect x="410" y="300" width="120" height="50" rx="7" fill="#d9e6fb" stroke="#1f3a5f"/>
+<text x="470.0" y="329.0" text-anchor="middle" fill="#1b2733" font-weight="bold">branch compare</text>
+<rect x="570" y="300" width="150" height="50" rx="7" fill="#d9e6fb" stroke="#1f3a5f"/>
+<text x="645.0" y="329.0" text-anchor="middle" fill="#1b2733" font-weight="bold">PC mux (pcsrc)</text>
+<path d="M210 325 H250" stroke="#4a86e8" stroke-width="2" marker-end="url(#a)"/>
+<path d="M370 325 H410" stroke="#4a86e8" stroke-width="2" marker-end="url(#a)"/>
+<path d="M530 325 H570" stroke="#4a86e8" stroke-width="2" marker-end="url(#a)"/>
+<path d="M645 350 C645 420 135 420 135 350" fill="none" stroke="#4a86e8" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#a)"/>
+<text x="390" y="435" text-anchor="middle" fill="#4a86e8" font-weight="bold">PC / BRANCH LOOP (PG1/5) — ~47% of extra cells</text>
+<defs><marker id="a" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="#1f3a5f"/></marker></defs>
+<text x="490" y="510" text-anchor="middle" fill="#555" font-size="12">extra cells feed the flip-flops of BOTH loops: +1,376 nand2 / +536 nand3 / +383 inv (RF) and +1,166 / +498 / +362 (PC)</text>
+</svg>
