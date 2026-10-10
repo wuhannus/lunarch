@@ -417,6 +417,27 @@ table_slide("Software Requirements (open-source)", ["Layer", "Tools / version"],
     ["AI / scripting", "opencode AI agent, Python 3 + openpyxl / python-pptx"],
 ], col_w=[3, 8], subtitle="100% open-source; no commercial EDA licenses")
 
+# ---- project effort: AI agent vs. engineer from scratch ----
+s = newslide()
+header(s, "Project Effort \u2014 AI Agent vs. Engineer From Scratch",
+       "measured opencode session telemetry vs. from-scratch engineering estimate")
+add_table(s, ["Metric", "AI agent (measured)", "Engineer (estimated)"], [
+    ["Calendar span", "35 days (interactive)", "8\u201315 weeks"],
+    ["Active work time", "47.5 h (\u2248 2.0 days)", "38\u201375 person-days"],
+    ["Prompts / tool calls", "120 / 1,429", "n/a"],
+    ["Tokens in / out / reasoning", "9.3 M / 0.45 M / 0.91 M", "n/a"],
+    ["Total tokens (all sessions)", "\u2248 12.2 M", "n/a"],
+    ["Cache-read tokens", "623 M", "n/a"],
+    ["Cost", "\u2248 $4.3 (API tokens)", "\u2248 $100k+ (loaded salary)"],
+    ["Deliverables", "RTL\u2192GDS, DRC/LVS/LEC clean, PPA sweep, sim, paper + deck", "same"],
+], left=0.5, top=1.4, width=12.3, col_w=[3.2, 4.8, 4.3],
+   header_size=15, body_size=14)
+text_panel(s, 0.55, 5.0, 12.2, 2.3, [
+    "Work packages: toolchain build (Yosys, OpenROAD, Magic, netgen, KLayout, Kepler, sky130 PDK, ORFS) \u00b7 RTL\u2192GDS flow \u00b7 DRC + LVS \u00b7 LEC \u00b7 timing closure + PPA sweep \u00b7 critical-path & logical-effort analysis \u00b7 simulation (golden ISS, pre/post/SDF) \u00b7 paper + deck.",
+    "Engineer estimate by package: toolchain 8\u201315 d, RTL\u2192GDS 4\u20138 d, DRC/LVS 5\u201310 d, LEC 3\u20136 d, timing+PPA 5\u201310 d, analysis 4\u20138 d, simulation 4\u20138 d, paper/deck 5\u201310 d.",
+    "Takeaway: \u2248 2 active AI-days vs \u2248 2\u20133\u00bd months solo (1\u20132 months small team), for \u2248 $4.3 in tokens.",
+], size=15)
+
 body_slide("Conclusions", [
     "A complete open-source RTL\u2192GDS flow for an RV32I core was built and sign-off clean (DRC 0, LVS match, LEC proven)",
     "AI orchestration covered toolchain bring-up, version matching, debugging, dashboards and goal-directed studies",
@@ -453,6 +474,33 @@ body_slide("Acknowledgements", [
     "With thanks to all these tool, PDK and research teams for making an open silicon flow possible.",
 ], subtitle="thanks to the open-source tool, PDK and research communities", size=19)
 
-out = '/mnt/d/opencode/lunarch/flow/LUNARCH_AI_Driven_Chip_Design.pptx'
+# ---- enlarge the fonts on every slide (uniform factor) ----
+FONT_SCALE = 1.15
+
+
+def _scale_tf(tf, f):
+    for para in tf.paragraphs:
+        if para.font.size is not None:
+            para.font.size = Pt(para.font.size.pt * f)
+        for run in para.runs:
+            if run.font.size is not None:
+                run.font.size = Pt(run.font.size.pt * f)
+
+
+def scale_fonts(f):
+    for slide in prs.slides:
+        for shape in slide.shapes:
+            if shape.has_text_frame:
+                _scale_tf(shape.text_frame, f)
+            if shape.has_table:
+                for row in shape.table.rows:
+                    for cell in row.cells:
+                        _scale_tf(cell.text_frame, f)
+
+
+scale_fonts(FONT_SCALE)
+
+out = os.environ.get(
+    'PPT_OUT', '/mnt/d/opencode/lunarch/flow/LUNARCH_AI_Driven_Chip_Design.pptx')
 prs.save(out)
 print('wrote', out, os.path.getsize(out), 'bytes;', len(prs.slides._sldIdLst), 'slides')
