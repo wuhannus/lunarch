@@ -399,6 +399,21 @@ body_slide("Why the critical loops prefer NAND2 / NAND3 / INVERTER cells", [
     "Net effect at the same clock: fmax 147.9 \u2192 155.4 MHz and power 19.7 \u2192 18.8 mW \u2014 the extra nand/inv gates ARE the speedup, not a cost.",
 ], size=17)
 
+# ---- logical-effort distribution (moved after the loop-effort discussion) ----
+table_slide("Logical-effort distribution (stages)",
+            ["g", "gate types", "p7_delay", "p7_area"], [
+    ["1.00", "inv / buf", "1,623", "719"],
+    ["1.33", "nand2", "181", "2,591"],
+    ["1.60\u20131.80", "a21o/a22o/o21a/o22a \u00b7 nand3", "694", "885"],
+    ["2.00", "aoi21 / oai21 / mux2 / ha", "1,516", "1,767"],
+    ["2.30\u20132.33", "aoi22 / oai22 / nor3", "285", "4"],
+    ["2.70", "aoi211/221/31 \u00b7 oai211", "381", "332"],
+    ["3.00", "aoi311 / oai311 / mux4", "388", "1"],
+    ["3.30", "aoi41", "295", "0"],
+    ["4.00", "xor2 / xnor2", "305", "221"],
+], col_w=[1.2, 5.2, 1.5, 1.5],
+   subtitle="per-stage g over the worst 264 paths of each run")
+
 body_slide("Hardware Requirements", [
     "Host: x86-64 machine running WSL2 (Ubuntu 24.04)",
     "CPU: multi-core (\u2265 4 cores; place/route are largely single-thread heavy)",
@@ -450,21 +465,6 @@ body_slide("Conclusions", [
     "The design is cell-delay dominated; wire delay < 0.02 ns per path \u2014 not wire-limited",
     "Next steps: pipelined microarchitecture to reach 200 MHz+; SRAM macro for the memories",
 ], size=21)
-
-# ---- backup: logical-effort distribution ----
-table_slide("Backup \u2014 logical-effort distribution (stages)",
-            ["g", "gate types", "p7_delay", "p7_area"], [
-    ["1.00", "inv / buf", "1,623", "719"],
-    ["1.33", "nand2", "181", "2,591"],
-    ["1.60\u20131.80", "a21o/a22o/o21a/o22a \u00b7 nand3", "694", "885"],
-    ["2.00", "aoi21 / oai21 / mux2 / ha", "1,516", "1,767"],
-    ["2.30\u20132.33", "aoi22 / oai22 / nor3", "285", "4"],
-    ["2.70", "aoi211/221/31 \u00b7 oai211", "381", "332"],
-    ["3.00", "aoi311 / oai311 / mux4", "388", "1"],
-    ["3.30", "aoi41", "295", "0"],
-    ["4.00", "xor2 / xnor2", "305", "221"],
-], col_w=[1.2, 5.2, 1.5, 1.5],
-   subtitle="per-stage g over the worst 264 paths of each run")
 
 # ---- acknowledgements ----
 body_slide("Acknowledgements", [
