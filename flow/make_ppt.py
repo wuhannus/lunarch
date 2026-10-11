@@ -272,23 +272,26 @@ add_table(s, ["Check", "Tool / method", "Result"], [
     ["Simulation / equivalence", "Yosys formal + SAT (counter-example free)", "Pass"],
 ], left=0.6, top=4.5, width=12.1, col_w=[3.6, 5.6, 2.9], header_size=13, body_size=12)
 
-# animated gate-level simulation replay (GIF)
+# animated gate-level simulation replay (GIF): pre-sim vs post-sim + consistency check
 s = newslide()
-header(s, "Simulation Replay \u2014 gate-level", "pre-layout RTL trace \u2014 animates in slide-show mode (press F5)")
+header(s, "Simulation Replay \u2014 pre-sim vs post-sim",
+       "pre-layout RTL vs post-layout routed gate-level \u2014 consistency-checked; animates in slide-show mode (press F5)")
 if os.path.exists(IMG_GIF):
     iw = 9.0
     ih = iw * 600.0 / 1000.0
     s.shapes.add_picture(IMG_GIF,
                          Inches((prs.slide_width.inches - iw) / 2),
                          Inches(1.4), Inches(iw), Inches(ih))
-tb = s.shapes.add_textbox(Inches(0.6), Inches(6.9), Inches(12.1), Inches(0.5))
+tb = s.shapes.add_textbox(Inches(0.6), Inches(6.88), Inches(12.1), Inches(0.55))
 tf = tb.text_frame; tf.word_wrap = True
 p = tf.paragraphs[0]
 for text, bold, color in [
-    ("Debugger-style replay of the 125-cycle directed test: ", False, GREY),
-    ("program listing", True, DARK), (" (left, current PC highlighted), ", False, GREY),
-    ("architectural state + memory-write log", True, DARK), (" (right), and a ", False, GREY),
-    ("signal strip", True, DARK), (" (pc / instr / memwrite / memread).", False, GREY),
+    ("Consistency replay of the 125-cycle directed test: ", False, GREY),
+    ("pre-sim (RTL)", True, DARK), (" and ", False, GREY),
+    ("post-sim (routed gate netlist)", True, DARK), (" stepped side by side, plus the ", False, GREY),
+    ("SDF-annotated", True, DARK), (" run.  ", False, GREY),
+    ("Per-cycle diff: 126/126 lines identical, 0 differing \u00b7 36/36 memory writes match \u2014 OVERALL: PASS.",
+     True, DARK),
 ]:
     r = p.add_run(); r.text = text; r.font.bold = bold
     r.font.size = Pt(14); r.font.color.rgb = color
