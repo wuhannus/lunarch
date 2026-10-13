@@ -13,6 +13,7 @@ LGREY = RGBColor(0xEE, 0xF2, 0xF7)
 WHITE = RGBColor(0xFF, 0xFF, 0xFF)
 SOFT = RGBColor(0xC9, 0xD8, 0xEE)
 BLUE = RGBColor(0x9E, 0xC5, 0xFF)
+NAVY = DARK
 
 IMG_BLOCK = '/mnt/d/opencode/lunarch/flow/analysis/design.png'
 IMG_MODMAP = '/mnt/d/opencode/lunarch/flow/baseline/modules/6_final_modules.png'
@@ -22,6 +23,7 @@ IMG_GDS = '/mnt/d/opencode/lunarch/flow/orfs_sky130hd_riscv32i/6_final_gds.png'
 IMG_GIF = '/mnt/d/opencode/lunarch/flow/opt/sweep/riscv32i_sim.gif'
 IMG_ROUTING = '/mnt/d/opencode/lunarch/flow/timing/dashboard/routing_maps.gif'
 IMG_LOOPS = '/mnt/d/opencode/lunarch/flow/opt/p7_area_loops.png'
+IMG_BIO = '/mnt/d/opencode/lunarch/flow/analysis/hanwu_photo.png'
 ACC_BLUE = RGBColor(0x4A, 0x86, 0xE8)
 ACC_RED = RGBColor(0xE0, 0x66, 0x66)
 
@@ -40,10 +42,10 @@ def header(s, title, subtitle=None):
     b.fill.solid(); b.fill.fore_color.rgb = DARK; b.line.fill.background()
     tf = b.text_frame; tf.margin_left = Inches(0.5); tf.vertical_anchor = MSO_ANCHOR.MIDDLE
     p = tf.paragraphs[0]; p.text = title
-    p.font.size = Pt(32); p.font.bold = True; p.font.color.rgb = WHITE
+    p.font.size = Pt(28); p.font.bold = True; p.font.color.rgb = WHITE
     if subtitle:
         p2 = tf.add_paragraph(); p2.text = subtitle
-        p2.font.size = Pt(16); p2.font.color.rgb = SOFT
+        p2.font.size = Pt(15); p2.font.color.rgb = SOFT
 
 
 def bullets(s, items, left=0.6, top=1.5, width=12.1, height=5.7, size=24):
@@ -145,24 +147,25 @@ def pareto_page():
         s.shapes.add_picture(IMG_PARETO, left, top, width=img_w, height=img_h)
     ann_left = left + img_w + Inches(0.3)
     ann_w = prs.slide_width - ann_left - Inches(0.4)
-    tb = s.shapes.add_textbox(ann_left, top, ann_w, img_h)
+    tb = s.shapes.add_textbox(ann_left, top, ann_w, Inches(5.9))
     tf = tb.text_frame; tf.word_wrap = True
     specs = [
-        ([("ABC mapper: \u201cdelay-oriented\u201d vs \u201carea-oriented\u201d", True, DARK, 17)], 10),
-        ([("delay-oriented (ABC_AREA=0): ", True, ACC_BLUE, 13.5),
+        ([("ABC mapper: \u201cperformance \u2014 delay\u201d vs \u201cpower \u2014 area-mapped\u201d", True, DARK, 15)], 10),
+        ([("delay-oriented (ABC_AREA=0): ", True, ACC_BLUE, 12),
           ("the mapper optimises the critical path \u2014 larger, faster cells, area "
            "spent to shorten logic depth. Fastest, but more capacitance \u2192 more "
-           "dynamic power.  (blue circles: p5/p7/p10_delay)", False, GREY, 13.5)], 10),
-        ([("area-oriented (ABC_AREA=1): ", True, ACC_RED, 13.5),
+           "dynamic power.  (blue circles: p5/p7/p10_delay)", False, GREY, 12)], 10),
+        ([("power-optimized \u2014 area-mapped (ABC_AREA=1): ", True, ACC_RED, 12),
           ("the mapper minimises gate area / transistor count \u2014 smaller cells, "
            "shared logic. Lower capacitance \u2192 less switching power, at some speed "
-           "cost.  (red squares: p7/p10/p20_area)", False, GREY, 13.5)], 10),
-        ([("Reading the plot: ", True, DARK, 13.5),
+           "cost.  (red squares: p7/p10/p20_power)", False, GREY, 12)], 10),
+        ([("Reading the plot: ", True, DARK, 12),
           ("X = achieved fmax; Y = total power @142.9 MHz (fair comparison). Dashed "
-           "line = Pareto front.", False, GREY, 13.5)], 10),
-        ([("Result: ", True, DARK, 13.5),
-          ("p7_area is lower power AND faster than the delay baseline at equal "
-           "frequency \u2192 area-oriented mapping dominates.", False, GREY, 13.5)], 0),
+           "line = Pareto front.", False, GREY, 12)], 10),
+        ([("Result: ", True, DARK, 12),
+          ("p7_power is lower power AND faster than the delay baseline at equal "
+           "frequency \u2192 power-optimized (area-mapped) mapping dominates.",
+           False, GREY, 12)], 0),
     ]
     for i, (runs, after) in enumerate(specs):
         p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
@@ -170,6 +173,55 @@ def pareto_page():
         for text, bold, color, size in runs:
             r = p.add_run(); r.text = text
             r.font.bold = bold; r.font.size = Pt(size); r.font.color.rgb = color
+    return s
+
+
+def bio_slide():
+    """Author bio page (reproduced from 'What AI Has Brought Us', slide 2)."""
+    s = newslide()
+    # top disclaimer band
+    band = s.shapes.add_shape(1, 0, 0, prs.slide_width, Inches(1.875))
+    band.fill.solid(); band.fill.fore_color.rgb = RGBColor(0xF9, 0xFA, 0xFB)
+    band.line.fill.background(); band.shadow.inherit = False
+    tb = s.shapes.add_textbox(Inches(0.38), Inches(0.05), Inches(12.5), Inches(0.5))
+    p = tb.text_frame.paragraphs[0]; p.text = "Disclaimer"
+    p.font.size = Pt(24); p.font.bold = True; p.font.color.rgb = NAVY
+    tb = s.shapes.add_textbox(Inches(0.36), Inches(0.52), Inches(12.5), Inches(1.15))
+    tf = tb.text_frame; tf.word_wrap = True
+    p = tf.paragraphs[0]
+    p.text = ("The views expressed in this presentation are solely those of the presenter "
+              "and do not reflect the official policy or position of any company or "
+              "institution. This presentation draws from 35 years of personal reflection, "
+              "is for informational purposes only, and does not constitute professional advice.")
+    p.font.size = Pt(15); p.font.color.rgb = GREY
+    # divider
+    dv = s.shapes.add_shape(1, Inches(0.38), Inches(1.86), Inches(12.57), Pt(2))
+    dv.fill.solid(); dv.fill.fore_color.rgb = RGBColor(0xE5, 0xE7, 0xEB)
+    dv.line.fill.background(); dv.shadow.inherit = False
+    # bio text
+    tb = s.shapes.add_textbox(Inches(0.38), Inches(2.0), Inches(8.9), Inches(5.3))
+    tf = tb.text_frame; tf.word_wrap = True
+    def line(i, runs, after=6):
+        p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
+        p.space_after = Pt(after)
+        for text, bold, color, size in runs:
+            r = p.add_run(); r.text = text; r.font.bold = bold
+            r.font.size = Pt(size); r.font.color.rgb = color
+    line(0, [("Dr. Han Wu", True, NAVY, 26)], after=12)
+    line(1, [("B.Eng. (2013) & M.E. (2016) \u2014 Chongqing University, China", False, DARK, 16)])
+    line(2, [("Ph.D. (2021) \u2014 National University of Singapore", False, DARK, 16)])
+    line(3, [("Research Fellow, NUS (2022)", False, DARK, 16)])
+    line(4, [("STCO Team Leader, HUAWEI  (2022 \u2013 2026)", False, DARK, 16)])
+    line(5, [("ASIC Engineer, NVIDIA (2026 \u2013 today)", False, DARK, 16)], after=12)
+    line(6, [("Industry Expertise:", True, DARK, 16),
+             (" IC design for high-performance & energy-efficient AI chips", False, GREY, 16)])
+    line(7, [("Research interests:", True, DARK, 16),
+             (" energy-efficient high-speed links, ultra-low-power SoC design, MEMS "
+              "sensor interface circuits, system-technology co-optimization for "
+              "advanced computing & AI hardware", False, GREY, 16)], after=0)
+    # photo
+    if os.path.exists(IMG_BIO):
+        s.shapes.add_picture(IMG_BIO, Inches(9.55), Inches(2.35), Inches(3.55), Inches(3.98))
     return s
 
 
@@ -197,6 +249,9 @@ dp.text = ("Disclaimer: this material reflects the author\u2019s personal resear
            "interest only. It is not related to, endorsed by, or affiliated with "
            "my current or former employers.")
 dp.font.size = Pt(11); dp.font.color.rgb = SOFT
+
+# 2 bio introduction (author bio, reproduced from the source deck)
+BIO = bio_slide()
 
 body_slide("Agenda", [
     "Introduction \u2014 RISC-V RV32I core and the open-source RTL\u2192GDS motivation",
@@ -341,11 +396,11 @@ for text, bold, color in [
 
 pareto_page()
 
-# cell-type analysis: why p7_area beats p7_delay at the same clock
+# cell-type analysis: why the power-optimized run beats p7_delay at the same clock
 s = newslide()
-header(s, "Why p7_area beats p7_delay (same 7 ns clock)",
-       "cell-type analysis \u2014 area vs delay ABC mapping")
-add_table(s, ["Cell class", "p7_delay", "p7_area", "\u0394"], [
+header(s, "Why p7_power beats p7_delay (same 7 ns clock)",
+       "cell-type analysis \u2014 power-optimized (area-mapped) vs delay ABC mapping")
+add_table(s, ["Cell class", "p7_delay", "p7_power", "\u0394"], [
     ["Multi-input combinational", "3,458", "6,404", "+2,946"],
     ["Inverter", "123", "843", "+720"],
     ["Clock inverter", "68", "63", "\u22125"],
@@ -370,23 +425,23 @@ text_panel(s, 7.2, 1.5, 5.65, 5.4, [
 # ---- Where the extra cells go: two critical loops + extra-cell table ----
 s = newslide()
 header(s, "Where the extra cells go \u2014 two critical loops",
-       "p7_area vs p7_delay: extra nand2 / nand3 / inv by endpoint loop")
+       "p7_power vs p7_delay: extra nand2 / nand3 / inv by endpoint loop")
 if os.path.exists(IMG_LOOPS):
     w, h = Image.open(IMG_LOOPS).size
     iw = 7.0; ih = iw * h / w
     s.shapes.add_picture(IMG_LOOPS, Inches(0.4), Inches(1.6), Inches(iw), Inches(ih))
 add_table(s, ["Loop (endpoint FF)", "Run", "nand2", "nand3", "inv"], [
     ["write-back (rf/D)", "p7_delay", "151", "30", "40"],
-    ["", "p7_area", "1,527", "566", "423"],
+    ["", "p7_power", "1,527", "566", "423"],
     ["PC / branch (pcreg/D)", "p7_delay", "175", "40", "33"],
-    ["", "p7_area", "1,341", "538", "395"],
+    ["", "p7_power", "1,341", "538", "395"],
     ["\u0394 (area \u2212 delay)", "total", "+2,542", "+1,034", "+745"],
 ], left=7.75, top=2.1, width=5.2, col_w=[2.0, 1.0, 0.9, 0.9, 0.9],
    header_size=13, body_size=12)
 text_panel(s, 7.75, 5.1, 5.2, 1.9, [
     "Extra cells split ~53% / ~47% between the register-file write-back loop and the PC/branch loop \u2014 both sequential loops were re-expressed.",
-    "Avg logic levels/path: p7_delay 21.5 vs p7_area 24.7 \u2014 more levels.",
-    "Avg logical effort/stage: p7_delay 1.96 vs p7_area 1.68 \u2014 each stage is cheaper (\u03a3g \u2248 42 both).",
+    "Avg logic levels/path: p7_delay 21.5 vs p7_power 24.7 \u2014 more levels.",
+    "Avg logical effort/stage: p7_delay 1.96 vs p7_power 1.68 \u2014 each stage is cheaper (\u03a3g \u2248 42 both).",
 ], size=12)
 
 # ---- Why the loops prefer nand2 / nand3 / inverter cells ----
@@ -401,7 +456,7 @@ body_slide("Why the critical loops prefer NAND2 / NAND3 / INVERTER cells", [
 
 # ---- logical-effort distribution (moved after the loop-effort discussion) ----
 table_slide("Logical-effort distribution (stages)",
-            ["g", "gate types", "p7_delay", "p7_area"], [
+            ["g", "gate types", "p7_delay", "p7_power"], [
     ["1.00", "inv / buf", "1,623", "719"],
     ["1.33", "nand2", "181", "2,591"],
     ["1.60\u20131.80", "a21o/a22o/o21a/o22a \u00b7 nand3", "694", "885"],
@@ -461,7 +516,7 @@ body_slide("Conclusions", [
     "AI orchestration covered toolchain bring-up, version matching, debugging, dashboards and goal-directed studies",
     "Baseline closes timing at 7.0 ns (147.9 MHz, 19.7 mW)",
     "200 MHz is unreachable without RTL pipelining \u2014 best is 153.4 MHz",
-    "Area-oriented synthesis cuts per-cycle energy ~5% (18.7 mW @142.9 MHz equiv.) and raises fmax to 155 MHz",
+    "Power-optimized (area-mapped) synthesis cuts per-cycle energy ~5% (18.7 mW @142.9 MHz equiv.) and raises fmax to 155 MHz",
     "The design is cell-delay dominated; wire delay < 0.02 ns per path \u2014 not wire-limited",
     "Next steps: pipelined microarchitecture to reach 200 MHz+; SRAM macro for the memories",
 ], size=21)
@@ -490,8 +545,10 @@ def _scale_tf(tf, f):
                 run.font.size = Pt(run.font.size.pt * f)
 
 
-def scale_fonts(f):
+def scale_fonts(f, skip=()):
     for slide in prs.slides:
+        if slide.slide_id in skip:
+            continue
         for shape in slide.shapes:
             if shape.has_text_frame:
                 _scale_tf(shape.text_frame, f)
@@ -501,7 +558,7 @@ def scale_fonts(f):
                         _scale_tf(cell.text_frame, f)
 
 
-scale_fonts(FONT_SCALE)
+scale_fonts(FONT_SCALE, skip=(BIO.slide_id,))
 
 out = os.environ.get(
     'PPT_OUT', '/mnt/d/opencode/lunarch/flow/LUNARCH_AI_Driven_Chip_Design.pptx')

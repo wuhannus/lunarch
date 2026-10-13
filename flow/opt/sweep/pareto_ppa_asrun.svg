@@ -70,15 +70,15 @@
 <circle cx="218" cy="379" r="6" fill="#4A86E8" stroke="#1f3a5f" stroke-width="1"/>
 <text x="227" y="371" fill="#1b2733">p10_delay</text>
 <rect x="788" y="282" width="12" height="12" fill="#E06666" stroke="#1f3a5f" stroke-width="1"/>
-<text x="803" y="280" fill="#1b2733">p7_area</text>
+<text x="803" y="280" fill="#1b2733">p7_power</text>
 <rect x="306" y="375" width="12" height="12" fill="#E06666" stroke="#1f3a5f" stroke-width="1"/>
-<text x="321" y="373" fill="#1b2733">p10_area</text>
+<text x="321" y="373" fill="#1b2733">p10_power</text>
 <rect x="392" y="489" width="12" height="12" fill="#E06666" stroke="#1f3a5f" stroke-width="1"/>
-<text x="407" y="487" fill="#1b2733">p20_area</text>
+<text x="407" y="487" fill="#1b2733">p20_power</text>
 <circle cx="122" cy="82" r="6" fill="#4A86E8" stroke="#1f3a5f"/>
-<text x="136" y="86" fill="#333">delay ABC (ABC_AREA=0)</text>
+<text x="136" y="86" fill="#333">performance &#8212; delay ABC (ABC_AREA=0)</text>
 <rect x="116" y="100" width="12" height="12" fill="#E06666" stroke="#1f3a5f"/>
-<text x="136" y="110" fill="#333">area ABC (ABC_AREA=1)</text>
+<text x="136" y="110" fill="#333">power-optimized &#8212; area-mapped (ABC_AREA=1)</text>
 <line x1="116" y1="130" x2="130" y2="130" stroke="#1E7A46" stroke-width="2" stroke-dasharray="6 4"/>
 <text x="136" y="134" fill="#333">Pareto front</text>
 </svg>

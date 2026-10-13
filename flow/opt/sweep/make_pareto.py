@@ -23,9 +23,9 @@ PTS = [
     ("p5_delay",   5.0, 0, 153.37, 5689, "timing_diematch/6_finish.rpt"),
     ("p7_delay",   7.0, 0, 147.93, 5520, "sweep/p7_delay.rpt"),
     ("p10_delay", 10.0, 0, 122.07, 5209, "sweep/p10_delay.rpt"),
-    ("p7_area",    7.0, 1, 155.37, 8919, "sweep/p7_area.rpt"),
-    ("p10_area",  10.0, 1, 127.49, 8859, "sweep/p10_area.rpt"),
-    ("p20_area",  20.0, 1, 132.50, 8800, "power_diematch/6_finish.rpt"),
+    ("p7_power",    7.0, 1, 155.37, 8919, "sweep/p7_area.rpt"),
+    ("p10_power",  10.0, 1, 127.49, 8859, "sweep/p10_area.rpt"),
+    ("p20_power",  20.0, 1, 132.50, 8800, "power_diematch/6_finish.rpt"),
 ]
 
 
@@ -113,9 +113,9 @@ def render(rows, key, y0, y1, ystep, title, ycaption, out):
 
     lx, ly = ML + 26, MT + 18
     s.append(f'<circle cx="{lx}" cy="{ly}" r="6" fill="#4A86E8" stroke="#1f3a5f"/>')
-    s.append(f'<text x="{lx+14}" y="{ly+4}" fill="#333">delay ABC (ABC_AREA=0)</text>')
+    s.append(f'<text x="{lx+14}" y="{ly+4}" fill="#333">performance &#8212; delay ABC (ABC_AREA=0)</text>')
     s.append(f'<rect x="{lx-6}" y="{ly+24-6}" width="12" height="12" fill="#E06666" stroke="#1f3a5f"/>')
-    s.append(f'<text x="{lx+14}" y="{ly+28}" fill="#333">area ABC (ABC_AREA=1)</text>')
+    s.append(f'<text x="{lx+14}" y="{ly+28}" fill="#333">power-optimized &#8212; area-mapped (ABC_AREA=1)</text>')
     s.append(f'<line x1="{lx-6}" y1="{ly+48}" x2="{lx+8}" y2="{ly+48}" stroke="#1E7A46" stroke-width="2" stroke-dasharray="6 4"/>')
     s.append(f'<text x="{lx+14}" y="{ly+52}" fill="#333">Pareto front</text>')
     s.append('</svg>')
