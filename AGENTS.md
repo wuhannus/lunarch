@@ -6,10 +6,12 @@ repository, written so that an autonomous agent can reproduce it end-to-end.
 ## Design Under Test
 
 The flow was verified on the **`riscv32i`** design bundled with OpenROAD Flow
-Scripts (`flow/designs/src/riscv32i/`): a simple **RV32I** core created for an
-Oregon State University undergraduate course (July 2019), Apache-2.0 licensed
-(the classic Harris & Harris *Digital Design and Computer Architecture* processor).
+Scripts (`flow/designs/src/riscv32i/`): a simple **RV32I** core created by
+James E. Stine (Oklahoma State University, ECEN 4243) for an OSU undergraduate
+course (July 2019), Apache-2.0 licensed (the classic Harris & Harris *Digital
+Design and Computer Architecture* processor).
 Top module: `riscv`.
+Source: <https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts/tree/master/flow/designs/src/riscv32i>
 
 > Note: the `lunahan_v1`/`lunahan_v2` cores are pyCircuit (Python) designs and
 > require the pyCircuit→MLIR→Verilog toolchain; this flow targets the

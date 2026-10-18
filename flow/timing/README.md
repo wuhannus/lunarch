@@ -7,7 +7,7 @@ First full RTL-to-GDS run of the baseline design.
 | | |
 |---|---|
 | Top module | `riscv` (single-cycle RV32I) |
-| Origin | James E. Stine, Oklahoma State University, ECEN 4243 (from the Harris & Harris textbook processor); bundled in ORFS, Apache-2.0 |
+| Origin | James E. Stine, Oklahoma State University, ECEN 4243 (from the Harris & Harris textbook processor); bundled in ORFS, Apache-2.0 — [source](https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts/tree/master/flow/designs/src/riscv32i) |
 | Platform | `sky130hd` (sky130_fd_sc_hd) |
 | Cells | 5,737 (incl. 1,024 `edfxtp_1` register-file FFs) |
 | Area | ~81,986 µm² (33% utilization) |
