@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="680" font-family="Helvetica,Arial" font-size="22">
+<rect width="1000" height="680" fill="#ffffff"/>
+<text x="500.0" y="54" text-anchor="middle" font-size="29" font-weight="bold" fill="#1f3a5f">riscv32i PPA — as-run power (unfair across clocks)</text>
+<line x1="163" y1="555" x2="932" y2="555" stroke="#666"/>
+<line x1="163" y1="108" x2="163" y2="555" stroke="#666"/>
+<line x1="240" y1="108" x2="240" y2="555" stroke="#eef2f7"/>
+<line x1="240" y1="555" x2="240" y2="560" stroke="#999"/>
+<text x="240" y="589" text-anchor="middle" fill="#555">120</text>
+<line x1="317" y1="108" x2="317" y2="555" stroke="#eef2f7"/>
+<line x1="317" y1="555" x2="317" y2="560" stroke="#999"/>
+<text x="317" y="589" text-anchor="middle" fill="#555">125</text>
+<line x1="394" y1="108" x2="394" y2="555" stroke="#eef2f7"/>
+<line x1="394" y1="555" x2="394" y2="560" stroke="#999"/>
+<text x="394" y="589" text-anchor="middle" fill="#555">130</text>
+<line x1="471" y1="108" x2="471" y2="555" stroke="#eef2f7"/>
+<line x1="471" y1="555" x2="471" y2="560" stroke="#999"/>
+<text x="471" y="589" text-anchor="middle" fill="#555">135</text>
+<line x1="548" y1="108" x2="548" y2="555" stroke="#eef2f7"/>
+<line x1="548" y1="555" x2="548" y2="560" stroke="#999"/>
+<text x="548" y="589" text-anchor="middle" fill="#555">140</text>
+<line x1="624" y1="108" x2="624" y2="555" stroke="#eef2f7"/>
+<line x1="624" y1="555" x2="624" y2="560" stroke="#999"/>
+<text x="624" y="589" text-anchor="middle" fill="#555">145</text>
+<line x1="701" y1="108" x2="701" y2="555" stroke="#eef2f7"/>
+<line x1="701" y1="555" x2="701" y2="560" stroke="#999"/>
+<text x="701" y="589" text-anchor="middle" fill="#555">150</text>
+<line x1="778" y1="108" x2="778" y2="555" stroke="#eef2f7"/>
+<line x1="778" y1="555" x2="778" y2="560" stroke="#999"/>
+<text x="778" y="589" text-anchor="middle" fill="#555">155</text>
+<line x1="855" y1="108" x2="855" y2="555" stroke="#eef2f7"/>
+<line x1="855" y1="555" x2="855" y2="560" stroke="#999"/>
+<text x="855" y="589" text-anchor="middle" fill="#555">160</text>
+<line x1="932" y1="108" x2="932" y2="555" stroke="#eef2f7"/>
+<line x1="932" y1="555" x2="932" y2="560" stroke="#999"/>
+<text x="932" y="589" text-anchor="middle" fill="#555">165</text>
+<line x1="163" y1="555" x2="932" y2="555" stroke="#eef2f7"/>
+<line x1="158" y1="555" x2="163" y2="555" stroke="#999"/>
+<text x="146" y="561" text-anchor="end" fill="#555">0</text>
+<line x1="163" y1="499" x2="932" y2="499" stroke="#eef2f7"/>
+<line x1="158" y1="499" x2="163" y2="499" stroke="#999"/>
+<text x="146" y="505" text-anchor="end" fill="#555">4</text>
+<line x1="163" y1="443" x2="932" y2="443" stroke="#eef2f7"/>
+<line x1="158" y1="443" x2="163" y2="443" stroke="#999"/>
+<text x="146" y="449" text-anchor="end" fill="#555">8</text>
+<line x1="163" y1="387" x2="932" y2="387" stroke="#eef2f7"/>
+<line x1="158" y1="387" x2="163" y2="387" stroke="#999"/>
+<text x="146" y="393" text-anchor="end" fill="#555">12</text>
+<line x1="163" y1="332" x2="932" y2="332" stroke="#eef2f7"/>
+<line x1="158" y1="332" x2="163" y2="332" stroke="#999"/>
+<text x="146" y="338" text-anchor="end" fill="#555">16</text>
+<line x1="163" y1="276" x2="932" y2="276" stroke="#eef2f7"/>
+<line x1="158" y1="276" x2="163" y2="276" stroke="#999"/>
+<text x="146" y="282" text-anchor="end" fill="#555">20</text>
+<line x1="163" y1="220" x2="932" y2="220" stroke="#eef2f7"/>
+<line x1="158" y1="220" x2="163" y2="220" stroke="#999"/>
+<text x="146" y="226" text-anchor="end" fill="#555">24</text>
+<line x1="163" y1="164" x2="932" y2="164" stroke="#eef2f7"/>
+<line x1="158" y1="164" x2="163" y2="164" stroke="#999"/>
+<text x="146" y="170" text-anchor="end" fill="#555">28</text>
+<line x1="163" y1="108" x2="932" y2="108" stroke="#eef2f7"/>
+<line x1="158" y1="108" x2="163" y2="108" stroke="#999"/>
+<text x="146" y="114" text-anchor="end" fill="#555">32</text>
+<text x="548" y="643" text-anchor="middle" fill="#1f3a5f">fmax (MHz) → faster &amp; better</text>
+<text x="44" y="332" text-anchor="middle" fill="#1f3a5f" transform="rotate(-90 44 332)">total power at each run’s own clock (mW)</text>
+<polyline points="432,464 784,292" fill="none" stroke="#1E7A46" stroke-width="2" stroke-dasharray="6 4"/>
+<circle cx="753" cy="146" r="10" fill="#4A86E8" stroke="#1f3a5f" stroke-width="1"/>
+<text x="753" y="132" text-anchor="middle" fill="#1b2733">p5_delay</text>
+<circle cx="669" cy="280" r="10" fill="#4A86E8" stroke="#1f3a5f" stroke-width="1"/>
+<text x="669" y="266" text-anchor="middle" fill="#1b2733">p7_delay</text>
+<circle cx="272" cy="368" r="10" fill="#4A86E8" stroke="#1f3a5f" stroke-width="1"/>
+<text x="272" y="354" text-anchor="middle" fill="#1b2733">p10_delay</text>
+<rect x="774" y="282" width="20" height="20" fill="#E06666" stroke="#1f3a5f" stroke-width="1"/>
+<text x="784" y="324" text-anchor="middle" fill="#1b2733">p7_power</text>
+<rect x="345" y="359" width="20" height="20" fill="#E06666" stroke="#1f3a5f" stroke-width="1"/>
+<text x="355" y="401" text-anchor="middle" fill="#1b2733">p10_power</text>
+<rect x="422" y="454" width="20" height="20" fill="#E06666" stroke="#1f3a5f" stroke-width="1"/>
+<text x="432" y="496" text-anchor="middle" fill="#1b2733">p20_power</text>
+<circle cx="207" cy="138" r="10" fill="#4A86E8" stroke="#1f3a5f"/>
+<text x="225" y="144" fill="#333">performance &#8212; delay ABC (ABC_AREA=0)</text>
+<rect x="197" y="168" width="20" height="20" fill="#E06666" stroke="#1f3a5f"/>
+<text x="225" y="184" fill="#333">power-optimized &#8212; area-mapped (ABC_AREA=1)</text>
+<line x1="197" y1="218" x2="219" y2="218" stroke="#1E7A46" stroke-width="3" stroke-dasharray="6 4"/>
+<text x="225" y="224" fill="#333">Pareto front</text>
+</svg>

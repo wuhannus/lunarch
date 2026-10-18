@@ -17,6 +17,8 @@ import re
 BASE = "/mnt/d/opencode/lunarch/flow/opt"
 OUTDIR = os.path.join(BASE, "sweep")
 F_REF = 1000.0 / 7.0          # 142.857 MHz
+S = float(os.environ.get('PARETO_SCALE', '1.0'))   # font / marker scale
+SUFFIX = os.environ.get('PARETO_SUFFIX', '')
 
 # name, clk_ns, abc_area, fmax_mhz, cells, report (relative to BASE)
 PTS = [
@@ -65,16 +67,19 @@ def pareto(rows, key):
 def render(rows, key, y0, y1, ystep, title, ycaption, out):
     front = pareto(rows, key)
     W, H = 1000, 680
-    ML, MR, MT, MB = 96, 40, 64, 74
+    FS = int(round(13 * S))
+    TFS = int(round(17 * S))
+    MRK = max(4, int(round(6 * S)))
+    ML, MR, MT, MB = int(96 * S), int(40 * S), int(64 * S), int(74 * S)
     pw, ph = W - ML - MR, H - MT - MB
     x0, x1 = 115, 165
     def X(v): return ML + (v - x0) / (x1 - x0) * pw
     def Y(v): return MT + (y1 - v) / (y1 - y0) * ph
 
     s = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" '
-         'font-family="Helvetica,Arial" font-size="13">',
+         f'font-family="Helvetica,Arial" font-size="{FS}">',
          f'<rect width="{W}" height="{H}" fill="#ffffff"/>',
-         f'<text x="{W/2}" y="30" text-anchor="middle" font-size="17" '
+         f'<text x="{W/2}" y="{int(32*S)}" text-anchor="middle" font-size="{TFS}" '
          'font-weight="bold" fill="#1f3a5f">' + title + '</text>',
          f'<line x1="{ML}" y1="{MT+ph}" x2="{ML+pw}" y2="{MT+ph}" stroke="#666"/>',
          f'<line x1="{ML}" y1="{MT}" x2="{ML}" y2="{MT+ph}" stroke="#666"/>']
@@ -83,20 +88,21 @@ def render(rows, key, y0, y1, ystep, title, ycaption, out):
     while v <= 165:
         s.append(f'<line x1="{X(v):.0f}" y1="{MT}" x2="{X(v):.0f}" y2="{MT+ph}" stroke="#eef2f7"/>')
         s.append(f'<line x1="{X(v):.0f}" y1="{MT+ph}" x2="{X(v):.0f}" y2="{MT+ph+5}" stroke="#999"/>')
-        s.append(f'<text x="{X(v):.0f}" y="{MT+ph+20}" text-anchor="middle" fill="#555">{v}</text>')
+        s.append(f'<text x="{X(v):.0f}" y="{MT+ph+int(20*S)}" text-anchor="middle" fill="#555">{v}</text>')
         v += 5
     yv = y0
     while yv <= y1 + 1e-9:
         s.append(f'<line x1="{ML}" y1="{Y(yv):.0f}" x2="{ML+pw}" y2="{Y(yv):.0f}" stroke="#eef2f7"/>')
         s.append(f'<line x1="{ML-5}" y1="{Y(yv):.0f}" x2="{ML}" y2="{Y(yv):.0f}" stroke="#999"/>')
         lab = f'{yv:.1f}' if ystep < 1 else f'{yv:.0f}'
-        s.append(f'<text x="{ML-10}" y="{Y(yv)+4:.0f}" text-anchor="end" fill="#555">{lab}</text>')
+        s.append(f'<text x="{ML-int(10*S)}" y="{Y(yv)+int(4*S):.0f}" text-anchor="end" fill="#555">{lab}</text>')
         yv += ystep
 
-    s.append(f'<text x="{ML+pw/2:.0f}" y="{H-22}" text-anchor="middle" fill="#1f3a5f">'
+    s.append(f'<text x="{ML+pw/2:.0f}" y="{H-int(22*S)}" text-anchor="middle" fill="#1f3a5f">'
              'fmax (MHz) \u2192 faster &amp; better</text>')
-    s.append(f'<text x="26" y="{MT+ph/2:.0f}" text-anchor="middle" fill="#1f3a5f" '
-             f'transform="rotate(-90 26 {MT+ph/2:.0f})">' + ycaption + '</text>')
+    xl = int(26 * S)
+    s.append(f'<text x="{xl}" y="{MT+ph/2:.0f}" text-anchor="middle" fill="#1f3a5f" '
+             f'transform="rotate(-90 {xl} {MT+ph/2:.0f})">' + ycaption + '</text>')
 
     s.append('<polyline points="' +
              ' '.join(f'{X(p["fmax"]):.0f},{Y(p[key]*1e3):.0f}' for p in front) +
@@ -106,18 +112,21 @@ def render(rows, key, y0, y1, ystep, title, ycaption, out):
         col = '#4A86E8' if p["area"] == 0 else '#E06666'
         cx, cy = X(p["fmax"]), Y(p[key]*1e3)
         if p["area"] == 0:
-            s.append(f'<circle cx="{cx:.0f}" cy="{cy:.0f}" r="6" fill="{col}" stroke="#1f3a5f" stroke-width="1"/>')
+            s.append(f'<circle cx="{cx:.0f}" cy="{cy:.0f}" r="{MRK}" fill="{col}" stroke="#1f3a5f" stroke-width="1"/>')
+            ty = cy - MRK - 4
         else:
-            s.append(f'<rect x="{cx-6:.0f}" y="{cy-6:.0f}" width="12" height="12" fill="{col}" stroke="#1f3a5f" stroke-width="1"/>')
-        s.append(f'<text x="{cx+9:.0f}" y="{cy-8:.0f}" fill="#1b2733">{p["name"]}</text>')
+            s.append(f'<rect x="{cx-MRK:.0f}" y="{cy-MRK:.0f}" width="{2*MRK}" height="{2*MRK}" fill="{col}" stroke="#1f3a5f" stroke-width="1"/>')
+            ty = cy + MRK + FS
+        s.append(f'<text x="{cx:.0f}" y="{ty:.0f}" text-anchor="middle" fill="#1b2733">{p["name"]}</text>')
 
-    lx, ly = ML + 26, MT + 18
-    s.append(f'<circle cx="{lx}" cy="{ly}" r="6" fill="#4A86E8" stroke="#1f3a5f"/>')
-    s.append(f'<text x="{lx+14}" y="{ly+4}" fill="#333">performance &#8212; delay ABC (ABC_AREA=0)</text>')
-    s.append(f'<rect x="{lx-6}" y="{ly+24-6}" width="12" height="12" fill="#E06666" stroke="#1f3a5f"/>')
-    s.append(f'<text x="{lx+14}" y="{ly+28}" fill="#333">power-optimized &#8212; area-mapped (ABC_AREA=1)</text>')
-    s.append(f'<line x1="{lx-6}" y1="{ly+48}" x2="{lx+8}" y2="{ly+48}" stroke="#1E7A46" stroke-width="2" stroke-dasharray="6 4"/>')
-    s.append(f'<text x="{lx+14}" y="{ly+52}" fill="#333">Pareto front</text>')
+    row = int(24 * S)
+    lx, ly = ML + int(26 * S), MT + int(18 * S)
+    s.append(f'<circle cx="{lx}" cy="{ly}" r="{MRK}" fill="#4A86E8" stroke="#1f3a5f"/>')
+    s.append(f'<text x="{lx+MRK+8}" y="{ly+int(4*S)}" fill="#333">performance &#8212; delay ABC (ABC_AREA=0)</text>')
+    s.append(f'<rect x="{lx-MRK}" y="{ly+row-MRK}" width="{2*MRK}" height="{2*MRK}" fill="#E06666" stroke="#1f3a5f"/>')
+    s.append(f'<text x="{lx+MRK+8}" y="{ly+row+int(4*S)}" fill="#333">power-optimized &#8212; area-mapped (ABC_AREA=1)</text>')
+    s.append(f'<line x1="{lx-MRK}" y1="{ly+2*row}" x2="{lx+MRK+2}" y2="{ly+2*row}" stroke="#1E7A46" stroke-width="{max(2,int(2*S))}" stroke-dasharray="6 4"/>')
+    s.append(f'<text x="{lx+MRK+8}" y="{ly+2*row+int(4*S)}" fill="#333">Pareto front</text>')
     s.append('</svg>')
     open(out, 'w').write('\n'.join(s))
 
@@ -131,11 +140,11 @@ def render(rows, key, y0, y1, ystep, title, ycaption, out):
 
 rows = load()
 render(rows, "pref", 18.0, 21.5, 0.5,
-       'AI-driven PPA sweep \u2014 riscv32i on sky130 (power normalized to 142.9 MHz baseline)',
+       'riscv32i PPA \u2014 timing vs power (142.9 MHz normalized)',
        'total power @ 142.9 MHz (mW) \u2192 lower is better',
-       os.path.join(OUTDIR, "pareto_ppa.svg"))
+       os.path.join(OUTDIR, f"pareto_ppa{SUFFIX}.svg"))
 render(rows, "total", 0.0, 32.0, 4.0,
-       'AI-driven PPA sweep \u2014 riscv32i on sky130 (AS-RUN power, unfair across clocks)',
+       'riscv32i PPA \u2014 as-run power (unfair across clocks)',
        'total power at each run\u2019s own clock (mW)',
-       os.path.join(OUTDIR, "pareto_ppa_asrun.svg"))
-print('wrote pareto_ppa.svg and pareto_ppa_asrun.svg')
+       os.path.join(OUTDIR, f"pareto_ppa_asrun{SUFFIX}.svg"))
+print('wrote pareto_ppa%s.svg and pareto_ppa_asrun%s.svg' % (SUFFIX, SUFFIX))
