@@ -490,6 +490,37 @@ table_slide("Software Requirements (open-source)", ["Layer", "Tools / version"],
     ["AI / scripting", "opencode AI agent, Python 3 + openpyxl / python-pptx"],
 ], col_w=[3, 8], subtitle="100% open-source; no commercial EDA licenses")
 
+# ---- open-source NPU outlook ----
+s = newslide()
+header(s, "Open-Source NPU Landscape & a sky130 Path",
+       "what is open, how it is built, and a small INT8 design that fits this flow")
+add_table(s, ["Project", "Architecture", "Dataflow", "Bus"], [
+    ["NVDLA", "conv + SDP/CDP", "pipelined", "AXI"],
+    ["Gemmini", "2-level systolic", "OS / WS", "RoCC"],
+    ["VTA", "GEMM + SRAM", "blocked GEMM", "TVM"],
+    ["PULP", "RISC-V + SIMD", "SIMD MAC", "tight"],
+    ["CFU", "custom func unit", "user-defined", "CFU"],
+], left=0.5, top=1.42, width=7.3, col_w=[1.5, 2.6, 1.7, 1.5],
+   header_size=13, body_size=11)
+text_panel(s, 0.55, 3.62, 7.2, 3.2, [
+    "Compute: 1-D MAC lanes vs 2-D systolic arrays vs pipelined engines.",
+    "Dataflow: weight- vs output-stationary \u2014 dominates energy.",
+    "Memory: scratchpad + accumulator + DMA (double-buffered).",
+    "Precision: INT8 baseline; INT4 / binary, mixed INT8/FP16 research.",
+    "Control: custom RISC-V ISA / microcode / compiler-scheduled.",
+], size=13)
+text_panel(s, 8.05, 1.42, 4.8, 5.5, [
+    "sky130 DUT: 8\u00d78 INT8 systolic array + scratchpad + DMA.",
+    "Attach to the RV32I as RoCC / CFU / AXI; reuse this RTL\u2192GDS flow.",
+    "Sign-off: DRC/LVS/LEC; report MACs/mm\u00b2, fmax, TOPS/W.",
+    "Demo: keyword spotting / anomaly detection.",
+], size=15)
+tbl = s.shapes.add_textbox(Inches(0.6), Inches(6.95), Inches(12.1), Inches(0.4))
+tp = tbl.text_frame.paragraphs[0]
+tp.text = ("github.com/nvdla/hw  \u00b7  github.com/ucb-bar/gemmini  \u00b7  "
+           "github.com/apache/tvm/vta  \u00b7  github.com/pulp-platform")
+tp.font.size = Pt(11); tp.font.color.rgb = GREY
+
 # ---- project effort: AI agent vs. engineer from scratch ----
 s = newslide()
 header(s, "Project Effort \u2014 AI Agent vs. Engineer From Scratch",
